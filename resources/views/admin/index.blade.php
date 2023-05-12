@@ -18,45 +18,13 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="col-xl-3 col-lg-6 col-md-12">
-            <div class="card pull-up ecom-card-1 bg-white">
-                <div class="card-content ecom-card2 height-180">
-                    <h5 class="text-muted info position-absolute p-1">@lang('site.projects')</h5>
-                    <div>
-                        <i class="fa fa-institution info font-large-1 float-right p-1"></i>
-                    </div>
-                    <div class="progress-stats-container ct-golden-section height-75 position-relative pt-3  ">
-                        <div id="">
-                            <h3 style="padding: 40px 15px;">{{ $projects }}</h3>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-
-        {{-- <div class="col-xl-3 col-lg-6 col-md-12">
-            <div class="card pull-up ecom-card-1 bg-white">
-                <div class="card-content ecom-card2 height-180">
-                    <h5 class="text-muted danger position-absolute p-1"> مرات تحميل البروفايل</h5>
-                    <div>
-                        <i class="fa fa-save danger font-large-1 float-right p-1"></i>
-                    </div>
-                    <div class="progress-stats-container ct-golden-section height-75 position-relative pt-3  ">
-                        <div id="">
-                            <h3 style="padding: 40px 15px;">{{ $counter }}</h3>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+     
     </div>
     <!-- Striped rows start -->
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header card-header-success">
                     <h4 class="card-title">سجل العمليات</h4>
                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                     <div class="heading-elements">

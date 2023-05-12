@@ -1,27 +1,26 @@
-<header>
+<header class="header2">
     <div class="top-bar-wrapper">
         <div class="container top-bar">
             <div class="row">
                 <div class="col-xs-5 col-sm-8">
                     <div class="top-mail pull-left hidden-xs">
-                        <span class="top-icon-circle pull-right">
+                        <span class="top-icon-circle">
                             <i class="fa fa-envelope fa-sm"></i>
                         </span>
                         <span class="top-bar-text">apartment@domain.tld</span>
                     </div>
                     <div class="top-phone pull-left hidden-xxs">
-                        <span class="top-icon-circle pull-right">
+                        <span class="top-icon-circle">
                             <i class="fa fa-phone"></i>
                         </span>
                         <span class="top-bar-text">(0)-123-456-789</span>
                     </div>
                     <div class="top-localization pull-left hidden-sm hidden-md hidden-xs">
-                        <span class="top-icon-circle pull-right">
+                        <span class="top-icon-circle pull-left">
                             <i class="fa fa-map-marker"></i>
                         </span>
                         <span class="top-bar-text">One Brookings Drive St. Louis, Missouri 63130-4899, USA</span>
                     </div>
-                    <div class="clearfix"></div>
                 </div>
                 <div class="col-xs-7 col-sm-4">
                     <div class="top-social-last top-dark pull-right" data-toggle="tooltip" data-placement="bottom" title="Login/Register">
@@ -29,7 +28,7 @@
                             <i class="fa fa-lock"></i>
                         </a>
                     </div>
-
+                    
                     <div class="top-social pull-right">
                         <a class="top-icon-circle" href="#">
                             <i class="fa fa-facebook"></i>
@@ -52,11 +51,11 @@
                     </div>
                 </div>
             </div>
-        </div><!-- /.top-bar -->
-    </div><!-- /.Page top-bar-wrapper -->
+        </div><!-- /.top-bar -->	
+    </div><!-- /.Page top-bar-wrapper -->	
     <nav class="navbar main-menu-cont">
         <div class="container">
-            <div class="navbar-header">
+            <div class="navbar-header" style="float: left;">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar icon-bar1"></span>
@@ -64,11 +63,11 @@
                     <span class="icon-bar icon-bar3"></span>
                 </button>
                 <a href="index.html" title="" class="navbar-brand">
-                    <img src="images/logo-dark.png" alt="Apartment - Premium Real Estate Template" />
+                    <img src="images/logo-light.png" alt="Apartment - Premium Real Estate Template" />
                 </a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-left">
+                <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                         <ul class="dropdown-menu">
@@ -223,5 +222,5 @@
                 </ul>
             </div>
         </div>
-    </nav><!-- /.mani-menu-cont -->
+    </nav><!-- /.mani-menu-cont -->	
 </header>

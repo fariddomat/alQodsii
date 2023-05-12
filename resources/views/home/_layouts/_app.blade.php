@@ -4,7 +4,7 @@
     <body>
 
         <div class="loader-bg"></div>
-        <div id="wrapper">
+        <div id="wrapper" class="wrapper2">
 
         @include('home._layouts._nav')
 

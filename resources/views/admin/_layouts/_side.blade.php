@@ -3,7 +3,7 @@
         <nav class="sidebar-nav">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href=""><i class="icon-speedometer"></i> لوحة التحكم
+                    <a class="nav-link" href="{{ route('admin.home') }}"><i class="icon-speedometer"></i> لوحة التحكم
                     </a>
                 </li>
 
