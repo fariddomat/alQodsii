@@ -1,238 +1,75 @@
-   <!-- Footer Area -->
-   <footer class="footer-area">
-       <div class="footer-top pt-100 pb-70">
-           <div class="container">
-               <div class="row">
-                   <div class="col-lg-4 col-md-6">
-                       <div class="single-footer-widget">
-                           <a href="{{ route('home') }}" class="logo">
-                               <img src="{{ asset('alqodsii.png') }}" style="max-width: 150px" alt="Logo">
-                           </a>
-                           <h6>أضف بريدك الالكتروني لتصلك تحديثات القدسي مباشرة</h6>
-
-                           <form action="{{ route('promoters') }}" method="POST">
-                               @csrf
-                               @extends('admin._layouts._error')
-                               <div class="row">
-                                   <input type="email" name="email" class="form-control col-sm-8"
-                                       placeholder="أضف بريدك الالكتروني هنا">
-                                   <button type="submit" class="btn btn-info col-sm-4">إضافة</button>
-
-                               </div>
-                           </form>
-                       </div>
-                   </div>
-                   <div class="col-lg-3 col-md-6">
-                       <div class="single-footer-widget">
-                           <p>
-                               {{ setting('site_name') }}
-                           </p>
-                           <ul class="social-link">
-                               @if (setting('snapchat_link'))
-                                   <li>
-                                       <a href="{{ setting('snapchat_link') }}" target="_blank"
-                                           style="background-color: rgb(238, 255, 0)"><i
-                                               class='bx bxl-snapchat'></i></a>
-                                   </li>
-                               @endif
-                               @if (setting('twitter_link'))
-                                   <li>
-                                       <a href="{{ setting('twitter_link') }}" target="_blank"><i
-                                               class='bx bxl-twitter'></i></a>
-                                   </li>
-                               @endif
-
-                               @if (setting('tiktok_link'))
-                                   <li>
-                                       <a href="{{ setting('tiktok_link') }}" target="_blank"
-                                           style="background-color: rgb(238, 255, 0)"><svg
-                                               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3333 3333"
-                                               shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
-                                               image-rendering="optimizeQuality" fill-rule="evenodd"
-                                               clip-rule="evenodd">
-                                               <path
-                                                   d="M1667 0c920 0 1667 746 1667 1667 0 920-746 1667-1667 1667C747 3334 0 2588 0 1667 0 747 746 0 1667 0zm361 744c31 262 177 418 430 434v294c-147 14-276-34-426-124v550c0 700-763 918-1069 417-197-322-76-889 556-911v311c-48 8-99 20-146 36-141 47-220 137-198 294 43 301 595 390 549-198V745h305z" />
-                                           </svg></a>
-                                   </li>
-                               @endif
-                               @if (setting('instagram_link'))
-                                   <li>
-                                       <a href="{{ setting('instagram_link') }}" target="_blank"><i
-                                               class='bx bxl-instagram'></i></a>
-                                   </li>
-                               @endif
-                               {{-- @if (setting('whatsapp_link'))
-                                   <li>
-                                       <a style="background-color: #18d93f;"
-                                           href="https://api.whatsapp.com/send?phone={{ setting('whatsapp_link') }}"
-                                           target="_blank"><i class='bx bxl-whatsapp'></i></a>
-                                   </li>
-                               @endif --}}
-                           </ul>
-                       </div>
-                   </div>
-
-                   {{-- <div class="col-lg-2 col-md-6">
-                    <div class="single-footer-widget">
-                        <h3>الخدمات</h3>
-                        <ul class="footer-list">
-                            <li>
-                                <a href="services.html" target="_blank">
-                                    <i class='bx bx-plus'></i>
-                                    شراء العقارات
-                                </a>
-                            </li>
-                            <li>
-                                <a href="about.html" target="_blank">
-                                    <i class='bx bx-plus'></i>
-                                    من نحن؟
-                                </a>
-                            </li>
-                            <li>
-                                <a href="terms-condition.html" target="_blank">
-                                    <i class='bx bx-plus'></i>
-                                    شروط الخدمة
-                                </a>
-                            </li>
-                            <li>
-                                <a href="privacy-policy.html" target="_blank">
-                                    <i class='bx bx-plus'></i>
-                                    الخصوصية
-                                </a>
-                            </li>
-                        </ul>
+<footer class="large-cont">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-lg-3">
+                <h4 class="second-color">contact us<span class="special-color">.</span></h4>
+                <div class="footer-title-separator"></div>
+                <p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <address>
+                    <span><i class="fa fa-map-marker"></i>00456 Some Address line</span>
+                    <div class="footer-separator"></div>
+                    <span><i class="fa fa-envelope fa-sm"></i><a href="#">email@domain.tld</a></span>
+                    <div class="footer-separator"></div>
+                    <span><i class="fa fa-phone"></i>01-23456789</span>
+                </address>
+                <div class="clear"></div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-3">
+                <h4 class="second-color">quick links<span class="special-color">.</span></h4>
+                <div class="footer-title-separator"></div>
+                <ul class="footer-ul">
+                    <li><span class="custom-ul-bullet"></span><a href="index.html">Home</a></li>
+                    <li><span class="custom-ul-bullet"></span><a href="listing-grid-right-sidebar.html">Listing</a></li>
+                    <li><span class="custom-ul-bullet"></span><a href="agencies-listing-right-sidebar.html">Agencies</a></li>
+                    <li><span class="custom-ul-bullet"></span><a href="archive-grid.html">Blog</a></li>
+                    <li><span class="custom-ul-bullet"></span><a href="contact1.html">Contact us</a></li>
+                    <li><span class="custom-ul-bullet"></span><a href="submit-property.html">Submit property</a></li>
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg-3">
+                <h4 class="second-color">from the blog<span class="special-color">.</span></h4>
+                <div class="footer-title-separator"></div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-12">
+                        <article>
+                            <a href="blog-right-sidebar.html"><img src="images/footer-blog1.jpg" alt="" class="footer-blog-image" /></a>
+                            <div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
+                            <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
+                            <div class="clearfix"></div>
+                        </article>
+                        <div class="footer-blog-separator hidden-xs"></div>
                     </div>
-                </div> --}}
-
-                   <div class="col-lg-3 col-md-6">
-                       <div class="single-footer-widget pl-3">
-                           <h3>معلومات التواصل</h3>
-                           <ul class="footer-contact-list">
-                               <li>
-                                   <span>الاثنين - الجمعة :</span>9 صباحا - 6 مساء
-                               </li>
-                               <li>
-                                   <span>السبت - الاحد :</span> 9 صباحا - 2 مساء
-                               </li>
-                               {{-- <li>
-                                   <span>هاتف :</span> <a href="tel:{{ setting('site_phone') }}">
-                                       {{ setting('site_phone') }}</a>
-                               </li>
-                               <li>
-                                   <span>هاتف 2 :</span> <a href="tel:{{ setting('site_phone2') }}">
-                                       {{ setting('site_phone2') }}</a>
-                               </li> --}}
-                               <li>
-                                   <span>بريد إلكتروني :</span> <a href="mailto:{{ setting('site_email') }}">
-                                       {{ setting('site_email') }}
-                                   </a>
-                               </li>
-                           </ul>
-                       </div>
-                   </div>
-
-                   {{-- <div class="col-lg-3 col-md-6">
-                 <div class="single-footer-widget pl-5">
-                     <h3>Gallery</h3>
-                     <ul class="footer-gallery">
-                         <li>
-                             <a href="#">
-                                 <img src="assets/img/gallery/g-1.jpg" alt="image">
-                             </a>
-                         </li>
-                         <li>
-                             <a href="#">
-                                 <img src="assets/img/gallery/g-2.jpg" alt="image">
-                             </a>
-                         </li>
-                         <li>
-                             <a href="#">
-                                 <img src="assets/img/gallery/g-3.jpg" alt="image">
-                             </a>
-                         </li>
-                         <li>
-                             <a href="#">
-                                 <img src="assets/img/gallery/g-4.jpg" alt="image">
-                             </a>
-                         </li>
-                         <li>
-                             <a href="#">
-                                 <img src="assets/img/gallery/g-5.jpg" alt="image">
-                             </a>
-                         </li>
-                         <li>
-                             <a href="#">
-                                 <img src="assets/img/gallery/g-6.jpg" alt="image">
-                             </a>
-                         </li>
-                     </ul>
-                 </div>
-             </div> --}}
-               </div>
-           </div>
-       </div>
-
-       <div class="footer-bottom">
-           <div class="container">
-               <div class="bottom-text">
-                   <p>
-                       <a href="https://www.digitsmark.com/" target="_blank">Digitsmark</a>
-                       Copyright ©2022. by
-                   </p>
-               </div>
-           </div>
-       </div>
-   </footer>
-   <!-- Footer Area End -->
-
-   {{-- <div id="" class="top-btn"
-       style="position: fixed;
-                bottom: 20px;
-                right: 20px;
-                cursor: pointer;
-                background-color: #18d93f;">
-       <a style="color: white !important" href="https://api.whatsapp.com/send?phone={{ setting('whatsapp_link') }}"
-           target="_blank"><i class='bx bxl-whatsapp'></i></a>
-   </div> --}}
-
-   <!-- Jquery Min JS -->
-   <script src="{{ asset('home/assets/js/jquery-3.5.1.slim.min.js') }}"></script>
-   <!-- Popper Min JS -->
-   {{-- <script src="{{ asset('home/assets/js/popper.min.js') }}"></script> --}}
-   <!-- Bootstrap Min JS -->
-   <script src="{{ asset('home/assets/js/bootstrap.min.js') }}"></script>
-   <!-- Owl Carousel Min JS -->
-   <script src="{{ asset('home/assets/js/owl.carousel.min.js') }}"></script>
-   {{-- <script src="{{ asset('home/assets/js/carousel-thumbs.js') }}"></script> --}}
-   <!-- Meanmenu JS -->
-   <script src="{{ asset('home/assets/js/meanmenu.js') }}"></script>
-   <!-- Magnific Popup JS -->
-   <script src="{{ asset('home/assets/js/jquery.magnific-popup.min.js') }}"></script>
-   <!-- Wow JS -->
-   {{-- <script src="{{ asset('home/assets/js/wow.min.js') }}"></script> --}}
-   <!-- Nice Select JS -->
-   {{-- <script src="{{ asset('home/assets/js/jquery.nice-select.min.js') }}"></script> --}}
-   <!-- Ajaxchimp Min JS -->
-   {{-- <script src="{{ asset('home/assets/js/jquery.ajaxchimp.min.js') }}"></script> --}}
-   <!-- Form Validator Min JS -->
-   {{-- <script src="{{ asset('home/assets/js/form-validator.min.js') }}"></script> --}}
-   <!-- Contact Form JS -->
-   {{-- <script src="{{ asset('home/assets/js/contact-form-script.js') }}"></script> --}}
-   <!-- Custom JS -->
-   <script src="{{ asset('home/assets/js/custom.js') }}?v=4"></script>
-
-   <!-- wow js -->
-   {{-- <script src="{{ asset('home/js/wow.min.js') }}"></script> --}}
-   {{-- <script>
-    new WOW().init();
-</script> --}}
-
-   <script>
-       $('.maps').click(function() {
-           $('.maps iframe').css("pointer-events", "auto");
-       });
-
-       $(".maps").mouseleave(function() {
-           $('.maps iframe').css("pointer-events", "none");
-       });
-   </script>
+                    <div class="col-xs-6 col-sm-12">
+                        <article>
+                            <a href="blog-right-sidebar.html"><img src="images/footer-blog2.jpg" alt="" class="footer-blog-image" /></a>
+                            <div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
+                            <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
+                            <div class="clearfix"></div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-lg-3">
+                <h4 class="second-color">newsletter<span class="special-color">.</span></h4>
+                <div class="footer-title-separator"></div>
+                <p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <form class="form-inline footer-newsletter">
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="enter your email">
+                    <button type="submit" class="btn"><i class="fa fa-lg fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</footer>
+<footer class="small-cont">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 small-cont">
+                <img src="images/logo-light.png" alt="" class="img-responsive footer-logo" />
+            </div>
+            <div class="col-xs-12 col-md-6 footer-copyrights">
+                &copy; Copyright 2015 <a href="http://themeforest.net/user/johnnychaos?ref=johnnychaos" target="blank">Jan Skwara</a>. All rights reserved. By on <a href="http://themeforest.net/user/johnnychaos/portfolio?ref=johnnychaos" target="blank">Themeforest</a>.
+            </div>
+        </div>
+    </div>
+</footer>

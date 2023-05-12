@@ -1,48 +1,36 @@
 <head>
     <!-- Required Meta Tags -->
     <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('home/assets/css/bootstrap.min.css') }}">
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="{{ asset('home/assets/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('home/assets/css/owl.theme.default.min.css') }}">
-    <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="{{ asset('home/assets/fonts/flaticon.css') }}">
-    <!-- Boxicons CSS -->
-    <link rel="stylesheet" href="{{ asset('home/assets/css/boxicons.min.css') }}">
-    <!-- Animate Min CSS -->
-    {{-- <link rel="stylesheet" href="{{ asset('home/assets/css/animate.min.css') }}"> --}}
-    <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" href="{{ asset('home/assets/css/magnific-popup.css') }}">
-    <!-- Meanmenu CSS -->
-    <link rel="stylesheet" href="{{ asset('home/assets/css/meanmenu.css') }}">
-    <!-- Nice Select CSS -->
-    {{-- <link rel="stylesheet" href="{{ asset('home/assets/css/nice-select.min.css') }}"> --}}
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ asset('home/assets/css/style.css') }}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ asset('home/assets/css/responsive.css') }}">
-    <!-- RTL CSS -->
-    <link rel="stylesheet" href="{{ asset('home/assets/css/rtl.css') }}">
-
     <!-- Title -->
     <title>{{ setting('site_title') }} </title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('alqodsii.png') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="keywords" content="Download, Apartment, Premium, Real Estate, HMTL, Site Template, property, mortgage, CSS" />
+	<meta name="description" content="Download Apartment - Premium Real Estate HMTL Site Template" />
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
+	<!-- Font awesome styles -->
+	<link rel="stylesheet" href="{{ asset('apartment-font/css/font-awesome.min.css') }}">
+	<!-- Custom styles -->
+	<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/plugins.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/apartment-layout.css') }}">
+    <link id="skin" rel="stylesheet" type="text/css" href="{{ asset('css/apartment-colors-blue.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-rtl.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/rtl.css') }}">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
     <style>
-        .owl-carousel {
-            display: block;
-        }
 
-        .counter-area {
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
 
         @media only screen and (min-width: 5px) {
             /* table {
@@ -170,48 +158,5 @@
                 font-size: 16px;
                 background-color: #094748
             }
-
-            ::-webkit-scrollbar {
-                height: 14px !important;
-                /* height of horizontal scrollbar ← You're missing this */
-                width: 4px !important;
-                /* width of vertical scrollbar */
-                border: 1px solid #094748 !important;
-            }
-
-            ::-webkit-scrollbar-track {
-                -webkit-box-shadow: inset 0 0 6px gray !important;
-                border-radius: 10px !important;
-            }
-
-            ::-webkit-scrollbar-thumb {
-                border-radius: 10px !important;
-                background-color: #094748 !important;
-                -webkit-box-shadow: inset 0 0 6px rgba(90, 90, 90, 0.7) !important;
-            }
-        }
-
-        .map-area-two iframe {
-            max-height: 50vh !important;
-        }
-        @media only screen and (max-width: 767px){
-            .map-area-two iframe {
-            max-height: 30vh !important;
-        }
-
-        }
-
-        @media only screen and (max-width: 995px){
-
-        .project-desktop{
-            display: none;
-        }
-        }
-
-        @media only screen and (min-width: 995px){
-            .project-mobile{
-            display: none;
-        }
-        }
     </style>
 </head>

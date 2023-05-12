@@ -7,7 +7,7 @@
     <meta name="author" content="ThemeSelect">
     <title>لوحة التحكم - القدسي</title>
     <link rel="apple-touch-icon" href="theme-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="theme-assets/images/ico/favicon.ico">
+    
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
      <!-- Icons -->
