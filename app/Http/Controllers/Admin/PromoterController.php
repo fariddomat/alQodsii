@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Mail;
 use App\Http\Controllers\Controller;
-use App\Project;
-use App\Promoter;
+use App\Models\Project;
+use App\Models\Promoter;
 use Illuminate\Http\Request;
 
 class PromoterController extends Controller
@@ -132,8 +132,8 @@ class PromoterController extends Controller
             );
             Mail::send('mail', $info, function ($message) use ($promoter) {
                 $message->to($promoter->email, $promoter->name)
-                    ->subject('إشعار مشروع جديد من أباهي');
-                $message->from('tahdeeth@abahee.com', 'Abahee');
+                    ->subject('إشعار مشروع جديد من القدسي');
+                $message->from('tahdeeth@alqodsii.com', 'alqodsii');
             });
 
             // echo "Successfully sent the email";

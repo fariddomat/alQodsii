@@ -20,7 +20,7 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse show" dir="rtl" style="text-align: right">
+                    <div class="card-block" dir="rtl" style="text-align: right">
                         <div class="card-body " style="text-align: right">
                             <fieldset class="form-group">
 
@@ -125,7 +125,7 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-block">
                         <div class="card-body " style="text-align: right">
 
 
@@ -175,7 +175,7 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-block">
                         <div class="card-body " style="text-align: right">
 
                             <fieldset class="form-group">
@@ -222,7 +222,7 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-block">
                         <div class="card-body " style="text-align: right">
 
                             <fieldset class="form-group">
@@ -273,7 +273,7 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-block">
                         <div class="card-body " style="text-align: right">
                             <fieldset class="form-group">
                                 <div class="col-lg-6 mt-3">
@@ -304,7 +304,7 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-block">
                         <div class="card-body " style="text-align: right">
 
                             <fieldset class="form-group">
@@ -341,7 +341,7 @@
             <div class="col-12">
                 <div class="card">
 
-                    <div class="card-content collapse show">
+                    <div class="card-block">
                         <div class="card-body " style="float: right">
                             <div class="col-lg-12">
                                 <button class="btn btn-icon btn-info mr-1 mt-3">@lang('site.update') <i class="fa fa-save"

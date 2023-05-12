@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Category;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
-use App\Project;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class CategoryControlelr extends Controller

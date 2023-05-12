@@ -31,7 +31,7 @@
     <title>{{ setting('site_title') }} </title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('abahee.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('alqodsii.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>

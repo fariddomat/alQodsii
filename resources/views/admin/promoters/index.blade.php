@@ -17,7 +17,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="card-content collapse show">
+                <div class="card-block">
                     <div class="card-body " style="float: right">
 
                         <a href="{{ route('admin.promoters.create') }}"

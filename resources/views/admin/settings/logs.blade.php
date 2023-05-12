@@ -17,7 +17,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="card-content collapse show">
+                <div class="card-block">
 
 
                     @if ($logs->count() == 0)

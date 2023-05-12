@@ -17,7 +17,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="card-content collapse show" style="direction: rtl; text-align: right">
+                <div class="card-block" style="direction: rtl; text-align: right">
 
                     <form action="{{ route('admin.setting.changePass') }}" method="POST">
                         @csrf

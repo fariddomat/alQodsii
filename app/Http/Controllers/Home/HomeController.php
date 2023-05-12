@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Home;
 
-use App\Contact;
+use App\Models\Contact;
 use App\Http\Controllers\Controller;
-use App\ProfileDownload;
-use App\Project;
-use App\Promoter;
+use App\Models\ProfileDownload;
+use App\Models\Project;
+use App\Models\Promoter;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 

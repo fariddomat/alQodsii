@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Project;
+use App\Models\Project;
 use App\Http\Controllers\Controller;
-use App\Category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use App\Propertie;
+use App\Models\Propertie;
 
 class PropertieController extends Controller
 {

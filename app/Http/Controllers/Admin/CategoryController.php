@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 
-use App\Category;
-use App\LogSystem;
+use App\Models\Category;
+use App\Models\LogSystem;
 use Illuminate\Http\Request;
 use Session;
 
@@ -62,7 +62,7 @@ class CategoryController extends Controller
 
         Category::create($request_data);
         LogSystem::success('تم إضافة تصنيف جديد بنجاح : ' . $request->name);
-        Session::flash('success', 'Successfully Created !');
+        session()->flash('success', 'Successfully Created !');
         return redirect()->route('admin.categories.index');
     }
 
@@ -126,7 +126,7 @@ class CategoryController extends Controller
         $category->update($request_data);
         LogSystem::info('تم تعديل تصنيف بنجاح : ' . $request->name);
 
-        Session::flash('success','Successfully updated !');
+        session()->flash('success','Successfully updated !');
         return redirect()->route('admin.categories.index');
     }
 
@@ -145,7 +145,7 @@ class CategoryController extends Controller
         Storage::disk('public')->delete('images/' . $category->img);
         $category->delete();
         LogSystem::info('تم حذف تصنيف بنجاح : ' . $category->name);
-        Session::flash('success','Successfully deleted !');
+        session()->flash('success','Successfully deleted !');
         return redirect()->route('admin.categories.index');
     }
 }

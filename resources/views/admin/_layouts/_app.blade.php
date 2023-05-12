@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+<html lang="IR-fa" dir="rtl">
 
 @include('admin._layouts._head')
 
-<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click"
-    data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
+<body class="navbar-fixed sidebar-nav fixed-nav">
 
     <!-- fixed-top-->
     @include('admin._layouts._nav')
@@ -13,16 +12,26 @@
 
 
     @include('admin._layouts._side')
-    <div class="app-content content">
-        <div class="content-wrapper">
-            {{-- <div class="content-wrapper-before"></div> --}}
-            <div class="content-header row" style="margin-top: 25px">
-            </div>
-            <div class="content-body">
+
+    <main class="main">
+
+        <!-- Breadcrumb -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="">Admin</a>
+            </li>
+            <li class="breadcrumb-item active">Dashboard</li>
+
+        </ol>
+
+        <div class="container-fluid">
+
+            <div class="animated fadeIn">
               @yield('content')
             </div>
         </div>
-    </div>
+    </main>
+
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
     @include('admin._layouts._footer')

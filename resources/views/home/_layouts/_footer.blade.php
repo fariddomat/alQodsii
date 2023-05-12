@@ -6,9 +6,9 @@
                    <div class="col-lg-4 col-md-6">
                        <div class="single-footer-widget">
                            <a href="{{ route('home') }}" class="logo">
-                               <img src="{{ asset('abahee.png') }}" style="max-width: 150px" alt="Logo">
+                               <img src="{{ asset('alqodsii.png') }}" style="max-width: 150px" alt="Logo">
                            </a>
-                           <h6>أضف بريدك الالكتروني لتصلك تحديثات أباهي مباشرة</h6>
+                           <h6>أضف بريدك الالكتروني لتصلك تحديثات القدسي مباشرة</h6>
 
                            <form action="{{ route('promoters') }}" method="POST">
                                @csrf

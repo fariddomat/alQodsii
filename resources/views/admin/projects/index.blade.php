@@ -12,23 +12,13 @@
             <div class="card">
                 <div class="card-header">
                     <h4 class="card-title">@lang('site.all_projects')</h4>
-                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                    <div class="heading-elements">
-                        <ul class="list-inline mb-0">
-                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                            {{-- <li><a data-action="close"><i class="ft-x"></i></a></li> --}}
-                        </ul>
-                    </div>
-                </div>
-                <div class="card-content collapse show">
-                    <div class="card-body " style="float: right">
 
                         <a href="{{ route('admin.projects.create') }}" class="btn btn-icon btn-info mr-1">@lang('site.create')
                             <i class="fa fa-plus" style="position: relative"></i></a>
 
-                    </div>
+                </div>
+                <div class="card-block">
+
                     <form action="" class="col-md-12">
                         <div class="form-group col-md-4">
                             <input type="text" class="form-control" name="search" id="search" autofocus

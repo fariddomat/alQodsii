@@ -50,7 +50,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root'   => '/home/abahee/public_html/update/uploads',
+            'root'   => '/home/alqodsii/public_html/update/uploads',
             'url' => env('APP_URL').'/public',
             'visibility' => 'public',
         ],

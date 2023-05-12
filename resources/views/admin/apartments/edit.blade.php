@@ -8,7 +8,7 @@
                     <div class="card-header">
                         <h4 class="card-title">@lang('site.edit') شقة</h4>
                     </div>
-                    <div class="card-block" dir="rtl" style="text-align: right">
+                    <div class="card-body" dir="rtl" style="text-align: right">
                         <div class="card-body col-lg-12">
                             <fieldset class="form-group">
                                 <form action="{{ route('admin.apartments.update', $apartment->id) }}" method="post"

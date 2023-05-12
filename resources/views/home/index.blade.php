@@ -9,7 +9,7 @@
                     <div class="container-fluid" style="min-height: 100vh;">
                         <div class="container-max">
                             <div class="slider-content ">
-                                <h1>أباهي.. <b>بمسكنك تُباهي</b></h1>
+                                <h1>القدسي.. <b>بمسكنك تُباهي</b></h1>
                                 <p></p>
                                 <div class="slider-btn-area">
                                     <a href="{{ route('projects') }}" class="discover-btn">
@@ -166,7 +166,7 @@
                         <a>
                             <h3>الدقة</h3>
                         </a>
-                        <p class="text-break"> أكثر ما يميز شركة أباهي الدقة في تأمين ما يطلبه العميل بالوقت المحدد
+                        <p class="text-break"> أكثر ما يميز شركة القدسي الدقة في تأمين ما يطلبه العميل بالوقت المحدد
                         </p>
                     </div>
                 </div>
@@ -339,7 +339,7 @@
                 <div class="col-lg-6 col-sm-12">
                     <div class="offer-content">
                         <div class="section-title-two">
-                            <h2 class="section-white">وسائل الراحة التي نقدمها <b>لدى أباهي !</b></h2>
+                            <h2 class="section-white">وسائل الراحة التي نقدمها <b>لدى القدسي !</b></h2>
                         </div>
                     </div>
                 </div>

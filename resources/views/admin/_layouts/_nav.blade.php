@@ -1,43 +1,41 @@
-<nav
-        class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
-        <div class="navbar-wrapper">
-            <div class="navbar-container content">
-                <div class="collapse navbar-collapse show" id="navbar-mobile">
-                    <ul class="nav navbar-nav mr-auto float-left">
-                        <li class="nav-item d-block d-md-none"><a class="nav-link nav-menu-main menu-toggle hidden-xs"
-                                href="#"><i class="ft-menu"></i></a></li>
-                        <li class="nav-item d-none d-md-block"><a class="nav-link nav-link-expand" href="#"><i
-                                    class="ficon ft-maximize"></i></a></li>
+<header class="navbar">
+    <div class="container-fluid">
+        <button class="navbar-toggler mobile-toggler hidden-lg-up" type="button">&#9776;</button>
+        <a class="navbar-brand" href="#"></a>
+        <ul class="nav navbar-nav hidden-md-down">
+            <li class="nav-item">
+                <a class="nav-link navbar-toggler layout-toggler" href="#">&#9776;</a>
+            </li>
 
-                    </ul>
+        </ul>
+        <ul class="nav navbar-nav pull-left hidden-md-down">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="hidden-md-down">{{ Auth::user()->name }}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <div class="dropdown-header text-xs-center">
+                        <strong>Account</strong>
+                    </div>
+                    <a class="dropdown-item" href=""><i class="fa fa-bell-o"></i>
+                        الملف الشخصي</a>
+                    <div class="dropdown-header text-xs-center">
+                        <strong>Settings</strong>
+                    </div><a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                        <i class="fa fa-lock"></i>تسجيل خروج
+                    </a>
 
-                    <ul class="nav navbar-nav float-right">
-
-                        <li class="dropdown dropdown-user nav-item"><a
-                                class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown">
-                                <span class=""><i class="fa fa-user"></i></span></a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><span
-                                            class="avatar avatar-online">
-                                            <span class="user-name text-bold-700 ml-1">{{Auth::user()->name}}</span></span></a>
-                                    <div class="dropdown-divider"></div>
-
-
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-
-                                    <i class="ft-power"></i> @lang('site.logout')
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
-            </div>
-        </div>
-    </nav>
+            </li>
+            <li class="nav-item">
+            </li>
+
+        </ul>
+    </div>
+</header>

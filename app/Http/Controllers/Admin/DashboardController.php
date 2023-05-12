@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Models\Category;
 use App\Http\Controllers\Controller;
-use App\LogSystem;
-use App\ProfileDownload;
-use App\Project;
+use App\Models\LogSystem;
+use App\Models\ProfileDownload;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 use IlluminateSupportFacadesLog;

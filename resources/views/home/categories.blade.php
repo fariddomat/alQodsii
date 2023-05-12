@@ -10,7 +10,7 @@
                     <h2>
                         <b class="section-color2">
 تحديثات
-                        </b> أباهي
+                        </b> القدسي
                     </h2>
                     {{-- <a href="{{ route('profileDownload') }}" target="_blank" class="default-btn default-hot-toddy text-white">
                         تحميل البروفايل

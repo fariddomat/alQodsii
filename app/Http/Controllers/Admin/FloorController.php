@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Apartment;
-use App\Floor;
+use App\Models\Apartment;
+use App\Models\Floor;
 use App\Http\Controllers\Controller;
-use App\LogSystem;
-use App\Project;
+use App\Models\LogSystem;
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class FloorController extends Controller

@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Project;
+use App\Models\Project;
 use App\Http\Controllers\Controller;
-use App\Category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use App\Propertie;
+use App\Models\Propertie;
 
-use App\Apartment;
-use App\LogSystem;
+use App\Models\Apartment;
+use App\Models\LogSystem;
 use Illuminate\Support\Facades\Redirect;
 
 class ApartmentController extends Controller
@@ -100,7 +100,7 @@ class ApartmentController extends Controller
 
         LogSystem::success('تم إضافة ' . $request->type . ' بنجاح - اسم المشروع: ' . $project->name);
 
-        Session::flash('success', 'Successfully Created !');
+        session()->flash('success', 'Successfully Created !');
         return redirect()->route('admin.apartments.index', ['projectId' => $request->project_id]);
     }
 
@@ -208,7 +208,7 @@ class ApartmentController extends Controller
 
         LogSystem::info('تم تعديل ' . $apartment->type . ' بنجاح - اسم المشروع: ' . $project->name);
 
-        Session::flash('success', 'Successfully updated !');
+        session()->flash('success', 'Successfully updated !');
         return redirect()->route('admin.apartments.index', ['projectId' => $apartment->project_id]);
     }
 
@@ -231,7 +231,7 @@ class ApartmentController extends Controller
         $project = Project::find($apartment->project_id);
         LogSystem::warning('تم حذف ' . $apartment->type . ' بنجاح - اسم المشروع: ' . $project->name);
 
-        Session::flash('success', 'Successfully deleted !');
+       session()->flash('success', 'Successfully deleted !');
         return redirect()->route('admin.apartments.index', ['projectId' => $apartment->project_id]);
     }
 }

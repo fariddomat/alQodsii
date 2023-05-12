@@ -17,7 +17,7 @@ Route::prefix('admin')
 
             Route::resource('projects', 'ProjectController');
             Route::post('projects/sortable','ProjectController@sort');
-            
+
             Route::resource('properties', 'PropertieController');
             Route::resource('promoters', 'PromoterController');
             Route::get('/notify', 'PromoterController@notify')->name('promoters.notify');
@@ -37,7 +37,7 @@ Route::prefix('admin')
             // Route::get('/settings/cover', 'SettingController@cover')->name('setting.cover');
             // Route::post('/settings/change_cover', 'SettingController@change_cover')->name('setting.change_cover');
             Route::get('/settings/logs', 'SettingController@logs')->name('setting.logs');
-            // Route::get('/settings/settings', 'SettingController@settingsText')->name('setting.settingsText');
+            Route::get('/settings/settings', 'SettingController@settingsText')->name('setting.settingsText');
             Route::post('/settings/setting', 'SettingController@settings')->name('setting.settings');
             Route::get('/settings/social', 'SettingController@social')->name('setting.social');
 

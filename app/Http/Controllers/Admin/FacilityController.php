@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Project;
+use App\Models\Project;
 use App\Http\Controllers\Controller;
-use App\Category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Session;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use App\Facility;
+use App\Models\Facility;
 
 class FacilityController extends Controller
 {/**
@@ -68,7 +68,7 @@ class FacilityController extends Controller
         $request_data['img'] = $request->img->hashName();
 
         Facility::create($request_data);
-        Session::flash('success', 'Successfully Created !');
+        session()->flash('success', 'Successfully Created !');
         return redirect()->route('admin.facilities.index', ['projectId' => $request->project_id]);
     }
 
@@ -133,7 +133,7 @@ class FacilityController extends Controller
 
         $facility->update($request_data);
 
-        Session::flash('success','Successfully updated !');
+        session()->flash('success','Successfully updated !');
         return redirect()->route('admin.facilities.index', ['projectId'=>$facility->project_id]);
     }
 
@@ -153,7 +153,7 @@ class FacilityController extends Controller
         Storage::disk('public')->delete('images/' . $facility->img);
         $facility->delete();
 
-        Session::flash('success', 'Successfully deleted !');
+        session()->flash('success', 'Successfully deleted !');
         return redirect()->route('admin.facilities.index', ['projectId' => $facility->project_id]);
     }
 }

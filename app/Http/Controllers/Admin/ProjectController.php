@@ -4,15 +4,15 @@
 namespace App\Http\Controllers\Admin;
 
 use Mail;
-use App\Apartment;
-use App\Project;
+use App\Models\Apartment;
+use App\Models\Project;
 use App\Http\Controllers\Controller;
-use App\Category;
-use App\Facility;
-use App\LogSystem;
-use App\ProjectImage;
+use App\Models\Category;
+use App\Models\Facility;
+use App\Models\LogSystem;
+use App\Models\ProjectImage;
 use App\Promoter;
-use App\Propertie;
+use App\Models\Propertie;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail as FacadesMail;
@@ -141,10 +141,11 @@ class ProjectController extends Controller
 
             LogSystem::success('تم إضافة مشروع جديد بنجاح - اسم المشروع: ' . $request->name);
 
-            Session::flash('success', 'Successfully Created !');
+            session()->flash('success', 'Successfully Created !');
             return redirect()->route('admin.apartments.index', ['projectId' => $project->id]);
         } catch (\Throwable $th) {
-            return redirect()->back()->withInput($request->input())->withErrors(['msg' => $th->errorInfo[2]]);
+            dd($th);
+            return redirect()->back()->withInput($request->input())->withErrors(['msg' => $th]);
         }
     }
 
@@ -291,10 +292,11 @@ class ProjectController extends Controller
             ]);
             LogSystem::info('تم تعديل مشروع - اسم المشروع: ' . $project->name);
 
-            Session::flash('success', 'Successfully updated !');
+            session()->flash('success', 'Successfully updated !');
             return redirect()->route('admin.projects.index');
         } catch (\Throwable $th) {
-            return redirect()->back()->withInput($request->input())->withErrors(['msg' => $th->errorInfo[2]]);
+            dd($th);
+            return redirect()->back()->withInput($request->input())->withErrors(['msg' => $th]);
         }
     }
 
@@ -328,7 +330,7 @@ class ProjectController extends Controller
 
         LogSystem::warning('تم حذف المشروع - اسم المشروع: ' . $project->name);
 
-        Session::flash('success', 'Successfully deleted !');
+        session()->flash('success', 'Successfully deleted !');
         return redirect()->route('admin.projects.index');
     }
 

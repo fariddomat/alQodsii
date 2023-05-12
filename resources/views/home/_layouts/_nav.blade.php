@@ -1,7 +1,7 @@
 <!-- Preloader -->
         <div class="preloader">
             <div class=" offset-md-3 offset-lg-0" style="text-align: center; padding-top: 150px">
-                    <img src="{{ asset('abahee.png') }}" style="max-width: 250px;" alt="">
+                    <img src="{{ asset('alqodsii.png') }}" style="max-width: 250px;" alt="">
 
             </div>
             <div class="d-table">
@@ -30,7 +30,7 @@
                 <div class="container-fluid">
                     <nav class="container-max navbar navbar-expand-md navbar-light ">
                         <a class="navbar-brand" href="{{ route('home') }}">
-                            <img src="{{ asset('abahee.png') }}" alt="Logo" style="max-height: 60px">
+                            <img src="{{ asset('alqodsii.png') }}" alt="Logo" style="max-height: 60px">
                         </a>
 
                         <div class=" navbar-collapse mean-menu" id="navbarSupportedContent">

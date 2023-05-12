@@ -1,145 +1,28 @@
 <footer class="footer footer-static footer-light navbar-border navbar-shadow">
     <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
-            class="float-md-left d-block d-md-inline-block">2022 &copy; Copyright <a class="text-bold-800 grey darken-2"
+            class="float-md-left d-block d-md-inline-block">2023 &copy; Copyright <a class="text-bold-800 grey darken-2"
                 href="https://www.digitsmark.com/" target="_blank">Digitsmark</a></span>
-        <ul class="list-inline float-md-right d-block d-md-inline-blockd-none d-lg-block mb-0">
-            <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/" target="_blank"> More
-                    themes</a></li>
-            <li class="list-inline-item"><a class="my-1" href="https://themeselection.com/support" target="_blank">
-                    Support</a></li>
-            <li class="list-inline-item"><a class="my-1"
-                    href="https://themeselection.com/products/chameleon-admin-modern-bootstrap-webapp-dashboard-html-template-ui-kit/"
-                    target="_blank"> Purchase</a></li>
-        </ul>
     </div>
 </footer>
 
-<!-- BEGIN VENDOR JS-->
-<script src="{{ asset('admin/theme-assets/vendors/js/vendors.min.js') }}" type="text/javascript"></script>
-<!-- BEGIN VENDOR JS-->
-<!-- BEGIN PAGE VENDOR JS-->
-<script src="{{ asset('admin/theme-assets/vendors/js/charts/chartist.min.js') }}" type="text/javascript"></script>
-<!-- END PAGE VENDOR JS-->
-<!-- BEGIN CHAMELEON  JS-->
-<script src="{{ asset('admin/theme-assets/js/core/app-menu-lite.js') }}" type="text/javascript"></script>
-<script src="{{ asset('admin/theme-assets/js/core/app-lite.js') }}" type="text/javascript"></script>
-<!-- END CHAMELEON  JS-->
-<!-- BEGIN PAGE LEVEL JS-->
-<script src="{{ asset('admin/theme-assets/js/scripts/pages/dashboard-lite.js') }}" type="text/javascript"></script>
-<!-- END PAGE LEVEL JS-->
+    <!-- Bootstrap and necessary plugins -->
+    <script src="{{ asset('dashboard/js/libs/jquery.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/libs/tether.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/libs/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('dashboard/js/libs/pace.min.js') }}"></script>
 
+    <!-- Plugins and scripts required by all views -->
+    <script src="{{ asset('dashboard/js/libs/Chart.min.js') }}"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!-- CoreUI main scripts -->
 
-<script>
-    $(document).ready(function() {
-        $('#summernote').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']]
-            ],
-            placeholder: 'Type here',
-            tabsize: 2,
-            height: 100,
-            focus: true
-        });
+    <script src="{{ asset('dashboard/js/app.js') }}"></script>
 
-        $('#summernote2').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']]
-            ],
-            placeholder: 'Type here',
-            tabsize: 2,
-            height: 100,
-            focus: true
-        });
+    <!-- Plugins and scripts required by this views -->
+    <!-- Custom scripts required by this view -->
+    {{-- <script src="{{ asset('dashboard/js/views/main.js') }}"></script> --}}
+    {{-- <script src="{{ asset('dashboard/js/views/charts.js') }}"></script> --}}
 
-        $('#summernote3').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']]
-            ],
-            placeholder: 'Type here',
-            tabsize: 2,
-            height: 100,
-            focus: true
-        });
-
-        $('#summernote4').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']]
-            ],
-            placeholder: 'Type Your Post here',
-            tabsize: 2,
-            height: 100,
-            focus: true
-        });
-
-        $('#summernote5').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']]
-            ],
-            placeholder: 'Type Your Post here',
-            tabsize: 2,
-            height: 100,
-            focus: true
-        });
-
-        $('#summernote6').summernote({
-            toolbar: [
-                // [groupName, [list of button]]
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']]
-            ],
-            placeholder: 'Type Your Post here',
-            tabsize: 2,
-            height: 100,
-            focus: true
-        });
-    });
-</script>
-
-<script>
-     $(document).ready(function() {
-        $(document).on('click', '.delete', function(e) {
-            e.preventDefault();
-            var that = $(this);
-            var n = confirm('هل أنت متأكد من الحذف؟');
-            if (n) {
-                that.closest('form').submit();
-            } else {
-
-            }
-        });
-
-
-    });
-</script>
-
-@yield('scripts')
+    @extends('admin._layouts._noty')
+    {{-- @yield('scripts') --}}
+    @yield('scripts')

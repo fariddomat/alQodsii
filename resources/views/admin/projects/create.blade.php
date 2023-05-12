@@ -9,19 +9,10 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">@lang('site.add') @lang('site.project')</h4>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                        <div class="heading-elements">
-                            <ul class="list-inline mb-0">
-                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                {{-- <li><a data-action="close"><i class="ft-x"></i></a></li> --}}
-                            </ul>
-                        </div>
 
                     </div>
-                    <div class="card-content collapse show" dir="rtl" style="text-align: right">
-                        <div class="card-body " style="text-align: right">
+                    <div class="card-block " dir="rtl" style="text-align: right">
+                        <div class="" style="text-align: right">
                             <fieldset class="form-group">
 
 
@@ -116,7 +107,7 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-block">
                         <div class="card-body " style="text-align: right">
 
 
@@ -164,7 +155,7 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-block">
                         <div class="card-body " style="text-align: right">
 
                             <fieldset class="form-group">
@@ -209,7 +200,7 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse show">
+                    <div class="card-block">
                         <div class="card-body " style="text-align: right">
 
                             <fieldset class="form-group">
@@ -244,19 +235,11 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">ميزات المشاريع</h4>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                        <div class="heading-elements">
-                            <ul class="list-inline mb-0">
-                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                {{-- <li><a data-action="close"><i class="ft-x"></i></a></li> --}}
-                            </ul>
-                        </div>
+
 
                     </div>
-                    <div class="card-content collapse show">
-                        <div class="card-body " style="text-align: right">
+                    <div class="card-block">
+                        <div class="" style="text-align: right">
                             <fieldset class="form-group">
                                 <div class="col-lg-6 mt-3">
                                     <textarea id="summernote6" name="pdetails" class="form-control" id="" required>
@@ -275,19 +258,11 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">الضمانات</h4>
-                        <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
-                        <div class="heading-elements">
-                            <ul class="list-inline mb-0">
-                                <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                {{-- <li><a data-action="close"><i class="ft-x"></i></a></li> --}}
-                            </ul>
-                        </div>
+
 
                     </div>
-                    <div class="card-content collapse show">
-                        <div class="card-body " style="text-align: right">
+                    <div class="card-block">
+                        <div class="" style="text-align: right">
 
                             <fieldset class="form-group">
                                 <div class="col-lg-6 mt-3">
@@ -323,8 +298,8 @@
             <div class="col-12">
                 <div class="card">
 
-                    <div class="card-content collapse show">
-                        <div class="card-body " style="float: right">
+                    <div class="card-block">
+                        <div class="" style="float: right">
                             <div class="col-lg-12">
                                 <button class="btn btn-icon btn-info mr-1 mt-3">@lang('site.create') <i class="fa fa-save"
                                         style="position: relative"></i></button>

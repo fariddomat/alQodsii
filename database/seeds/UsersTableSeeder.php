@@ -1,6 +1,6 @@
 <?php
 
-use App\User;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
@@ -14,8 +14,8 @@ class UsersTableSeeder extends Seeder
     {
         $user=User::create([
             'name'=>'Super Admin',
-            'email'=>'info@abahee.com',
-            'password'=>bcrypt('12@21##@b'),
+            'email'=>'info@alqodsii.com',
+            'password'=>bcrypt('12121212'),
         ]);
         $user->attachRole('admin');
 

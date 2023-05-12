@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Contact;
+use App\Models\Contact;
 use App\Http\Controllers\Controller;
-use App\LogSystem;
+use App\Models\LogSystem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Session;
 use App\Rules\MatchOldPassword;
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
 class SettingController extends Controller
@@ -60,13 +60,13 @@ class SettingController extends Controller
     public function settingsText()
     {
         return view('admin.settings.settings');
-    } 
+    }
 
     public function settings(Request $request)
     {
         setting($request->all())->save();
 
-        Session::flash('success', 'Successfully added !');
+        session()->flash('success', 'Successfully added !');
         return redirect()->back();
     }
 

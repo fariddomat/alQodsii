@@ -54,8 +54,8 @@
                             </div>
 
                         </div>
-                        <div class="card-content collapse hide" dir="rtl" style="text-align: right">
-                            <div class="card-body " style="text-align: right">
+                        <div class="card-block" dir="rtl" style="text-align: right">
+                            <div class="card-block " style="text-align: right">
                                 <fieldset class="form-group">
 
 
@@ -99,8 +99,8 @@
                         </div>
 
                     </div>
-                    <div class="card-content collapse hide" dir="rtl" style="text-align: right">
-                        <div class="card-body " style="text-align: right">
+                    <div class="card-block" dir="rtl" style="text-align: right">
+                        <div class="card-block " style="text-align: right">
                             <fieldset class="form-group">
 
 
