@@ -16,7 +16,7 @@ Route::prefix('admin')
             Route::resource('categories', 'CategoryController');
 
             Route::resource('projects', 'ProjectController');
-            Route::post('projects/sortable','ProjectController@sort');
+            Route::post('projects/sortable', 'ProjectController@sort');
 
             Route::resource('properties', 'PropertieController');
             Route::resource('promoters', 'PromoterController');
@@ -48,5 +48,12 @@ Route::prefix('admin')
 
             Route::get('/settings/changePassword', 'SettingController@changePassword')->name('setting.changePassword');
             Route::post('/settings/changePass', 'SettingController@changePass')->name('setting.changePass');
+
+
+    Route::get('/imageGallery/browser', 'ImageGalleryController@browser')->name('imageGallery.browser');
+    Route::post('/imageGallery/uploader', 'ImageGalleryController@uploader')->name('imageGallery.uploader');
+
+            Route::get('/about', 'AboutController@create')->name('about.create');
+            Route::post('/about', 'AboutController@store')->name('about.store');
         }
     );

@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Sign In Area -->
-    <div class="sign-in-area pt-100 pb-70">
+    <div class="sign-in-area pt-100 pb-70 margin-top-135">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
