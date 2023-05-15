@@ -38,6 +38,10 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.setting.settingsText') }}"><i class="icon-info "></i>
+                 معلومات الموقع</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.about.create') }}"><i class="icon-info "></i>
                  اعدادات المحتوى</a>
             </li>
                 <li class="nav-title">
