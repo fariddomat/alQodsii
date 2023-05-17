@@ -22,6 +22,101 @@
     <!-- Custom scripts required by this view -->
     {{-- <script src="{{ asset('dashboard/js/views/main.js') }}"></script> --}}
     {{-- <script src="{{ asset('dashboard/js/views/charts.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js" ></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote({
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                ],
+                placeholder: 'Type here',
+                tabsize: 2,
+                height: 100,
+                focus: true
+            });
+
+            $('#summernote2').summernote({
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                ],
+                placeholder: 'Type here',
+                tabsize: 2,
+                height: 100,
+                focus: true
+            });
+
+            $('#summernote3').summernote({
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                ],
+                placeholder: 'Type here',
+                tabsize: 2,
+                height: 100,
+                focus: true
+            });
+
+            $('#summernote4').summernote({
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                ],
+                placeholder: 'Type Your Post here',
+                tabsize: 2,
+                height: 100,
+                focus: true
+            });
+
+            $('#summernote5').summernote({
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['font', ['strikethrough', 'superscript', 'subscript']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                ],
+                placeholder: 'Type Your Post here',
+                tabsize: 2,
+                height: 100,
+                focus: true
+            });
+
+            // $('#summernote6').summernote({
+            //     toolbar: [
+            //         // [groupName, [list of button]]
+            //         ['style', ['bold', 'italic', 'underline', 'clear']],
+            //         ['font', ['strikethrough', 'superscript', 'subscript']],
+            //         ['fontsize', ['fontsize']],
+            //         ['color', ['color']],
+            //         ['para', ['ul', 'ol', 'paragraph']]
+            //     ],
+            //     placeholder: 'Type Your Post here',
+            //     tabsize: 2,
+            //     height: 100,
+            //     focus: true
+            // });
+        });
+    </script>
 
     @extends('admin._layouts._noty')
     {{-- @yield('scripts') --}}

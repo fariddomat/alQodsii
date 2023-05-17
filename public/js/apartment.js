@@ -185,7 +185,7 @@ jQuery(window).load(function () {
 
 
         if ($("#swiper1").length) {
-            //initialize swiper when document ready  
+            //initialize swiper when document ready
             swiper1 = new Swiper('#swiper1', {
                 // Optional parameters
                 nextButton: '.slide-next',
@@ -219,7 +219,7 @@ jQuery(window).load(function () {
 
 
         if ($("#swiper2").length) {
-            //initialize swiper when document ready  
+            //initialize swiper when document ready
             swiper2 = new Swiper('#swiper2', {
                 // Optional parameters
                 nextButton: '.slide-next',
@@ -252,7 +252,7 @@ jQuery(window).load(function () {
 
 
         if ($("#swiper-gallery").length) {
-            //initialize swiper when document ready  
+            //initialize swiper when document ready
             gallerySwiper = new Swiper('#swiper-gallery', {
                 // Optional parameters
                 nextButton: '.slide-next',
@@ -309,7 +309,7 @@ jQuery(window).load(function () {
 
         if ($("#swiper-thumbs").length) {
             var slideIndex;
-            //initialize swiper when document ready  
+            //initialize swiper when document ready
             var thumbsSwiper = new Swiper('#swiper-thumbs', {
                 // Optional parameters
                 nextButton: '.thumb-next',
@@ -1081,7 +1081,7 @@ jQuery(window).load(function () {
             timeout = setTimeout(delayed, threshold || 100);
         };
     }
-    // smartresize 
+    // smartresize
     jQuery.fn[sr] = function (fn) { return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
 })(jQuery, 'smartresize');

@@ -160,5 +160,8 @@
                 font-size: 16px;
                 background-color: #094748
             }
+
+           
     </style>
+    @yield('style')
 </head>

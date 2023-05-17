@@ -7,7 +7,7 @@
     <meta name="author" content="ThemeSelect">
     <title>لوحة التحكم - القدسي</title>
     <link rel="apple-touch-icon" href="theme-assets/images/ico/apple-icon-120.png">
-    
+
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
      <!-- Icons -->
@@ -20,10 +20,10 @@
      <script src="{{ asset('noty/noty.min.js') }}" defer></script>
 
      <!-- Include jQuery library -->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
 
      <!-- Include ajaxForm library -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" defer></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js" ></script>
 
      {{-- select2 --}}
 
@@ -63,6 +63,10 @@
         }
 
 </style>
+
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="{{ asset('alqodsii.png') }}">
     @yield('head')
 </head>
