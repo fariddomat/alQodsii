@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-xs-6 col-sm-12">
                         <article>
-                            <a href="blog-right-sidebar.html"><img src="images/footer-blog1.jpg" alt="" class="footer-blog-image" /></a>
+                            <a href="blog-right-sidebar.html"><img src="{{ asset('images/footer-blog1.jpg') }}" alt="" class="footer-blog-image" /></a>
                             <div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
                             <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
                             <div class="clearfix"></div>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="col-xs-6 col-sm-12">
                         <article>
-                            <a href="blog-right-sidebar.html"><img src="images/footer-blog2.jpg" alt="" class="footer-blog-image" /></a>
+                            <a href="blog-right-sidebar.html"><img src="{{ asset('images/footer-blog2.jpg') }}" alt="" class="footer-blog-image" /></a>
                             <div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
                             <div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
                             <div class="clearfix"></div>
@@ -65,7 +65,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-6 small-cont">
-                <img src="images/logo-light.png" alt="" class="img-responsive footer-logo" />
+                <img src="{{ asset('images/logo-light.png') }}" alt="" class="img-responsive footer-logo" />
             </div>
             <div class="col-xs-12 col-md-6 footer-copyrights">
                 &copy; Copyright 2015 <a href="http://themeforest.net/user/johnnychaos?ref=johnnychaos" target="blank">Jan Skwara</a>. All rights reserved. By on <a href="http://themeforest.net/user/johnnychaos/portfolio?ref=johnnychaos" target="blank">Themeforest</a>.

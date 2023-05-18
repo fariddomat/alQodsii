@@ -80,7 +80,7 @@
                     @if ($project->propertie->details)
                         <div class="row margin-top-45">
                             @foreach (preg_split("/((\r?\n)|(\r\n?))/", $project->propertie->details) as $line)
-                                <div class="col-xs-6 col-sm-4" style="float: right">
+                                <div class="col-xs-6 col-sm-6" style="float: right">
                                     <ul class="details-ticks">
                                         <li style="font-size: 22px"><i class="jfont">&#xe815;</i></i>{{ $line }}
                                         </li>
@@ -257,7 +257,7 @@
                     <div class="row">
                         @if ($project->floors->count() > 0)
                             <!-- apartment check Area-->
-                            <div class="room-details-area pt-100 pb-70  " style="background: url({{ asset('b.png') }});">
+                            <div class="room-details-area pt-100 pb-70  ">
                                 <div class="container-fluid m-0 p-0">
                                     <div class="section-title-two text-center">
                                         <div class="row margin-top-60">
@@ -473,7 +473,7 @@
                                     <div class="grid-offer-front">
 
                                         <div class="grid-offer-photo">
-                                            <img src="images/grid-offer1.jpg" alt="" />
+                                            <img src="{{ asset('images/grid-offer1.jpg') }}" alt="" />
                                             <div class="type-container">
                                                 <div class="estate-type">apartment</div>
                                                 <div class="transaction-type">sale</div>
@@ -498,282 +498,19 @@
                                         </div>
                                         <div class="grid-offer-params">
                                             <div class="grid-area">
-                                                <img src="images/area-icon.png" alt="" />54m<sup>2</sup>
+                                                <img src="{{ asset('images/area-icon.png') }}" alt="" />54m<sup>2</sup>
                                             </div>
                                             <div class="grid-rooms">
-                                                <img src="images/rooms-icon.png" alt="" />3
+                                                <img src="{{ asset('images/rooms-icon.png') }}" alt="" />3
                                             </div>
                                             <div class="grid-baths">
-                                                <img src="images/bathrooms-icon.png" alt="" />1
+                                                <img src="{{ asset('images/bathrooms-icon.png') }}" alt="" />1
                                             </div>
                                         </div>
 
                                     </div>
                                     <div class="grid-offer-back">
                                         <div id="grid-map1" class="grid-offer-map"></div>
-                                        <div class="button">
-                                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                                <span>read more</span>
-                                                <div class="button-triangle"></div>
-                                                <div class="button-triangle2"></div>
-                                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-col">
-                                <div class="grid-offer">
-                                    <div class="grid-offer-front">
-                                        <div class="grid-offer-photo">
-                                            <img src="images/grid-offer2.jpg" alt="" />
-                                            <div class="type-container">
-                                                <div class="estate-type">apartment</div>
-                                                <div class="transaction-type">sale</div>
-                                            </div>
-                                        </div>
-                                        <div class="grid-offer-text">
-                                            <i class="fa fa-map-marker grid-offer-localization"></i>
-                                            <div class="grid-offer-h4">
-                                                <h4 class="grid-offer-title">West Fourth Street, New York 10003, USA</h4>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et [...]</p>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="price-grid-cont">
-                                            <div class="grid-price-label pull-right">Price:</div>
-                                            <div class="grid-price pull-left">
-                                                $299000
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="grid-offer-params">
-                                            <div class="grid-area">
-                                                <img src="images/area-icon.png" alt="" />48m<sup>2</sup>
-                                            </div>
-                                            <div class="grid-rooms">
-                                                <img src="images/rooms-icon.png" alt="" />2
-                                            </div>
-                                            <div class="grid-baths">
-                                                <img src="images/bathrooms-icon.png" alt="" />1
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-offer-back">
-                                        <div id="grid-map2" class="grid-offer-map"></div>
-                                        <div class="button">
-                                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                                <span>read more</span>
-                                                <div class="button-triangle"></div>
-                                                <div class="button-triangle2"></div>
-                                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-col">
-                                <div class="grid-offer">
-                                    <div class="grid-offer-front">
-                                        <div class="grid-offer-photo">
-                                            <img src="images/grid-offer3.jpg" alt="" />
-                                            <div class="type-container">
-                                                <div class="estate-type">apartment</div>
-                                                <div class="transaction-type">sale</div>
-                                            </div>
-                                        </div>
-                                        <div class="grid-offer-text">
-                                            <i class="fa fa-map-marker grid-offer-localization"></i>
-                                            <div class="grid-offer-h4">
-                                                <h4 class="grid-offer-title">E. Elwood St. Phoenix, AZ 85034, USA</h4>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et [...]</p>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="price-grid-cont">
-                                            <div class="grid-price-label pull-right">Price:</div>
-                                            <div class="grid-price pull-left">
-                                                $400000
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="grid-offer-params">
-                                            <div class="grid-area">
-                                                <img src="images/area-icon.png" alt="" />93m<sup>2</sup>
-                                            </div>
-                                            <div class="grid-rooms">
-                                                <img src="images/rooms-icon.png" alt="" />4
-                                            </div>
-                                            <div class="grid-baths">
-                                                <img src="images/bathrooms-icon.png" alt="" />2
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-offer-back">
-                                        <div id="grid-map3" class="grid-offer-map"></div>
-                                        <div class="button">
-                                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                                <span>read more</span>
-                                                <div class="button-triangle"></div>
-                                                <div class="button-triangle2"></div>
-                                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-col">
-                                <div class="grid-offer">
-                                    <div class="grid-offer-front">
-                                        <div class="grid-offer-photo">
-                                            <img src="images/grid-offer4.jpg" alt="" />
-                                            <div class="type-container">
-                                                <div class="estate-type">house</div>
-                                                <div class="transaction-type">sale</div>
-                                            </div>
-                                        </div>
-                                        <div class="grid-offer-text">
-                                            <i class="fa fa-map-marker grid-offer-localization"></i>
-                                            <div class="grid-offer-h4">
-                                                <h4 class="grid-offer-title">N. Willamette Blvd., Portland, OR 97203, USA
-                                                </h4>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et [...]</p>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="price-grid-cont">
-                                            <div class="grid-price-label pull-right">Price:</div>
-                                            <div class="grid-price pull-left">
-                                                $800000
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="grid-offer-params">
-                                            <div class="grid-area">
-                                                <img src="images/area-icon.png" alt="" />300m<sup>2</sup>
-                                            </div>
-                                            <div class="grid-rooms">
-                                                <img src="images/rooms-icon.png" alt="" />8
-                                            </div>
-                                            <div class="grid-baths">
-                                                <img src="images/bathrooms-icon.png" alt="" />3
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-offer-back">
-                                        <div id="grid-map4" class="grid-offer-map"></div>
-                                        <div class="button">
-                                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                                <span>read more</span>
-                                                <div class="button-triangle"></div>
-                                                <div class="button-triangle2"></div>
-                                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-col">
-                                <div class="grid-offer">
-                                    <div class="grid-offer-front">
-                                        <div class="grid-offer-photo">
-                                            <img src="images/grid-offer5.jpg" alt="" />
-                                            <div class="type-container">
-                                                <div class="estate-type">apartment</div>
-                                                <div class="transaction-type">sale</div>
-                                            </div>
-                                        </div>
-                                        <div class="grid-offer-text">
-                                            <i class="fa fa-map-marker grid-offer-localization"></i>
-                                            <div class="grid-offer-h4">
-                                                <h4 class="grid-offer-title">One Brookings Drive St. Louis, Missouri 63130,
-                                                    USA</h4>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et [...]</p>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="price-grid-cont">
-                                            <div class="grid-price-label pull-right">Price:</div>
-                                            <div class="grid-price pull-left">
-                                                $320000
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="grid-offer-params">
-                                            <div class="grid-area">
-                                                <img src="images/area-icon.png" alt="" />50m<sup>2</sup>
-                                            </div>
-                                            <div class="grid-rooms">
-                                                <img src="images/rooms-icon.png" alt="" />2
-                                            </div>
-                                            <div class="grid-baths">
-                                                <img src="images/bathrooms-icon.png" alt="" />1
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-offer-back">
-                                        <div id="grid-map5" class="grid-offer-map"></div>
-                                        <div class="button">
-                                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                                <span>read more</span>
-                                                <div class="button-triangle"></div>
-                                                <div class="button-triangle2"></div>
-                                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-col">
-                                <div class="grid-offer">
-                                    <div class="grid-offer-front">
-                                        <div class="grid-offer-photo">
-                                            <img src="images/grid-offer7.jpg" alt="" />
-                                            <div class="type-container">
-                                                <div class="estate-type">house</div>
-                                                <div class="transaction-type">sale</div>
-                                            </div>
-                                        </div>
-                                        <div class="grid-offer-text">
-                                            <i class="fa fa-map-marker grid-offer-localization"></i>
-                                            <div class="grid-offer-h4">
-                                                <h4 class="grid-offer-title">One Neumann Drive Aston, Philadelphia 19014,
-                                                    USA</h4>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et [...]</p>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="price-grid-cont">
-                                            <div class="grid-price-label pull-right">Price:</div>
-                                            <div class="grid-price pull-left">
-                                                $500000
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="grid-offer-params">
-                                            <div class="grid-area">
-                                                <img src="images/area-icon.png" alt="" />210m<sup>2</sup>
-                                            </div>
-                                            <div class="grid-rooms">
-                                                <img src="images/rooms-icon.png" alt="" />6
-                                            </div>
-                                            <div class="grid-baths">
-                                                <img src="images/bathrooms-icon.png" alt="" />2
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-offer-back">
-                                        <div id="grid-map6" class="grid-offer-map"></div>
                                         <div class="button">
                                             <a href="estate-details-right-sidebar.html" class="button-primary">
                                                 <span>read more</span>
@@ -875,7 +612,7 @@
                         <div class="sidebar-featured-cont">
                             <div class="sidebar-featured">
                                 <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
-                                    <img src="images/sidebar-featured1.jpg" alt="" />
+                                    <img src="{{ asset('images/sidebar-featured1.jpg') }}" alt="" />
                                     <div class="sidebar-featured-type">
                                         <div class="sidebar-featured-estate">A</div>
                                         <div class="sidebar-featured-transaction">S</div>
@@ -888,7 +625,7 @@
                             </div>
                             <div class="sidebar-featured">
                                 <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
-                                    <img src="images/sidebar-featured2.jpg" alt="" />
+                                    <img src="{{ asset('images/sidebar-featured2.jpg') }}" alt="" />
                                     <div class="sidebar-featured-type">
                                         <div class="sidebar-featured-estate">A</div>
                                         <div class="sidebar-featured-transaction">S</div>
@@ -901,7 +638,7 @@
                             </div>
                             <div class="sidebar-featured">
                                 <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
-                                    <img src="images/sidebar-featured3.jpg" alt="" />
+                                    <img src="{{ asset('images/sidebar-featured3.jpg') }}" alt="" />
                                     <div class="sidebar-featured-type">
                                         <div class="sidebar-featured-estate">A</div>
                                         <div class="sidebar-featured-transaction">S</div>
@@ -919,7 +656,7 @@
                         </div>
                         <div class="sidebar-blog-cont">
                             <article>
-                                <a href="blog-right-sidebar.html"><img src="images/footer-blog1.jpg" alt=""
+                                <a href="blog-right-sidebar.html"><img src="{{ asset('images/footer-blog1.jpg') }}" alt=""
                                         class="sidebar-blog-image" /></a>
                                 <div class="sidebar-blog-title"><a href="blog-right-sidebar.html">This post title, lorem
                                         ipsum dolor sit</a></div>
@@ -927,7 +664,7 @@
                                 <div class="clearfix"></div>
                             </article>
                             <article>
-                                <a href="blog-right-sidebar.html"><img src="images/footer-blog2.jpg" alt=""
+                                <a href="blog-right-sidebar.html"><img src="{{ asset('images/footer-blog2.jpg') }}" alt=""
                                         class="sidebar-blog-image" /></a>
                                 <div class="sidebar-blog-title"><a href="blog-right-sidebar.html">This post title, lorem
                                         ipsum dolor sit</a></div>
@@ -935,7 +672,7 @@
                                 <div class="clearfix"></div>
                             </article>
                             <article>
-                                <a href="blog-right-sidebar.html"><img src="images/footer-blog3.jpg" alt=""
+                                <a href="blog-right-sidebar.html"><img src="{{ asset('images/footer-blog3.jpg') }}" alt=""
                                         class="sidebar-blog-image" /></a>
                                 <div class="sidebar-blog-title"><a href="blog-right-sidebar.html">This post title, lorem
                                         ipsum dolor sit</a></div>

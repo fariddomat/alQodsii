@@ -3,67 +3,52 @@
 @section('content')
     <!-- Sign In Area -->
     <div class="sign-in-area pt-100 pb-70 margin-top-135">
-        <div class="container">
+        <div class="container margin-top-135" style="  padding: 100px 0 180px;">
             <div class="row align-items-center">
-                <div class="col-lg-5">
+                <div class="col-lg-5" style="">
                     <div class="user-all-content">
-                        <div class="section-title-two text-center">
-                            <span class="section-span-bg2">@lang('site.login')</span>
-                            <h2>@lang('site.login') <b class="section-color2">إلى @lang('site.Admin_panel')</b></h2>
+                        <div class="section-title-two text-center"><h1 style="color: white">@lang('site.login') <b class="section-color2">إلى @lang('site.Admin_panel')</b></h1>
+                            <h3 class="section-span-bg2" style="color: white">@lang('site.login')</h3>
+                            
                         </div>
                     </div>
-
                 </div>
                 <div class="col-lg-7">
-                    <div class="user-all-form">
-                        <div class="contact-form">
+                    <div class="">
+                        <div class="">
                             <form id="" method="POST" action="{{ route('login') }}">
                                 @csrf
-                                <div class="row">
-                                    <div class="col-lg-12 ">
-                                        <div class="form-group">
-                                            <i class='bx bx-user'></i>
+                                <div class="row" style="  padding: 0 25px;">
+                                    <div class="col-xs-12 ">
                                             <input type="text" name="email" id="name"
                                                 class="form-control  @error('email') is-invalid @enderror" required
                                                 data-error="Please enter your Username or Email"
                                                 placeholder="@lang('site.email')">
                                             @error('email')
-                                                <span class="invalid-feedback" role="alert" style="margin-top: 25px;">
+                                                <span class="invalid-feedback" role="alert" style="margin-top: 15px;">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                        </div>
                                     </div>
 
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <i class='bx bx-lock-alt'></i>
+                                    <div class="col-xs-12 margin-top-15">
                                             <input class="form-control @error('password') is-invalid @enderror"
                                                 type="password" name="password" placeholder="@lang('site.password')">
 
                                             @error('password')
-                                                <span class="invalid-feedback" role="alert" style="margin-top: 25px;">
+                                                <span class="invalid-feedback" role="alert" style="margin-top: 15px;">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-sm-6 form-condition">
-                                        <div class="agree-label">
-                                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}
-                                                id="chb1">
-                                            <label for="chb1">
-                                                تذكرني
-                                            </label>
-                                        </div>
                                     </div>
 
 
-
-                                    <div class="col-lg-12 col-md-12 text-center">
-                                        <button type="submit" class="default-btn default-bg-buttercup user-all-btn">
-                                            @lang('site.login')
+                                    <div class="col-xs-12 margin-top-15">
+                                        <button type="submit" class="button-primary button-shadow button-full">
+                                            <span>دخول</span>
+                                            <div class="button-triangle"></div>
+                                            <div class="button-triangle2"></div>
+                                            <div class="button-icon"><i class="fa fa-user"></i></div>
                                         </button>
                                     </div>
 

@@ -36,6 +36,16 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
+        body {
+            font-family: 'Cairo';
+        }
+        header.header2 .navbar-nav > li > a {
+            font-size: 18px;
+        }
+        h5{
+            letter-spacing: 0.5px;
+        }
+
         @media only screen and (min-width: 5px) {
             /* table {
                 border-collapse: separate !important;

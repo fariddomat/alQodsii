@@ -23,10 +23,7 @@
 								<h1>42 estates found<span class="special-color">.</span></h1>
 							</div>
 							<div class="col-xs-12 col-lg-6">
-								<div class="view-icons-container">
-									<a class="view-box view-box-active"><img src="images/grid-icon.png" alt="" /></a>
-									<a class="view-box" href="listing-list-right-sidebar.html"><img src="images/list-icon.png" alt="" /></a>
-								</div>
+								
 								<div class="order-by-container">
 									<select name="sort" class="bootstrap-select" title="Order By:">
 										<option>Price low to high</option>
@@ -169,72 +166,6 @@
 								<div class="button-triangle2"></div>
 								<div class="button-icon"><i class="fa fa-search"></i></div>
 							</a>
-						</div>
-						<div class="sidebar-title-cont">
-							<h4 class="sidebar-title">featured offers<span class="special-color">.</span></h4>
-							<div class="title-separator-primary"></div>
-						</div>
-						<div class="sidebar-featured-cont">
-							<div class="sidebar-featured">
-								<a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
-									<img src="images/sidebar-featured1.jpg" alt="" />
-									<div class="sidebar-featured-type">
-										<div class="sidebar-featured-estate">A</div>
-										<div class="sidebar-featured-transaction">S</div>
-									</div>
-								</a>
-								<div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html">Fort Collins, Colorado 80523, USA</a></div>
-								<div class="sidebar-featured-price">$ 320 000</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="sidebar-featured">
-								<a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
-									<img src="images/sidebar-featured2.jpg" alt="" />
-									<div class="sidebar-featured-type">
-										<div class="sidebar-featured-estate">A</div>
-										<div class="sidebar-featured-transaction">S</div>
-									</div>
-								</a>
-								<div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html">West Fourth Street, New York 10003, USA</a></div>
-								<div class="sidebar-featured-price">$ 350 000</div>
-								<div class="clearfix"></div>
-							</div>
-							<div class="sidebar-featured">
-								<a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
-									<img src="images/sidebar-featured3.jpg" alt="" />
-									<div class="sidebar-featured-type">
-										<div class="sidebar-featured-estate">A</div>
-										<div class="sidebar-featured-transaction">S</div>
-									</div>
-								</a>
-								<div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html">E. Elwood St. Phoenix, AZ 85034, USA</a></div>
-								<div class="sidebar-featured-price">$ 410 000</div>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="sidebar-title-cont">
-							<h4 class="sidebar-title">latest news<span class="special-color">.</span></h4>
-							<div class="title-separator-primary"></div>
-						</div>
-						<div class="sidebar-blog-cont">
-							<article>
-								<a href="blog-right-sidebar.html"><img src="images/footer-blog1.jpg" alt="" class="sidebar-blog-image" /></a>
-								<div class="sidebar-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
-								<div class="sidebar-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-								<div class="clearfix"></div>
-							</article>
-							<article>
-								<a href="blog-right-sidebar.html"><img src="images/footer-blog2.jpg" alt="" class="sidebar-blog-image" /></a>
-								<div class="sidebar-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
-								<div class="sidebar-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-								<div class="clearfix"></div>
-							</article>
-							<article>
-								<a href="blog-right-sidebar.html"><img src="images/footer-blog3.jpg" alt="" class="sidebar-blog-image" /></a>
-								<div class="sidebar-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
-								<div class="sidebar-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-								<div class="clearfix"></div>
-							</article>
 						</div>
 					</div>
 				</div>

@@ -31,7 +31,7 @@ Route::group([], function()
 	Route::post('/contact', 'Home\HomeController@contact')->name('contact');
 	Route::get('/contactPage', 'Home\HomeController@contactPage')->name('contactPage');
 	Route::post('/promoters', 'Home\HomeController@promoters')->name('promoters');
-    Route::get('/categories','Home\CategoryControlelr@index')->name('home');
+    Route::get('/categories','Home\CategoryControlelr@index')->name('categories');
     Route::get('/category/{id}','Home\CategoryControlelr@show')->name('category');
     Route::get('/projects','Home\ProjectControlelr@index')->name('projects');
     Route::get('/project/{id}','Home\ProjectControlelr@show')->name('project');
