@@ -30,7 +30,7 @@
                             <div class="">
                                 <!-- Slides -->
                                 <div class="">
-                                    <img class="" src="{{ asset('images/slides/1.jpg') }}" style="max-width: 100%" />
+                                    <img class="" src="{{ $project->image_path }}" style="max-width: 100%" />
                                 </div>
                             </div>
 
@@ -82,7 +82,8 @@
                             @foreach (preg_split("/((\r?\n)|(\r\n?))/", $project->propertie->details) as $line)
                                 <div class="col-xs-6 col-sm-4" style="float: right">
                                     <ul class="details-ticks">
-                                        <li><i class="jfont">&#xe815;</i></i>{{ $line }}</li>
+                                        <li style="font-size: 22px"><i class="jfont">&#xe815;</i></i>{{ $line }}
+                                        </li>
                                     </ul>
                                 </div>
                             @endforeach
@@ -119,7 +120,15 @@
                             </div>
                         </div>
                     </div>
-                    <section class="section-dark no-padding margin-top-15">
+                    <div class="row margin-top-60">
+                        <div class="col-xs-12 col-lg-12 text-center">
+                            <h1 class="">معرض الصور<span class="special-color">.</span></h1>
+                        </div>
+                        <div class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-4">
+                            <div class="title-separator-primary2"></div>
+                        </div>
+                    </div>
+                    <section class="section-dark no-padding margin-top-30">
 
                         <!-- Slider main container -->
                         <div id="swiper-gallery" class="swiper-container">
@@ -170,8 +179,8 @@
                                             <!-- Slides -->
                                             @foreach ($project->images_path as $item)
                                                 <div class="swiper-slide">
-                                                    <img class="slide-thumb" src="{{ $item }}"
-                                                        alt="" style="max-width: 140px; max-height: 80px">
+                                                    <img class="slide-thumb" src="{{ $item }}" alt=""
+                                                        style="max-width: 140px; max-height: 80px">
                                                 </div>
                                             @endforeach
                                         </div>
@@ -186,85 +195,263 @@
                             </div>
                         </div>
                     </section>
-                    <div class="row margin-top-60">
-                        <div class="col-xs-12">
-                            <h3 class="title-negative-margin">contact the agent<span class="special-color">.</span></h3>
-                            <div class="title-separator-primary"></div>
-                        </div>
-                    </div>
-                    <div class="row margin-top-60">
-                        <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-4">
-                            <h5 class="subtitle-margin">manager</h5>
-                            <h3 class="title-negative-margin">Mark Smith<span class="special-color">.</span></h3>
-                            <a href="agent1.html" class="agent-photo">
-                                <img src="images/agent1.jpg" alt="" class="img-responsive" />
-                            </a>
-                        </div>
-                        <div class="col-xs-12 col-sm-8">
-                            <div class="agent-social-bar">
-                                <div class="pull-left">
-                                    <span class="agent-icon-circle">
-                                        <i class="fa fa-phone"></i>
-                                    </span>
-                                    <span class="agent-bar-text">123-456-789</span>
-                                </div>
-                                <div class="pull-left">
-                                    <span class="agent-icon-circle">
-                                        <i class="fa fa-envelope fa-sm"></i>
-                                    </span>
-                                    <span class="agent-bar-text">apartment@domain.tld</span>
-                                </div>
-                                <div class="pull-right">
-                                    <div class="pull-right">
-                                        <a class="agent-icon-circle" href="#">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a class="agent-icon-circle icon-margin" href="#">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a class="agent-icon-circle icon-margin" href="#">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a class="agent-icon-circle icon-margin" href="#">
-                                            <i class="fa fa-skype"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
+
+                    {{-- Facilities --}}
+                    <div class="row">
+                        <div class="row margin-top-60">
+                            <div class="col-xs-12 col-lg-12 text-center">
+                                <h1 class="">الضمانات<span class="special-color">.</span></h1>
                             </div>
-                            <form name="contact-from" action="#">
-                                <input name="name" type="text" class="input-short main-input pull-left"
-                                    placeholder="Your name" />
-                                <input name="phone" type="text" class="input-short pull-right main-input"
-                                    placeholder="Your phone" />
-                                <input name="mail" type="email" class="input-full main-input"
-                                    placeholder="Your email" />
-                                <textarea name="message" class="input-full agent-textarea main-input" placeholder="Your question"></textarea>
-                                <div class="form-submit-cont">
-                                    <a href="#" class="button-primary pull-right">
-                                        <span>send</span>
-                                        <div class="button-triangle"></div>
-                                        <div class="button-triangle2"></div>
-                                        <div class="button-icon"><i class="fa fa-search"></i></div>
-                                    </a>
-                                    <div class="clearfix"></div>
+                            <div class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-4">
+                                <div class="title-separator-primary2"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 margin-top-30">
+                            <div class="main-timeline9">
+                                <div class="timeline">
+                                    <div class="timeline-content">
+                                        <div class="circle"><span><i class="fa fa-home"></i></span></div>
+                                        <div class="content">
+                                            <span class="year">{{ $project->facility->f1 }}</span>
+                                            <h4 class="title">على الهيكل الإنشائي</h4>
+                                            <div class="icon"><span></span></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </form>
+                                <div class="timeline">
+                                    <div class="timeline-content">
+                                        <div class="circle"><span><i class="fa fa-plug"></i></span></div>
+                                        <div class="content">
+                                            <span class="year">{{ $project->facility->f2 }}</span>
+                                            <h4 class="title">على القواطع والأفياش</h4>
+                                            <div class="icon"><span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline">
+                                    <div class="timeline-content">
+                                        <div class="circle"><span><i class="fa fa-cog"></i></span></div>
+                                        <div class="content">
+                                            <span class="year">{{ $project->facility->f3 }}</span>
+                                            <h4 class="title">على الكهرباء والسباكة</h4>
+                                            <div class="icon"><span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="timeline">
+                                    <div class="timeline-content">
+                                        <div class="circle"><span><i class="fa fa-user"></i></span></div>
+                                        <div class="content">
+                                            <span class="year">{{ $project->facility->f3 }}</span>
+                                            <h4 class="title">اتحــاد المـلاك مجانـــا</h4>
+                                            <div class="icon"><span></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
 
+                    {{-- Apartments Reservation --}}
+                    <div class="row">
+                        @if ($project->floors->count() > 0)
+                            <!-- apartment check Area-->
+                            <div class="room-details-area pt-100 pb-70  " style="background: url({{ asset('b.png') }});">
+                                <div class="container-fluid m-0 p-0">
+                                    <div class="section-title-two text-center">
+                                        <div class="row margin-top-60">
+                                            <div class="col-xs-12 col-lg-12 text-center">
+                                                <h1 class="">حالة الشقق<span class="special-color">.</span></h1>
+                                            </div>
+                                            <div class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-4">
+                                                <div class="title-separator-primary2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container margin-top-30" style="color: white; width: 100%">
+                                        <div class="table-responsive">
+
+
+
+                                            <table class="table mt-2 center"
+                                                style="  margin-left: auto !important;
+                                    margin-right: auto !important;
+                                    width: fit-content;
+                                    margin-bottom: 35px;">
+                                                @if ($project->FloorRow($project->floors_count)->count() > 0)
+                                                    <tr>
+                                                        <td style="color: #2f2e33; border-top: none">
+                                                            الملاحق
+                                                        </td>
+                                                        @foreach ($project->FloorRow($project->floors_count) as $key => $floor)
+                                                            <td
+                                                                class=" @if ($floor->status == 'متاح') td1
+                                                @elseif ($floor->status == 'محجوز')
+                                                td2
+                                                @else
+                                                td3 @endif">
+                                                                {{-- {{ $floor->apartment->count() }} --}}
+                                                                {{ $floor->apartment->type }}
+                                                                {{-- -
+                                                        {{ $floor->apartment->code }} --}}
+                                                            </td>
+
+                                                            {{-- @if ($key == 0)
+                                                        <td
+                                                            style="width: 33% !important; color:transparent!important;box-shadow: none !important; translate: 0px 24px;">
+                                                            .</td>
+                                                    @endif --}}
+                                                        @endforeach
+                                                    </tr>
+                                                @endif
+
+                                                @for ($i = $project->floors_count - 1; $i >= 1; $i--)
+                                                    <tr>
+                                                        <td style="color: #2f2e33; border-top: none">
+                                                            الدور {{ $i }}
+                                                        </td>
+                                                        @php
+                                                            $check = false;
+                                                        @endphp
+                                                        @foreach ($project->FloorRow($i) as $key => $floor)
+                                                            {{-- @if ($key == $project->FloorRow($i)->count() - 1 && $floor->apartment->type == 'أمامية' && $project->backCount2($i) > 0)
+                                                        <td class="m2">.</td>
+                                                    @endif --}}
+
+                                                            {{-- @if (!$check && $floor->apartment->type == 'خلفية')
+                                                        <td class="m1">.</td>
+                                                    @endif --}}
+                                                            <td style="   border-radius: @if ($key == 0) 0 15px 15px 0px
+                                                    @elseif ($key == $project->FloorRow($i)->count() - 1)
+                                                    15px 0 0 15px @endif;"
+                                                                class=" @if ($floor->status == 'متاح') td1
+                                                    @elseif ($floor->status == 'محجوز')
+                                                    td2
+                                                    @else
+                                                    td3 @endif @if ($floor->apartment->type == 'خلفية') back @endif">
+                                                                {{ $floor->apartment->type }}
+                                                                {{ $floor->apartment->code }}
+                                                            </td>
+
+
+                                                            {{-- @if ($project->backCount2($i) == 2 && $check == false && $floor->apartment->type == 'خلفية')
+                                                        @php
+                                                            $check = true;
+                                                        @endphp
+                                                        <td
+                                                            style="color: transparent; width: 10px !important; border:none !important; box-shadow: none !important;">
+                                                            .</td>
+                                                    @endif --}}
+                                                        @endforeach
+                                                    </tr>
+                                                @endfor
+                                            </table>
+
+
+                                        </div>
+                                        <div style="text-align: center">
+
+                                            {{-- <img src="{{ asset('1.png') }}" style="width: 60%; min-width: 300px; margin-top: 5px"> --}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End -->
+                        @endif
+                    </div>
+
+                    {{-- Apartment Details --}}
+
+                    @if ($project->apartments->count() > 0)
+                        <section class="parallax">
+
+                            <div class="container" style="width: 100%">
+                                <div class="row">
+                                    <div class="col-xs-12 col-lg-12 text-center">
+                                        <h5 class="subtitle-margin">تفاصيل</h5>
+                                        <h1 class="">الشقق<span class="special-color">.</span></h1>
+                                    </div>
+                                    <div class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-4">
+                                        <div class="title-separator-primary2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container margin-top-60" style="width: 100%; padding: 0">
+                                <div class="row">
+                                    <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+                                        <div class="panel-group panel-apartment" id="accordion" role="tablist"
+                                            aria-multiselectable="true">
+
+                                            @foreach ($project->apartments as $index => $item)
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading" role="tab"
+                                                        id="heading{{ $index }}">
+                                                        <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                                            href="#collaps{{ $index }}" aria-expanded="true"
+                                                            aria-controls="collaps{{ $index }}">
+                                                            <span style="padding-right: 50px">تفاصيل {{ $item->type }}
+                                                                ({{ $item->code }})</span>
+                                                            <div class="button-triangle"></div>
+                                                            <div class="button-triangle2"></div>
+                                                            <div class="button-icon" style="right: unset; left: 10px;"><i
+                                                                    class="jfont">&#xe801;</i></div>
+                                                        </a>
+                                                    </div>
+                                                    <div id="collaps{{ $index }}" class="panel-collapse collapse"
+                                                        role="tabpanel" aria-labelledby="heading{{ $index }}">
+                                                        <div class="panel-body">
+                                                            <div class="row">
+                                                                <div class="col-xs-12 col-sm-6">
+                                                                    <img src="{{ $item->image_path }}" alt=""
+                                                                        class="p-image img-responsive" />
+                                                                </div>
+                                                                <div class="col-xs-12 col-sm-6">
+                                                                    <p class="negative-margin">
+                                                                    <ul class="house-list">
+                                                                        <li>عدد الغرف: <b>
+                                                                                {{ $item->room_count }}</b>
+                                                                        </li>
+                                                                        @if ($item->price)
+                                                                            <li>السعر : <b>{{ $item->price }} ريال</b>
+                                                                            </li>
+                                                                        @endif
+                                                                        <li> المساحة : <b>{{ $item->area }} متر</b></li>
+                                                                    </ul>
+                                                                    </p>
+                                                                    <div class="row margin-top-30">
+                                                                        @foreach (preg_split("/((\r?\n)|(\r\n?))/", $item->details) as $line)
+                                                                            <div class="col-xs-12" style="float: right">
+                                                                                <ul class="ticks-ul">
+                                                                                    <li><i
+                                                                                            class="jfont">&#xe815;</i>{{ $line }}
+                                                                                    </li>
+
+                                                                                </ul>
+                                                                            </div>
+                                                                        @endforeach
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    @endif
+
+
                     <div class="row margin-top-90">
-                        <div class="col-xs-12 col-sm-9 col-sm-push-3">
+                        <div class="col-xs-12 col-sm-9">
                             <h5 class="subtitle-margin">hot</h5>
                             <h1>new listings<span class="special-color">.</span></h1>
                         </div>
-                        <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                        <div class="col-xs-12 col-sm-3">
                             <a href="#" class="navigation-box navigation-box-prev" id="short-offers-owl-prev">
                                 <div class="navigation-triangle"></div>
                                 <div class="navigation-box-icon"><i class="jfont">&#xe800;</i></div>

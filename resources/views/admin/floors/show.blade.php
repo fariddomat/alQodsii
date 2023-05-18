@@ -66,7 +66,7 @@
                                    color: white;
                                    font-weight: bolder;
                                    font-size: 16px;
-            background: linear-gradient(#cc9933, #d19426, #cc9933)">
+            background: #4a716f">
                                                 متاح</td>
                                             <td
                                                 style="text-align: center;
@@ -80,7 +80,7 @@
                                    color: white;
                                    font-weight: bolder;
                                    font-size: 16px;
-                background-color: #094748">
+                background-color: #dd5452">
                                                 مباع</td>
                                         </tr>
 

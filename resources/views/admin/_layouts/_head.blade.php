@@ -37,7 +37,7 @@
             color: white;
             font-weight: bolder;
             font-size: 16px;
-            background: linear-gradient(#cc9933, #d19426, #cc9933);
+            background: #4a716f;
         }
 
         .td2 {
@@ -46,7 +46,7 @@
             font-weight: bolder;
             font-size: 16px;
 
-            background-color: #0aafb6;
+            background-color: #ba8e42;
         }
 
         .td3 {
@@ -54,7 +54,7 @@
             color: white;
             font-weight: bolder;
             font-size: 16px;
-            background-color: #094748
+            background-color: #dd5452;
         }
 
         .td {

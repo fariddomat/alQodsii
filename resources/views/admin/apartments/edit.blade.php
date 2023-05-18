@@ -51,7 +51,7 @@ selectedselected
                                             class="form-control" id="basicInput" >
 
                                         <h5 class="mt-2"> التفاصيل</h5>
-                                        <textarea id="summernote" name="details" class="form-control" id="" cols="30" rows="10">
+                                        <textarea id="" name="details" class="form-control" id="" cols="30" rows="10">
                                                 {{ old('details', $apartment->details) }}
                                             </textarea>
                                         <h5 class="mt-2">@lang('site.image')</h5>
