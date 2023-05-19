@@ -73,7 +73,7 @@
                                    color: white;
                                    font-weight: bolder;
                                    font-size: 16px;
-            background-color: #0aafb6;">
+            background-color: #ba8e42;">
                                                 محجوز</td>
                                             <td
                                                 style="text-align: center;

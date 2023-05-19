@@ -31,6 +31,9 @@
                                     <h5 class="mt-2">@lang('site.scheme_name')</h5>
                                     <input value="{{ old('scheme_name') }}" name="scheme_name" type="text"
                                         class="form-control" id="basicInput" required>
+                                    {{-- date_of_build --}}
+                                    <h5 class="mt-2">تاريخ البناء</h5>
+                                    <input type="date" name="date_of_build" value="{{ old('date_of_build') }}" id="basicInput" class="form-control">
 
                                     <h5 class="mt-2">@lang('site.address')</h5>
                                     <textarea id="summernote" name="address" class="form-control" id="basicTextarea" rows="3" required>{{ old('address') }}</textarea>
@@ -282,9 +285,7 @@
                                     <h5 class="mt-2">اتحاد الملاك مجاناَ</h5>
                                     <input value="{{ old('f4') }}" name="f4" type="text"
                                         class="form-control" id="basicInput" required>
-                                    <h5 class="mt-2">ضمانات إضافية (اختياري)</h5>
-                                    <input value="{{ old('f5') }}" name="f5" type="text"
-                                        class="form-control" id="basicInput">
+                                   
                                 </div>
                             </fieldset>
                         </div>

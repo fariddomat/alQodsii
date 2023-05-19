@@ -58,6 +58,7 @@ class ProjectController extends Controller
             $request->validate([
                 'category' => 'required',
                 'name' => 'required|unique:projects,name',
+                'date_of_build'=> 'required',
                 'address' => 'required',
                 'scheme_name' => 'required',
                 'status' => 'required',
@@ -86,6 +87,7 @@ class ProjectController extends Controller
             $project = Project::create([
                 'category_id' => $request->category,
                 'name' => $request->name,
+                'date_of_build'=> $request->date_of_build,
                 'address' => $request->address,
                 'address_location' => $request->address_location,
                 'scheme_name' => $request->scheme_name,
@@ -190,6 +192,7 @@ class ProjectController extends Controller
 
                 'category' => 'required',
                 'name' => 'required|unique:projects,name,' . $id,
+                'date_of_build'=> 'required',
                 'address' => 'required',
                 'scheme_name' => 'required',
                 // 'floors_count' => 'required|numeric|min:1',
@@ -262,6 +265,7 @@ class ProjectController extends Controller
             $project->update([
                 'category_id' => $request->category,
                 'name' => $request->name,
+                'date_of_build'=> $request->date_of_build,
                 'address' => $request->address,
                 'address_location' => $request->address_location,
                 'scheme_name' => $request->scheme_name,

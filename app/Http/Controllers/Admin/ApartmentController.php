@@ -61,7 +61,9 @@ class ApartmentController extends Controller
             'code' => 'required',
             'room_count' => 'required|numeric|min:0',
             'area' => 'required|numeric|min:0',
+            'about' => 'nullable',
             'price' => 'nullable|numeric|min:0',
+            'price_bank' => 'nullable|numeric|min:0',
             'details' => 'required',
             'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
@@ -175,7 +177,9 @@ class ApartmentController extends Controller
             'type' => 'required',
             'area' => 'required|numeric|min:0',
             'room_count' => 'required|numeric|min:0',
+            'about' => 'nullable',
             'price' => 'nullable|numeric|min:0',
+            'price_bank' => 'nullable|numeric|min:0',
             'details' => 'required',
             'img' => 'image|mimes:jpeg,png,jpg,gif,svg',
 

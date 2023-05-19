@@ -38,10 +38,16 @@
                                         <h5 class="mt-2">المساحة</h5>
                                         <input value="{{ old('area') }}" name="area" type="number" min="0"
                                             class="form-control" id="basicInput" required>
+                                        <h5 class="mt-2">معلومات عن الشقة</h5>
+                                                <textarea name="about" id="" class="form-control">{{ old('about') }}</textarea>
 
                                         <h5 class="mt-2">السعر (اختياري)</h5>
                                         <input value="{{ old('price') }}" name="price" type="number" min="0"
                                             class="form-control" id="basicInput" >
+                                            <h5 class="mt-2">سعر البنك (اختياري)</h5>
+                                            <input value="{{ old('price_bank') }}" name="price_bank" type="number" min="0"
+                                                class="form-control" id="basicInput" >
+
 
                                         <h5 class="mt-2"> التفاصيل</h5>
                                         <textarea id="" name="details" class="form-control" id="" cols="30" rows="10">

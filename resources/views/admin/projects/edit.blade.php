@@ -42,34 +42,37 @@
                                     <h5 class="mt-2">@lang('site.scheme_name')</h5>
                                     <input value="{{ old('scheme_name', $project->scheme_name) }}" name="scheme_name"
                                         type="text" class="form-control" id="basicInput" required>
+                                    {{-- date_of_build --}}
+                                    <h5 class="mt-2">تاريخ البناء</h5>
+                                    <input type="date" name="date_of_build"
+                                        value="{{ old('date_of_build', $project->date_of_build) }}" id="basicInput"
+                                        class="form-control">
+
+
                                     <h5 class="mt-2">@lang('site.address')</h5>
-                                    <textarea id="summernote"  name="address" class="form-control" id="basicTextarea" rows="3" required>{{ old('address', $project->address) }}</textarea>
+                                    <textarea id="summernote" name="address" class="form-control" id="basicTextarea" rows="3" required>{{ old('address', $project->address) }}</textarea>
 
                                     {{-- address_location --}}
                                     <h5 class="mt-2">الموقع على الخريطة - iframe (اختياري)</h5>
-                                    <textarea name="address_location" class="form-control" id="basicTextarea" rows="3" >{{ old('address_location', $project->address_location) }}</textarea>
+                                    <textarea name="address_location" class="form-control" id="basicTextarea" rows="3">{{ old('address_location', $project->address_location) }}</textarea>
                                     <h5 class="mt-2">حالة المشروع</h5>
                                     <select name="status" id="" class="form-control">
                                         <option value="مكتمل" selected>مكتمل</option>
-                                        <option value="قيد الانشاء" @if ($project->status == 'قيد الانشاء')
-                                            selected
-                                        @endif>قيد الانشاء</option>
-                                        <option value="تحت الانشاء"@if ($project->status == 'تحت الانشاء')
-                                            selected
-                                        @endif>تحت الانشاء</option>
-                                        <option value="تحت التشطيب"@if ($project->status == 'تحت التشطيب')
-                                            selected
-                                        @endif>تحت التشطيب</option>
-                                        <option value="على وشك الانتهاء"@if ($project->status == 'على وشك الانتهاء')
-                                            selected
-                                        @endif>على وشك الانتهاء</option>
-                                        <option value="غير متاح للعرض" @if ($project->status == 'غير متاح للعرض')
-                                            selected
-                                        @endif>غير متاح للعرض</option>
+                                        <option value="قيد الانشاء" @if ($project->status == 'قيد الانشاء') selected @endif>قيد
+                                            الانشاء</option>
+                                        <option value="تحت الانشاء"@if ($project->status == 'تحت الانشاء') selected @endif>تحت
+                                            الانشاء</option>
+                                        <option value="تحت التشطيب"@if ($project->status == 'تحت التشطيب') selected @endif>تحت
+                                            التشطيب</option>
+                                        <option value="على وشك الانتهاء"@if ($project->status == 'على وشك الانتهاء') selected @endif>
+                                            على وشك الانتهاء</option>
+                                        <option value="غير متاح للعرض" @if ($project->status == 'غير متاح للعرض') selected @endif>غير
+                                            متاح للعرض</option>
 
                                     </select>
                                     <h5 class="mt-2">نسبة التنفيذ</h5>
-                                    <input value="{{ old('status_percent', $project->status_percent) }}" name="status_percent" type="number" min="0" max="100"
+                                    <input value="{{ old('status_percent', $project->status_percent) }}"
+                                        name="status_percent" type="number" min="0" max="100"
                                         class="form-control" id="basicInput" required>
 
 
@@ -77,17 +80,17 @@
                                 <div class="col-lg-6">
                                     <h5 class="mt-2">@lang('site.floors_count')</h5>
                                     <input value="{{ old('floors_count', $project->floors_count) }}" name="floors_count"
-                                        type="number" min="1" class="form-control" id="basicInput"  required>
+                                        type="number" min="1" class="form-control" id="basicInput" required>
 
 
                                     <h5 class="mt-2">@lang('site.description')</h5>
-                                    <textarea id="summernote2"  name="details" class="form-control" id="basicTextarea" rows="3" required>{{ old('details', $project->details) }}</textarea>
+                                    <textarea id="summernote2" name="details" class="form-control" id="basicTextarea" rows="3" required>{{ old('details', $project->details) }}</textarea>
                                     <h5 class="mt-2">@lang('site.image') رئيسية</h5>
-                                    <input value="{{ old('poster') }}" name="poster"  type="file"
-                                        class="form-control" id="basicInput">
-                                        <div class="row mt-1">
-                                                <img class="col-lg-3" src="{{ $project->poster_path }}" alt="Images">
-                                        </div>
+                                    <input value="{{ old('poster') }}" name="poster" type="file" class="form-control"
+                                        id="basicInput">
+                                    <div class="row mt-1">
+                                        <img class="col-lg-3" src="{{ $project->poster_path }}" alt="Images">
+                                    </div>
                                     <h5 class="mt-2">صور المشروع</h5>
                                     <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
                                         class="form-control" id="basicInput">
@@ -109,7 +112,7 @@
                 </div>
             </div>
         </div>
-{{--
+        {{--
         <div class="row">
             <div class="col-12">
                 <div class="card">
@@ -277,7 +280,7 @@
                         <div class="card-body " style="text-align: right">
                             <fieldset class="form-group">
                                 <div class="col-lg-6 mt-3">
-                                    <textarea id="summernote6"  name="pdetails" class="form-control" id="" required>
+                                    <textarea id="summernote6" name="pdetails" class="form-control" id="" required>
                                     {{ old('pdetails', $project->propertie->details) }}
                                 </textarea>
                                 </div>
@@ -325,9 +328,7 @@
                                     <h5 class="mt-2">اتحاد الملاك مجاناَ</h5>
                                     <input value="{{ old('f4', $project->facility->f4) }}" name="f4" type="text"
                                         class="form-control" id="basicInput" required>
-                                    <h5 class="mt-2">ضمانات إضافية (اختياري)</h5>
-                                    <input value="{{ old('f5', $project->facility->f5) }}" name="f5" type="text"
-                                        class="form-control" id="basicInput">
+
                                 </div>
                             </fieldset>
                         </div>

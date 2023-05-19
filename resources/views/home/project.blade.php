@@ -44,6 +44,11 @@
                             <div class="details-parameters-price">{{ $project->status }}</div>
                             <div class="details-parameters">
                                 <div class="details-parameters-cont">
+                                    <div class="details-parameters-val">تاريخ البناء</div>
+                                    <div class="details-parameters-name">{{ $project->date_of_build }}</div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="details-parameters-cont">
                                     <div class="details-parameters-val">عدد الأدوار</div>
                                     <div class="details-parameters-name">{{ $project->floors_count }}</div>
                                     <div class="clearfix"></div>
@@ -242,7 +247,7 @@
                                     <div class="timeline-content">
                                         <div class="circle"><span><i class="fa fa-user"></i></span></div>
                                         <div class="content">
-                                            <span class="year">{{ $project->facility->f3 }}</span>
+                                            <span class="year">{{ $project->facility->f4 }}</span>
                                             <h4 class="title">اتحــاد المـلاك مجانـــا</h4>
                                             <div class="icon"><span></span></div>
                                         </div>
@@ -276,7 +281,6 @@
 
                                             <table class="table mt-2 center"
                                                 style="  margin-left: auto !important;
-                                    margin-right: auto !important;
                                     width: fit-content;
                                     margin-bottom: 35px;">
                                                 @if ($project->FloorRow($project->floors_count)->count() > 0)
@@ -290,7 +294,8 @@
                                                 @elseif ($floor->status == 'محجوز')
                                                 td2
                                                 @else
-                                                td3 @endif">
+                                                td3 @endif" style=" @if ($key==0) margin-right: 139px;
+                                                @endif">
                                                                 {{-- {{ $floor->apartment->count() }} --}}
                                                                 {{ $floor->apartment->type }}
                                                                 {{-- -
@@ -408,12 +413,17 @@
                                                                 </div>
                                                                 <div class="col-xs-12 col-sm-6">
                                                                     <p class="negative-margin">
+                                                                        <p>{!! $item->about !!}</p>
                                                                     <ul class="house-list">
                                                                         <li>عدد الغرف: <b>
                                                                                 {{ $item->room_count }}</b>
                                                                         </li>
                                                                         @if ($item->price)
                                                                             <li>السعر : <b>{{ $item->price }} ريال</b>
+                                                                            </li>
+                                                                        @endif
+                                                                        @if ($item->price_bank)
+                                                                            <li>سعر البنك : <b>{{ $item->price_bank }} ريال</b>
                                                                             </li>
                                                                         @endif
                                                                         <li> المساحة : <b>{{ $item->area }} متر</b></li>
@@ -424,7 +434,7 @@
                                                                             <div class="col-xs-12" style="float: right">
                                                                                 <ul class="ticks-ul">
                                                                                     <li><i
-                                                                                            class="jfont">&#xe815;</i>{{ $line }}
+                                                                                            class="jfont">&#xe815; </i>{{ $line }}
                                                                                     </li>
 
                                                                                 </ul>

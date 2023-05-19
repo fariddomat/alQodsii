@@ -2344,7 +2344,7 @@
             height: 25px;
             border-radius: 50%;
             background: #fff;
-            border: 4px solid #cca872;
+            border: 4px solid #ec8d38;
             position: absolute;
             top: 0;
             right: -14px;
@@ -2373,7 +2373,7 @@
             content: "";
             width: 100%;
             height: 5px;
-            background: #cca872;
+            background: #ec8d38;
             position: absolute;
             top: 88px;
             left: 0;
@@ -2385,7 +2385,7 @@
             height: 180px;
             border-radius: 50%;
             background: #fff;
-            border: 8px solid #cca872;
+            border: 8px solid #ec8d38;
             float: left;
             margin-right: 25px;
             position: relative
@@ -2405,7 +2405,7 @@
         .main-timeline9 .circle:before {
             width: 26px;
             height: 30px;
-            background: #cca872;
+            background: #ec8d38;
             top: 0;
             box-shadow: inset 7px 0 9px -7px #444
         }
@@ -2446,7 +2446,7 @@
             display: block;
             padding: 10px;
             margin: 10px 0 50px;
-            background: #cca872;
+            background: #ec8d38;
             border-radius: 7px;
             font-size: 25px;
             color: #fff
@@ -2455,7 +2455,7 @@
         .main-timeline9 .title {
             font-size: 25px;
             font-weight: 700;
-            color: #cca872;
+            color: #ec8d38;
             margin-top: 0
         }
 
@@ -2482,7 +2482,7 @@
             height: 25px;
             border-radius: 50%;
             background: #fff;
-            border: 4px solid #cca872;
+            border: 4px solid #ec8d38;
             position: absolute;
             top: 78px;
             right: -14px
@@ -2490,7 +2490,7 @@
 
         .main-timeline9 .icon:before {
             width: 15px;
-            background: #cca872;
+            background: #ec8d38;
             top: -1px
         }
 

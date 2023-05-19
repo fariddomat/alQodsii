@@ -23,7 +23,9 @@ class CreateApartmentsTable extends Migration
             $table->string('code');
             $table->integer('room_count');
             $table->integer('area');
+            $table->longText('about')->nullable();
             $table->integer('price')->nullable();
+            $table->integer('price_bank')->nullable();
             $table->text('details');
             $table->string('img');
             // $table->text('reservation');
