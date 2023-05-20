@@ -8,7 +8,7 @@ $(function() {
         removeButtons: "About"
     });
 
-    CKEDITOR.replace("brief", {
+    CKEDITOR.replace("quality_safty", {
         filebrowserBrowseUrl: imageGalleryBrowseUrl,
         filebrowserUploadUrl:
             imageGalleryUploadUrl +

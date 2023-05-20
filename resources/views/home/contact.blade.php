@@ -1,68 +1,54 @@
 @extends('home._layouts._app')
 
 @section('content')
-
-
-
-
-
-
-
-    <!-- Contacnt Area -->
-    <div id="contact" class="map-area-two">
-        <div class="container-fluid m-0 p-0 maps">
-            {{-- <iframe
-                src="https://www.google.com/maps/d/embed?mid=1Dt0DAlVYal47pNOXy20K08p3qpE&hl=en&ehbc=2E312"
-                allowfullscreen="" aria-hidden="false" tabindex="0" style="pointer-events: none;"></iframe> --}}
-                <img src="{{ asset('w.jpg') }}" style="width: 100%; height: 90vh;; min-height: 580px" alt="">
-
-            <div class="contact-wrap" style="top: 15px !important;">
-                <div class="contact-form" style="border-radius: 25px; padding-top: 35px">
-                    <h2>هل ترغب <b> بالتواصل معنا </b></h2>
-                    <form id="contactForm" action="{{ route('contact') }}" method="POST">
+    <section class="section-light section-both-shadow top-padding-45 margin-top-135">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 margin-top-45">
+                    <p class="negative-margin">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <img src="images/contact-image.jpg" alt="" class="pull-left margin-top-45" />
+                    <address class="contact-info pull-left">
+                        <span><i class="fa fa-map-marker"></i>00456 Some Address line</span>
+                        <span><i class="fa fa-envelope"></i><a href="#">email@domain.tld</a></span>
+                        <span><i class="fa fa-phone"></i>01-23456789</span>
+                        <span><i class="fa fa-globe"></i><a href="#">http://somedmain.tld</a></span>
+                        <span><i class="fa fa-clock-o"></i>mon-fri: 8:00 - 18:00</span>
+                        <span class="span-last">sat: 10:00 - 16:00</span>
+                    </address>
+                </div>
+                <div class="col-xs-12 col-md-6 margin-top-45">
+                    <form name="contact-from" id="contact-form" action="{{ route('contact') }}" method="post">
                         @csrf
-                        @method('POST')
-                        <div class="row">
-                            @extends('admin._layouts._error')
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <i class='bx bx-user'></i>
-                                    <input type="text" name="name" id="name" class="form-control" required data-error="Please enter your name" placeholder="اسمك بالكامل*">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 col-sm-6">
-                                <div class="form-group">
-                                    <i class='bx bx-user'></i>
-                                    <input type="email" name="email" id="email" class="form-control"  data-error="Please enter your email" placeholder="البريد الإلكتروني">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-sm-12">
-                                <div class="form-group">
-                                    <i class='bx bx-phone'></i>
-                                    <input type="text" name="phone" id="phone" required data-error="Please enter your number" class="form-control" placeholder="رقم الهاتف*" required>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <div class="form-group">
-                                    <i class='bx bx-envelope'></i>
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="6" required data-error="Write your message" placeholder="رسالتك هنا"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-md-12">
-                                <button type="submit" class="default-btn default-hot-toddy">
-                                    إرسال
-                                    <i class='bx bx-right-arrow-alt'></i>
-                                </button>
-                            </div>
+                        @extends('admin._layouts._error')
+                        <div id="form-result"></div>
+                        <input name="name" id="name" type="text" class="input-short main-input required,all"
+                            placeholder="الاسم بالكامل *"
+                            style="  float: right;
+                            margin-left: 15px;" required/>
+                        <input name="phone" id="phone" type="text" class="input-short pull-right main-input ,all"
+                            placeholder="رقم الهاتف *" required />
+                        <input name="email" id="mail" type="email" class="input-full main-input ,email"
+                            placeholder="البريد الالكتروني" />
+                        <textarea name="message" id="message" class="input-full contact-textarea main-input required,email"
+                            placeholder="رسالتك *" required></textarea>
+                        <div class="form-submit-cont">
+                            <button type="submit" class="button-primary pull-right" id="form-submit">
+                                <span>ارسال</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-paper-plane"></i></div>
+                            </button>
+                            <div class="clearfix"></div>
                         </div>
                     </form>
                 </div>
+
+
             </div>
         </div>
-    </div>
-    <!-- Contact Area End -->
+    </section>
 @endsection

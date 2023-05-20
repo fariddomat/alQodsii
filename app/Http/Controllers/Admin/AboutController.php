@@ -18,7 +18,7 @@ class AboutController extends Controller
     {
         $rules = [
             'about_me' => ['required'],
-            'brief' => ['required'],
+            'quality_safty' => ['required'],
             'who' => ['required'],
             'history' => ['required'],
             'massage' => ['required'],
@@ -34,7 +34,7 @@ class AboutController extends Controller
         }
 
         $about->about_me = $validatedData['about_me'];
-        $about->brief = $validatedData['brief'];
+        $about->quality_safty = $validatedData['quality_safty'];
         $about->who_are_we = $validatedData['who'];
         $about->history = $validatedData['history'];
         $about->massage = $validatedData['massage'];
