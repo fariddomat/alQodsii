@@ -22,6 +22,7 @@
     <link rel='stylesheet' type='text/css'
         href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins.css') }}">
+    
     <link rel="stylesheet" type="text/css" href="{{ asset('css/apartment-layout.css') }}">
     <link id="skin" rel="stylesheet" type="text/css" href="{{ asset('css/apartment-colors-orange.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-rtl.css') }}">
@@ -3398,4 +3399,5 @@
         }
     </style>
     @yield('style')
+
 </head>

@@ -54,7 +54,7 @@ class CategoryController extends Controller
         $request_data = $request->except(['img']);
 
         $img = Image::make($request->img)
-            ->resize(570, 370)
+            ->resize(524, 646)
             ->encode('jpg');
 
         Storage::disk('public')->put('images/' . $request->img->hashName(), (string)$img, 'public');
@@ -115,7 +115,7 @@ class CategoryController extends Controller
             Storage::disk('public')->delete('images/' . $category->img);
 
             $img = Image::make($request->img)
-                ->resize(570, 370)
+                ->resize(524, 646)
                 ->encode('jpg');
 
             Storage::disk('public')->put('images/' . $request->img->hashName(), (string)$img, 'public');

@@ -102,7 +102,7 @@ class ProjectController extends Controller
                 'img' => $request->poster->hashName()
             ]);
             $poster = Image::make($request->poster)
-                ->resize(570, 370)
+                ->resize(720, 538)
                 ->encode('jpg');
 
             Storage::disk('public')->put('images/' . $project->id . '/'  . $request->poster->hashName(), (string)$poster, 'public');
@@ -223,7 +223,7 @@ class ProjectController extends Controller
             if ($request->poster) {
                 Storage::disk('public')->delete('images/' . $project->id . '/' . $project->img);
                 $poster = Image::make($request->poster)
-                    ->resize(570, 370)
+                    ->resize(720, 538)
                     ->encode('jpg');
 
                 Storage::disk('public')->put('images/' . $project->id . '/' . $request->poster->hashName(), (string)$poster, 'public');

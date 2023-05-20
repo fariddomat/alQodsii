@@ -62,3 +62,5 @@
 <!-- template scripts -->
 <script type="text/javascript" src="{{ asset('mail/validate.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/apartment.js') }}"></script>
+
+@yield('scripts')
