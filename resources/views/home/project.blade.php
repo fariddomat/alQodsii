@@ -329,7 +329,11 @@
                                                     @endif --}}
                                                             <td style="   border-radius: @if ($key == 0) 0 15px 15px 0px
                                                     @elseif ($key == $project->FloorRow($i)->count() - 1)
-                                                    15px 0 0 15px @endif;"
+                                                    15px 0 0 15px @endif;
+                                                    @if ($project->backCount2($i) == 1 && $check == false && $floor->apartment->type == 'خلفية')
+                                                        width:260px !important;
+                                                    @endif
+                                                    "
                                                                 class=" @if ($floor->status == 'متاح') td1
                                                     @elseif ($floor->status == 'محجوز')
                                                     td2

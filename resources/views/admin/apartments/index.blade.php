@@ -23,16 +23,11 @@
                         <a href="{{ route('admin.apartments.create', ['projectId' => $project->id]) }}"
                             class="btn btn-icon btn-info mr-1">@lang('site.create') <i class="fa fa-plus"
                                 style="position: relative"></i></a>
-                        <a href="{{ route('admin.floors.index', $project->id) }}" type="button"
-                            class="btn btn-icon btn-primary" style="  min-width: 100px;">إدارة الشقق قي الأدوار<i
-                                class="fa fa-edit" style="position: relative;"></i></a>
-                                @if ($project->floors)
 
                         <a href="{{ route('admin.floors.show', $project->id) }}" type="button"
                             class="btn btn-icon btn-success" style="  min-width: 100px;">تعديل حالة الشقق<i
                                 class="fa fa-edit" style="position: relative;"></i></a>
 
-                                @endif
 
                     </div>
                     <form action="" class="col-md-12">
