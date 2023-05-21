@@ -78,10 +78,10 @@
                         <a href="{{ route('categories') }}" role="button">المشاريع</a>
 
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#" role="button">من نحن</a>
 
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="{{ route('contactPage') }}" role="button">اتصل بنا</a>
 

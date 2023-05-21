@@ -23,6 +23,44 @@ class Project extends Model
         });
     }
 
+
+    public function scopeWhenPrice($query, $price)
+    {
+        if ($price) {
+            $price = array_map('intval', explode(' ', $price));
+            return $query->when($price, function ($q) use ($price) {
+                return $q->whereHas('apartments', function ($q1) use ($price) {
+                    return $q1->where('price', '<=', $price[2])->where('price', '>=', $price[0]);
+                });
+            });
+        }
+    }
+
+    public function scopeWhenRoom($query, $room)
+    {
+        if ($room) {
+            $room = array_map('intval', explode(' ', $room));
+            return $query->when($room, function ($q) use ($room) {
+                return $q->whereHas('apartments', function ($q1) use ($room) {
+                    return $q1->where('room_count', '<=', $room[2])->where('room_count', '>=', $room[0]);
+                });
+            });
+        }
+    }
+
+    public function scopeWhenArea($query, $area)
+    {
+        if ($area) {
+            $area = array_map('intval', explode(' ', $area));
+            return $query->when($area, function ($q) use ($area) {
+                return $q->whereHas('apartments', function ($q1) use ($area) {
+                    return $q1->where('area', '<=', $area[2])->where('area', '>=', $area[0]);
+                });
+            });
+        }
+    }
+
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -90,8 +128,6 @@ class Project extends Model
     {
         // return asset('uploads/images/' . $this->id . '/' . $this->img);
         return Storage::url('images/' . $this->id . '/' . $this->img);
-
-
     }
     public function getImagePathAttribute()
     {
@@ -127,11 +163,11 @@ class Project extends Model
         $q = $this->floors->where('floor_id', $id)->where('apartment_id');
         $q1 = collect();
         $b = false;
-        $item=null;
+        $item = null;
         foreach ($q as $key => $floor) {
-            if ($floor->apartment->type=="أمامية") {
+            if ($floor->apartment->type == "أمامية") {
                 if ($b) {
-                    $item=$floor;
+                    $item = $floor;
                 } else {
                     $b = true;
                     $q1->push($floor);
@@ -140,27 +176,24 @@ class Project extends Model
                 $q1->push($floor);
             }
         }
-            if($item){
+        if ($item) {
 
-                $q1->push($item);
-            }
+            $q1->push($item);
+        }
         return $q1;
     }
 
-    public function backCount($id,$a_id)
+    public function backCount($id, $a_id)
     {
         // dd($this->FloorRow($id)->where("apartment_id",$a_id)->count());
-        return $this->FloorRow($id)->where("apartment_id",$a_id)->count();
-
+        return $this->FloorRow($id)->where("apartment_id", $a_id)->count();
     }
 
     public function backCount2($id)
     {
-        $back=$this->apartments->where('type', 'خلفية');
+        $back = $this->apartments->where('type', 'خلفية');
         // dd($back->pluck('id'));
         // dd($this->FloorRow($id)->whereIn("apartment_id",$back->pluck('id'))->count());
-        return $this->FloorRow($id)->whereIn("apartment_id",$back->pluck('id'))->count();
-
-
+        return $this->FloorRow($id)->whereIn("apartment_id", $back->pluck('id'))->count();
     }
 }

@@ -21,6 +21,8 @@ class Category extends Model
         });
     }
 
+    
+
     public function getImagePathAttribute()
     {
         // return asset('uploads/images/'. $this->img);

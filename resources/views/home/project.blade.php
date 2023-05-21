@@ -6,6 +6,20 @@
         }
     </style>
 @endsection
+
+@section('scripts')
+    <script>
+        $(window).on('load', function() {
+            var maxHeight = 0;
+            $('.grid-offer-text').each(function() {
+                if ($(this).height() > maxHeight) {
+                    maxHeight = $(this).height();
+                }
+            });
+            $('.grid-offer-text').height(maxHeight);
+        });
+    </script>
+@endsection
 @section('content')
 
     <section class="section-light no-bottom-padding margin-top-135">
@@ -482,12 +496,14 @@
 
                     <div class="short-offers-container">
                         <div class="owl-carousel" id="short-offers-owl">
+                            @foreach ($projects as $project)
+
                             <div class="grid-offer-col">
                                 <div class="grid-offer">
                                     <div class="grid-offer-front">
 
                                         <div class="grid-offer-photo">
-                                            <img src="{{ asset('images/grid-offer1.jpg') }}" alt="" />
+                                            <img src="{{ $project->poster_path }}" alt="" />
                                             <div class="type-container">
                                                 <div class="estate-type">apartment</div>
                                                 <div class="transaction-type">sale</div>
@@ -496,38 +512,25 @@
                                         <div class="grid-offer-text">
                                             <i class="fa fa-map-marker grid-offer-localization"></i>
                                             <div class="grid-offer-h4">
-                                                <h4 class="grid-offer-title">34 Fort Collins, Colorado 80523, USA</h4>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                            <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod
-                                                tempor incididunt ut labore et [...]</p>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="price-grid-cont">
-                                            <div class="grid-price-label pull-right">Price:</div>
-                                            <div class="grid-price pull-left">
-                                                $320000
+                                                <h4 class="grid-offer-title">{!! $project->address !!}</h4>
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
                                         <div class="grid-offer-params">
-                                            <div class="grid-area">
-                                                <img src="{{ asset('images/area-icon.png') }}" alt="" />54m<sup>2</sup>
-                                            </div>
-                                            <div class="grid-rooms">
-                                                <img src="{{ asset('images/rooms-icon.png') }}" alt="" />3
-                                            </div>
-                                            <div class="grid-baths">
-                                                <img src="{{ asset('images/bathrooms-icon.png') }}" alt="" />1
+
+                                            <div class="grid-rooms"
+                                                style="float: right; padding-right: 15px; text-align: right">
+                                                {{ $project->name }}
                                             </div>
                                         </div>
-
                                     </div>
                                     <div class="grid-offer-back">
-                                        <div id="grid-map1" class="grid-offer-map"></div>
+                                        <div id="grid-map1" class="grid-offer-map">
+                                            {!! $project->address_location !!}
+                                        </div>
                                         <div class="button">
-                                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                                <span>read more</span>
+                                            <a href="{{ route('project', $project->id) }}" class="button-primary">
+                                                <span>تفاصيل المشروع</span>
                                                 <div class="button-triangle"></div>
                                                 <div class="button-triangle2"></div>
                                                 <div class="button-icon"><i class="fa fa-search"></i></div>
@@ -536,165 +539,58 @@
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
                     </div>
                     <div class="margin-top-45"></div>
                 </div>
                 <div class="col-xs-12 col-md-3">
+                    <form action="" method="get">
+
                     <div class="sidebar">
-                        <h3 class="sidebar-title">narrow search<span class="special-color">.</span></h3>
+                        <h3 class="sidebar-title">البحث<span class="special-color">.</span></h3>
                         <div class="title-separator-primary"></div>
 
                         <div class="sidebar-select-cont">
-                            <select name="transaction1" class="bootstrap-select" title="Transaction:" multiple>
-                                <option>For sale</option>
-                                <option>For rent</option>
-                            </select>
-                            <select name="conuntry1" class="bootstrap-select" title="Country:" multiple
-                                data-actions-box="true">
-                                <option>United States</option>
-                                <option>Canada</option>
-                                <option>Mexico</option>
-                            </select>
-                            <select name="city1" class="bootstrap-select" title="City:" multiple
-                                data-actions-box="true">
-                                <option>New York</option>
-                                <option>Los Angeles</option>
-                                <option>Chicago</option>
-                                <option>Houston</option>
-                                <option>Philadelphia</option>
-                                <option>Phoenix</option>
-                                <option>Washington</option>
-                                <option>Salt Lake Cty</option>
-                                <option>Detroit</option>
-                                <option>Boston</option>
-                            </select>
-                            <select name="location1" class="bootstrap-select" title="Location:" multiple
-                                data-actions-box="true">
-                                <option>Some location 1</option>
-                                <option>Some location 2</option>
-                                <option>Some location 3</option>
-                                <option>Some location 4</option>
+                            <select name="category_id" class="bootstrap-select" title="التصنيف" multiple>
+                                @foreach ($category_list as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="adv-search-range-cont">
-                            <label for="slider-range-price-sidebar-value" class="adv-search-label">Price:</label>
-                            <span>$</span>
-                            <input type="text" id="slider-range-price-sidebar-value" readonly
-                                class="adv-search-amount">
+                            <label for="slider-range-price-sidebar-value" class="adv-search-label">السعر:</label>
+                            <span></span>
+                            <input type="text" name="price" id="slider-range-price-sidebar-value" readonly class="adv-search-amount">
                             <div class="clearfix"></div>
-                            <div id="slider-range-price-sidebar" data-min="0" data-max="300000" class="slider-range">
+                            <div id="slider-range-price-sidebar" data-min="0" data-max="{{ $max_price }}" class="slider-range">
                             </div>
                         </div>
                         <div class="adv-search-range-cont">
-                            <label for="slider-range-area-sidebar-value" class="adv-search-label">Area:</label>
+                            <label for="slider-range-area-sidebar-value" class="adv-search-label">المساحة:</label>
                             <span>m<sup>2</sup></span>
-                            <input type="text" id="slider-range-area-sidebar-value" readonly
-                                class="adv-search-amount">
+                            <input type="text" name="area" id="slider-range-area-sidebar-value" readonly class="adv-search-amount">
                             <div class="clearfix"></div>
-                            <div id="slider-range-area-sidebar" data-min="0" data-max="180" class="slider-range">
-                            </div>
+                            <div id="slider-range-area-sidebar" data-min="0" data-max="{{ $max_area }}" class="slider-range"></div>
                         </div>
                         <div class="adv-search-range-cont">
-                            <label for="slider-range-bedrooms-sidebar-value" class="adv-search-label">Bedrooms:</label>
-                            <input type="text" id="slider-range-bedrooms-sidebar-value" readonly
+                            <label for="slider-range-bedrooms-sidebar-value" class="adv-search-label">الغرف:</label>
+                            <input type="text" name="room_count" id="slider-range-bedrooms-sidebar-value" readonly
                                 class="adv-search-amount">
                             <div class="clearfix"></div>
-                            <div id="slider-range-bedrooms-sidebar" data-min="1" data-max="10" class="slider-range">
-                            </div>
-                        </div>
-                        <div class="adv-search-range-cont">
-                            <label for="slider-range-bathrooms-sidebar-value" class="adv-search-label">Bathrooms:</label>
-                            <input type="text" id="slider-range-bathrooms-sidebar-value" readonly
-                                class="adv-search-amount">
-                            <div class="clearfix"></div>
-                            <div id="slider-range-bathrooms-sidebar" data-min="1" data-max="4" class="slider-range">
+                            <div id="slider-range-bedrooms-sidebar" data-min="1" data-max="{{ $max_room_count }}" class="slider-range">
                             </div>
                         </div>
                         <div class="sidebar-search-button-cont">
-                            <a href="#" class="button-primary">
-                                <span>search</span>
+                            <button type="submit" class="button-primary">
+                                <span>ابحث</span>
                                 <div class="button-triangle"></div>
                                 <div class="button-triangle2"></div>
                                 <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                        <div class="sidebar-title-cont">
-                            <h4 class="sidebar-title">featured offers<span class="special-color">.</span></h4>
-                            <div class="title-separator-primary"></div>
-                        </div>
-                        <div class="sidebar-featured-cont">
-                            <div class="sidebar-featured">
-                                <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
-                                    <img src="{{ asset('images/sidebar-featured1.jpg') }}" alt="" />
-                                    <div class="sidebar-featured-type">
-                                        <div class="sidebar-featured-estate">A</div>
-                                        <div class="sidebar-featured-transaction">S</div>
-                                    </div>
-                                </a>
-                                <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html">Fort
-                                        Collins, Colorado 80523, USA</a></div>
-                                <div class="sidebar-featured-price">$320000</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="sidebar-featured">
-                                <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
-                                    <img src="{{ asset('images/sidebar-featured2.jpg') }}" alt="" />
-                                    <div class="sidebar-featured-type">
-                                        <div class="sidebar-featured-estate">A</div>
-                                        <div class="sidebar-featured-transaction">S</div>
-                                    </div>
-                                </a>
-                                <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html">West
-                                        Fourth Street, New York 10003, USA</a></div>
-                                <div class="sidebar-featured-price">$350000</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="sidebar-featured">
-                                <a class="sidebar-featured-image" href="estate-details-right-sidebar.html">
-                                    <img src="{{ asset('images/sidebar-featured3.jpg') }}" alt="" />
-                                    <div class="sidebar-featured-type">
-                                        <div class="sidebar-featured-estate">A</div>
-                                        <div class="sidebar-featured-transaction">S</div>
-                                    </div>
-                                </a>
-                                <div class="sidebar-featured-title"><a href="estate-details-right-sidebar.html">E. Elwood
-                                        St. Phoenix, AZ 85034, USA</a></div>
-                                <div class="sidebar-featured-price">$410000</div>
-                                <div class="clearfix"></div>
-                            </div>
-                        </div>
-                        <div class="sidebar-title-cont">
-                            <h4 class="sidebar-title">latest news<span class="special-color">.</span></h4>
-                            <div class="title-separator-primary"></div>
-                        </div>
-                        <div class="sidebar-blog-cont">
-                            <article>
-                                <a href="blog-right-sidebar.html"><img src="{{ asset('images/footer-blog1.jpg') }}" alt=""
-                                        class="sidebar-blog-image" /></a>
-                                <div class="sidebar-blog-title"><a href="blog-right-sidebar.html">This post title, lorem
-                                        ipsum dolor sit</a></div>
-                                <div class="sidebar-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </article>
-                            <article>
-                                <a href="blog-right-sidebar.html"><img src="{{ asset('images/footer-blog2.jpg') }}" alt=""
-                                        class="sidebar-blog-image" /></a>
-                                <div class="sidebar-blog-title"><a href="blog-right-sidebar.html">This post title, lorem
-                                        ipsum dolor sit</a></div>
-                                <div class="sidebar-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </article>
-                            <article>
-                                <a href="blog-right-sidebar.html"><img src="{{ asset('images/footer-blog3.jpg') }}" alt=""
-                                        class="sidebar-blog-image" /></a>
-                                <div class="sidebar-blog-title"><a href="blog-right-sidebar.html">This post title, lorem
-                                        ipsum dolor sit</a></div>
-                                <div class="sidebar-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </article>
+                            </button>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

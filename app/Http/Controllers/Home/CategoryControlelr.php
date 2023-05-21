@@ -22,9 +22,11 @@ class CategoryControlelr extends Controller
         return view('home.categories', compact('categories', 'category_list', 'max_price', 'max_room_count', 'max_area'));
     }
 
-   public function show($id)
+   public function show(Request $request, $id)
    {
-
+    if ($request->category_id) {
+        $id=$request->category_id;
+    }
     $category=Category::find($id);
     if ($category) {
 
@@ -32,7 +34,13 @@ class CategoryControlelr extends Controller
         $max_price=Apartment::max('price');
         $max_room_count=Apartment::max('room_count');
         $max_area=Apartment::max('area');
-    $projects=Project::where('category_id',$id)->orderBy('sort_id', 'asc')->paginate(6);
+        // dd($request->price);
+    $projects=Project::where('category_id',$id)
+        ->whenPrice(request()->price)
+        ->whenRoom(request()->room_count)
+        ->whenArea(request()->area)
+        ->orderBy('sort_id', 'asc')
+        ->paginate(6);
     return view('home.category',compact('category','projects',  'category_list', 'max_price', 'max_room_count', 'max_area'));
 
     } else {

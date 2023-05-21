@@ -76,13 +76,6 @@
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </div>
-                                            {{-- <div class="price-grid-cont">
-											<div class="grid-price-label pull-left">Price:</div>
-											<div class="grid-price pull-right">
-												$ 320 000
-											</div>
-											<div class="clearfix"></div>
-										</div> --}}
                                             <div class="grid-offer-params">
 
                                                 <div class="grid-rooms"
@@ -118,6 +111,8 @@
                 </div>
 
                 <div class="col-xs-12 col-md-3">
+                    <form action="" method="get">
+
                     <div class="sidebar">
                         <h3 class="sidebar-title">البحث<span class="special-color">.</span></h3>
                         <div class="title-separator-primary"></div>
@@ -153,14 +148,15 @@
                             </div>
                         </div>
                         <div class="sidebar-search-button-cont">
-                            <a href="#" class="button-primary">
+                            <button type="submit" class="button-primary">
                                 <span>ابحث</span>
                                 <div class="button-triangle"></div>
                                 <div class="button-triangle2"></div>
                                 <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
+                            </button>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>
