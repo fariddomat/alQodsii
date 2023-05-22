@@ -45,22 +45,17 @@
 
 
 <!-- jQuery  -->
-<script type="text/javascript" src="{{ asset('js/jQuery/jquery.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jQuery/jquery-ui.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jQuery/jquery.min.js') }}" defer></script>
+<script type="text/javascript" src="{{ asset('js/jQuery/jquery-ui.min.js') }}" defer></script>
 
 <!-- Bootstrap-->
-<script type="text/javascript" src="{{ asset('bootstrap/bootstrap.min.js') }}"></script>
-
-<!-- Google Maps -->
-<script type="text/javascript"
-    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDfDCV5hXiPamCIT8_vwGXuzimLQ9MF76g&amp;sensor=false&amp;libraries=places">
-</script>
+<script type="text/javascript" src="{{ asset('bootstrap/bootstrap.min.js') }}" defer></script>
 
 <!-- plugins script -->
-<script type="text/javascript" src="{{ asset('js/plugins.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/plugins.js') }}" defer></script>
 
 <!-- template scripts -->
 {{-- <script type="text/javascript" src="{{ asset('mail/validate.js') }}"></script> --}}
-<script type="text/javascript" src="{{ asset('js/apartment.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/apartment.js') }}" defer></script>
 
 @yield('scripts')

@@ -8,8 +8,8 @@
                 <div class="col-lg-5" style="">
                     <div class="user-all-content">
                         <div class="section-title-two text-center"><h1 style="color: white">@lang('site.login') <b class="section-color2">إلى @lang('site.Admin_panel')</b></h1>
-                            <h3 class="section-span-bg2" style="color: white">@lang('site.login')</h3>
-                            
+                            <h3 class="section-span-bg2 margin-top-15" style="color: white">@lang('site.login')</h3>
+
                         </div>
                     </div>
                 </div>

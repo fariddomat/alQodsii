@@ -78,6 +78,13 @@
                                                             class="fa fa-trash" style="position: relative;"></i></button>
                                                 </form>
 
+
+                                                <a href="{{ route('admin.projects.clone', $project->id) }}" type="button"
+                                                    class="btn btn-icon btn-success mr-1"
+                                                    style="  min-width: 100px;">نسخ <i class="fa fa-copy"
+                                                        style="position: relative;"></i></a>
+
+
                                             </td>
                                         </tr>
                                     @endforeach

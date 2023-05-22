@@ -16,6 +16,7 @@ Route::prefix('admin')
             Route::resource('categories', 'CategoryController');
 
             Route::resource('projects', 'ProjectController');
+            Route::get('/projects/{id}/clone', 'ProjectController@clone')->name('projects.clone');
             Route::post('projects/sortable', 'ProjectController@sort');
 
             Route::resource('properties', 'PropertieController');

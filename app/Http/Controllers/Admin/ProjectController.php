@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Mail as FacadesMail;
 use Session;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 class ProjectController extends Controller
 {
@@ -33,6 +34,59 @@ class ProjectController extends Controller
         $projects = Project::orderBy('sort_id', 'asc')->whenSearch(request()->search)
             ->paginate(30);
         return view('admin.projects.index', compact('projects'));
+    }
+
+    public function clone($id)
+    {
+        $project = Project::findOrFail($id);
+        $project->load('apartments', 'floors', 'propertie', 'facility');
+
+        // replicate() will take care of those
+        $clone = $project->replicate();
+
+        $clone->push();
+
+        // Copy the apartments
+        foreach ($project->apartments as $apartment) {
+            $cloneApartment = $apartment->replicate();
+            $clone->apartments()->save($cloneApartment);
+        }
+
+        // Copy the floors
+        foreach ($project->floors as $floor) {
+            $cloneFloor = $floor->replicate();
+            $clone->floors()->save($cloneFloor);
+        }
+
+        // Copy the floors
+        foreach ($project->projectImages as $projectImage) {
+            $cloneProjectImage = $projectImage->replicate();
+            $clone->projectImages()->save($cloneProjectImage);
+        }
+
+
+        // Copy the property
+        if ($project->propertie) {
+            $cloneProperty = $project->propertie->replicate();
+            $clone->propertie()->save($cloneProperty);
+        }
+
+        // Copy the facility
+        if ($project->facility) {
+            $cloneFacility = $project->facility->replicate();
+            $clone->facility()->save($cloneFacility);
+        }
+
+
+        $sourcePath = storage_path('app/public/images/' . $project->id); // Path to the source folder
+        $destinationPath = storage_path('app/public/images/' . $clone->id); // Path to the destination folder
+
+        // Copy the directory to the destination folder
+        File::copyDirectory($sourcePath, $destinationPath);
+
+        session()->flash('success', 'Successfully Cloned !');
+
+        return redirect()->back();
     }
 
     /**
@@ -58,7 +112,7 @@ class ProjectController extends Controller
             $request->validate([
                 'category' => 'required',
                 'name' => 'required|unique:projects,name',
-                'date_of_build'=> 'required',
+                'date_of_build' => 'required',
                 'address' => 'required',
                 'scheme_name' => 'required',
                 'status' => 'required',
@@ -87,7 +141,7 @@ class ProjectController extends Controller
             $project = Project::create([
                 'category_id' => $request->category,
                 'name' => $request->name,
-                'date_of_build'=> $request->date_of_build,
+                'date_of_build' => $request->date_of_build,
                 'address' => $request->address,
                 'address_location' => $request->address_location,
                 'scheme_name' => $request->scheme_name,
@@ -192,7 +246,7 @@ class ProjectController extends Controller
 
                 'category' => 'required',
                 'name' => 'required|unique:projects,name,' . $id,
-                'date_of_build'=> 'required',
+                'date_of_build' => 'required',
                 'address' => 'required',
                 'scheme_name' => 'required',
                 // 'floors_count' => 'required|numeric|min:1',
@@ -265,7 +319,7 @@ class ProjectController extends Controller
             $project->update([
                 'category_id' => $request->category,
                 'name' => $request->name,
-                'date_of_build'=> $request->date_of_build,
+                'date_of_build' => $request->date_of_build,
                 'address' => $request->address,
                 'address_location' => $request->address_location,
                 'scheme_name' => $request->scheme_name,

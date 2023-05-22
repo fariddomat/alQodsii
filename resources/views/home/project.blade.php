@@ -44,7 +44,7 @@
                             <div class="">
                                 <!-- Slides -->
                                 <div class="">
-                                    <img class="" src="{{ $project->image_path }}" style="width: 100%" />
+                                    <img class="" src="{{ $project->poster_path }}" style="width: 100%" />
                                 </div>
                             </div>
 
