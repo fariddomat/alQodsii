@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Home;
 
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
+use App\Models\About;
+use App\Models\Apartment;
+use App\Models\Category;
 use App\Models\ProfileDownload;
 use App\Models\Project;
 use App\Models\Promoter;
@@ -17,9 +20,15 @@ class HomeController extends Controller
     {
 
         $projects = Project::latest()->get();
-        // $pending_projects=Project::where('status','pending')->latest()->limit(4)->get();
+
+        $category_list=Category::all();
+        $max_price=Apartment::max('price');
+        $max_room_count=Apartment::max('room_count');
+        $max_area=Apartment::max('area');
+        $about=About::first();
+
         $count = Project::count();
-        return view('home.index', compact('projects', 'count'));
+        return view('home.index', compact('projects', 'count', 'category_list', 'max_price', 'max_room_count', 'max_area', 'about'));
     }
 
     public function contact(Request $request)

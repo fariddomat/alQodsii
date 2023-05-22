@@ -1,5 +1,17 @@
 @extends('home._layouts._app')
-
+@section('scripts')
+    <script>
+        $(window).on('load', function() {
+            var maxHeight = 0;
+            $('.grid-offer-text').each(function() {
+                if ($(this).height() > maxHeight) {
+                    maxHeight = $(this).height();
+                }
+            });
+            $('.grid-offer-text').height(maxHeight);
+        });
+    </script>
+@endsection
 @section('content')
     <section class="no-padding adv-search-section">
         <!-- Slider main container -->
@@ -23,108 +35,109 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide swiper-lazy" data-background="images/slides/1.jpg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-8 col-xs-offset-2 animated fadeInDown slide2-desc slide2-desc-1">
-                                <h1 class="second-color">Fort Collins, Colorado 80523<span class="special-color">.</span>
-                                </h1>
-                                <div class="clearfix"></div>
-                                <p class="swiper2-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="swiper2-buttons margin-top-45">
-                                    <div class="swiper2-price-button">$320 000</div>
-
-                                    <a href="estate-details-right-sidebar.html" class="button-primary">
-                                        <span>read more</span>
-                                        <div class="button-triangle"></div>
-                                        <div class="button-triangle2"></div>
-                                        <div class="button-icon"><i class="fa fa-search"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/1.jpg') }}">
                     <div class="slider-overlay"></div>
                 </div>
-                <div class="swiper-slide swiper-lazy" data-background="images/slides/2.jpg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-8 col-xs-offset-2 animated slide2-desc slide2-desc-2">
-                                <h1 class="second-color">West Fourth Street, New York 10003<span
-                                        class="special-color">.</span></h1>
-                                <div class="clearfix"></div>
-                                <p class="swiper2-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="swiper2-buttons margin-top-45">
-                                    <div class="swiper2-price-button">$550 000</div>
-
-                                    <a href="estate-details-right-sidebar.html" class="button-primary">
-                                        <span>read more</span>
-                                        <div class="button-triangle"></div>
-                                        <div class="button-triangle2"></div>
-                                        <div class="button-icon"><i class="fa fa-search"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/2.jpg') }}">
                     <div class="slider-overlay"></div>
-                    <div class="video-slide">
-                        <video poster="images/slides/2.jpg" preload="auto" loop autoplay muted>
-                            <source src='images/slides/2.mp4' type='video/mp4' />
-                        </video>
-                    </div>
                 </div>
-                <div class="swiper-slide swiper-lazy" data-background="images/slides/3.jpg">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xs-8 col-xs-offset-2 animated slide2-desc slide2-desc-3">
-                                <h1 class="second-color">E. Elwood St. Phoenix, AZ 85034<span class="special-color">.</span>
-                                </h1>
-                                <div class="clearfix"></div>
-                                <p class="swiper2-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                <div class="swiper2-buttons margin-top-45">
-                                    <div class="swiper2-price-button">$395 000</div>
-
-                                    <a href="estate-details-right-sidebar.html" class="button-primary">
-                                        <span>read more</span>
-                                        <div class="button-triangle"></div>
-                                        <div class="button-triangle2"></div>
-                                        <div class="button-icon"><i class="fa fa-search"></i></div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/3.jpg') }}">
                     <div class="slider-overlay"></div>
                 </div>
             </div>
         </div>
-
-        <form class="simple-search-form" action="#">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="simple-search-cont">
-                            <select name="transaction1" class="bootstrap-select" title="Transaction:" multiple>
-                                <option>For sale</option>
-                                <option>For rent</option>
-                            </select>
-                            <input type="text" name="simple-search" class="simple-search-input"
-                                placeholder="... Write localization, eg. New York ..." />
-                            <a href="estate-details-right-sidebar.html" class="button-primary pull-right">
-                                <span>search</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                            <div class="clearfix"></div>
+        <form action="{{ route('category', ['id' => 1]) }}" method="get">
+            <div class="adv-search-cont">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-11 adv-search-icons">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs adv-search-tabs" role="tablist">
+                                <li role="presentation" class="active" data-toggle="tooltip" data-placement="top"
+                                    title="apartments"><a href="#apartments" aria-controls="apartments" role="tab"
+                                        data-toggle="tab" id="adv-search-tab1"><i class="fa fa-building"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-1 visible-lg">
+                            <a id="adv-search-hide" href="#"><i class="jfont">&#xe801;</i></a>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="container">
+                        <div class="row tab-content">
+                            <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade in active"
+                                id="apartments">
+
+                                <div class="row" dir="rtl">
+                                    <div class="col-xs-12 col-sm-6 col-lg-3" style="float: right">
+                                        <select name="category_id" class="bootstrap-select" title="التصنيف" multiple>
+                                            @foreach ($category_list as $category)
+                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                        <div class="adv-search-range-cont">
+                                            <label for="slider-range-price-sidebar-value"
+                                                class="adv-search-label">السعر:</label>
+                                            <span></span>
+                                            <input type="text" name="price" id="slider-range-price-sidebar-value"
+                                                readonly class="adv-search-amount">
+                                            <div class="clearfix"></div>
+                                            <div id="slider-range-price-sidebar" data-min="0"
+                                                data-max="{{ $max_price }}" class="slider-range">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                        <div class="adv-search-range-cont">
+                                            <label for="slider-range-area-sidebar-value"
+                                                class="adv-search-label">المساحة:</label>
+                                            <span>m<sup>2</sup></span>
+                                            <input type="text" name="area" id="slider-range-area-sidebar-value"
+                                                readonly class="adv-search-amount">
+                                            <div class="clearfix"></div>
+                                            <div id="slider-range-area-sidebar" data-min="0"
+                                                data-max="{{ $max_area }}" class="slider-range"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-lg-4">
+                                        <div class="adv-search-range-cont">
+                                            <label for="slider-range-bedrooms-sidebar-value"
+                                                class="adv-search-label">الغرف:</label>
+                                            <input type="text" name="room_count"
+                                                id="slider-range-bedrooms-sidebar-value" readonly
+                                                class="adv-search-amount">
+                                            <div class="clearfix"></div>
+                                            <div id="slider-range-bedrooms-sidebar" data-min="1"
+                                                data-max="{{ $max_room_count }}" class="slider-range">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-3 col-md-offset-6 col-lg-offset-9 adv-search-button-cont">
+                            <button type="submit" class="button-primary pull-right">
+                                <span>بحث</span>
+                                <div class="button-triangle"></div>
+                                <div class="button-triangle2"></div>
+                                <div class="button-icon"><i class="fa fa-search"></i></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        </div>
         </form>
     </section>
 
@@ -183,776 +196,108 @@
         </div>
     </section>
 
-    <section class="featured-offers parallax">
-
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-9 col-sm-push-3">
-                    <h5 class="subtitle-margin second-color">highly recommended</h5>
-                    <h1 class="second-color">featured offers<span class="special-color">.</span></h1>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-sm-pull-9">
-                    <a href="#" class="navigation-box navigation-box-prev" id="featured-offers-owl-prev">
-                        <div class="navigation-triangle"></div>
-                        <div class="navigation-box-icon"><i class="jfont">&#xe800;</i></div>
-                    </a>
-                    <a href="#" class="navigation-box navigation-box-next" id="featured-offers-owl-next">
-                        <div class="navigation-triangle"></div>
-                        <div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div>
-                    </a>
-                </div>
-                <div class="col-xs-12">
-                    <div class="title-separator-secondary"></div>
-                </div>
-            </div>
-        </div>
-        <div class="featured-offers-container">
-            <div class="owl-carousel" id="featured-offers-owl">
-                <div class="featured-offer-col wow fadeInLeft">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images/featured-offer1.jpg" alt="" />
-                            <div class="type-container">
-                                <div class="estate-type">apartment</div>
-                                <div class="transaction-type">sale</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">250 South Dr, Fort Collins, Colorado 80523, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images/area-icon.png" alt="" />54m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images/rooms-icon.png" alt="" />3
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images/bathrooms-icon.png" alt="" />1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $320000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map1" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col wow fadeInUp">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images/featured-offer2.jpg" alt="" />
-                            <div class="type-container">
-                                <div class="estate-type">apartment</div>
-                                <div class="transaction-type">sale</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">West Fourth Street, New York 10003, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images/area-icon.png" alt="" />70m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images/rooms-icon.png" alt="" />4
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images/bathrooms-icon.png" alt="" />1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $350000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map2" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col wow fadeInRight">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images/featured-offer3.jpg" alt="" />
-                            <div class="type-container">
-                                <div class="estate-type">house</div>
-                                <div class="transaction-type">sale</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">500 E. Elwood St. Phoenix, AZ 85034, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images/area-icon.png" alt="" />250m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images/rooms-icon.png" alt="" />7
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images/bathrooms-icon.png" alt="" />3
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $650000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map3" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images/featured-offer4.jpg" alt="" />
-                            <div class="type-container">
-                                <div class="estate-type">apartment</div>
-                                <div class="transaction-type">sale</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">N. Willamette Blvd., Portland, OR 97203-5798, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images/area-icon.png" alt="" />40m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images/rooms-icon.png" alt="" />2
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images/bathrooms-icon.png" alt="" />1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $299000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map4" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images/featured-offer5.jpg" alt="" />
-                            <div class="type-container">
-                                <div class="estate-type">apartment</div>
-                                <div class="transaction-type">sale</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">One Brookings Drive St. Louis, Missouri 63130-4899, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images/area-icon.png" alt="" />80m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images/rooms-icon.png" alt="" />3
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images/bathrooms-icon.png" alt="" />1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $390000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map5" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images/featured-offer6.jpg" alt="" />
-                            <div class="type-container">
-                                <div class="estate-type">apartment</div>
-                                <div class="transaction-type">sale</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">One Neumann Drive Aston, Philadelphia 19014-1298, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images/area-icon.png" alt="" />54m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images/rooms-icon.png" alt="" />3
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images/bathrooms-icon.png" alt="" />1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $320000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map6" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="featured-offer-col">
-                    <div class="featured-offer-front">
-                        <div class="featured-offer-photo">
-                            <img src="images/featured-offer7.jpg" alt="" />
-                            <div class="type-container">
-                                <div class="estate-type">house</div>
-                                <div class="transaction-type">sale</div>
-                            </div>
-                        </div>
-                        <div class="featured-offer-text">
-                            <h4 class="featured-offer-title">200 South Dr, Fort Collins, Colorado 80523, USA</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.</p>
-                        </div>
-                        <div class="featured-offer-params">
-                            <div class="featured-area">
-                                <img src="images/area-icon.png" alt="" />54m<sup>2</sup>
-                            </div>
-                            <div class="featured-rooms">
-                                <img src="images/rooms-icon.png" alt="" />3
-                            </div>
-                            <div class="featured-baths">
-                                <img src="images/bathrooms-icon.png" alt="" />1
-                            </div>
-                        </div>
-                        <div class="featured-price">
-                            $320000
-                        </div>
-                    </div>
-                    <div class="featured-offer-back">
-                        <div id="featured-map7" class="featured-offer-map"></div>
-                        <div class="button">
-                            <a href="estate-details-right-sidebar.html" class="button-primary">
-                                <span>read more</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="team section-light section-both-shadow">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-9 col-sm-push-3">
-                    <h5 class="subtitle-margin">meet our</h5>
-                    <h1>proffesional team<span class="special-color">.</span></h1>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-sm-push-9">
-                    <a href="#" class="navigation-box navigation-box-prev" id="team-owl-prev">
-                        <div class="navigation-triangle"></div>
-                        <div class="navigation-box-icon"><i class="jfont">&#xe800;</i></div>
-                    </a>
-                    <a href="#" class="navigation-box navigation-box-next" id="team-owl-next">
-                        <div class="navigation-triangle"></div>
-                        <div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div>
-                    </a>
-                </div>
-                <div class="col-xs-12">
-                    <div class="title-separator-primary"></div>
-                </div>
-            </div>
-        </div>
-        <div class="team-container animated-section">
-            <div class="owl-carousel" id="team-owl">
-                <div class="team-member-cont">
-                    <div class="team-member wow fadeInLeft">
-                        <div class="team-photo">
-                            <img src="images/agent1.jpg" alt="" />
-                            <div class="big-triangle"></div>
-                            <div class="big-triangle2"></div>
-                            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i
-                                    class="jfont">&#xe804;</i></a>
-                            <div class="team-description">
-                                <div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-phone"></i>
-                                        </span>
-                                        <span class="pull-right">(0)-123-456-789</span>
-                                    </div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-envelope fa-sm"></i>
-                                        </span>
-                                        <span class="pull-right">apartment@domain.tld</span>
-                                    </div>
-                                    <div class="team-social-cont">
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-skype"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="team-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-name">
-                            <h5>manager</h5>
-                            <h4>Mark Smith<span class="special-color">.</span></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member-cont">
-                    <div class="team-member wow fadeInUp">
-                        <div class="team-photo">
-                            <img src="images/agent2.jpg" alt="" />
-                            <div class="big-triangle"></div>
-                            <div class="big-triangle2"></div>
-                            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i
-                                    class="jfont">&#xe804;</i></a>
-                            <div class="team-description">
-                                <div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-phone"></i>
-                                        </span>
-                                        <span class="pull-right">(0)-123-456-789</span>
-                                    </div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-envelope fa-sm"></i>
-                                        </span>
-                                        <span class="pull-right">apartment@domain.tld</span>
-                                    </div>
-                                    <div class="team-social-cont">
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-skype"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="team-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-name">
-                            <h5>Agent</h5>
-                            <h4>Michelle Jackson<span class="special-color">.</span></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member-cont">
-                    <div class="team-member wow fadeInUp">
-                        <div class="team-photo">
-                            <img src="images/agent3.jpg" alt="" />
-                            <div class="big-triangle"></div>
-                            <div class="big-triangle2"></div>
-                            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i
-                                    class="jfont">&#xe804;</i></a>
-                            <div class="team-description">
-                                <div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-phone"></i>
-                                        </span>
-                                        <span class="pull-right">(0)-123-456-789</span>
-                                    </div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-envelope fa-sm"></i>
-                                        </span>
-                                        <span class="pull-right">apartment@domain.tld</span>
-                                    </div>
-                                    <div class="team-social-cont">
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-skype"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="team-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-name">
-                            <h5>specialist</h5>
-                            <h4>Robert Duncan<span class="special-color">.</span></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member-cont">
-                    <div class="team-member wow fadeInRight">
-                        <div class="team-photo">
-                            <img src="images/agent4.jpg" alt="" />
-                            <div class="big-triangle"></div>
-                            <div class="big-triangle2"></div>
-                            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i
-                                    class="jfont">&#xe804;</i></a>
-                            <div class="team-description">
-                                <div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-phone"></i>
-                                        </span>
-                                        <span class="pull-right">(0)-123-456-789</span>
-                                    </div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-envelope fa-sm"></i>
-                                        </span>
-                                        <span class="pull-right">apartment@domain.tld</span>
-                                    </div>
-                                    <div class="team-social-cont">
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-skype"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="team-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-name">
-                            <h5>agent</h5>
-                            <h4>Veronica Green<span class="special-color">.</span></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member-cont">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="images/agent5.jpg" alt="" />
-                            <div class="big-triangle"></div>
-                            <div class="big-triangle2"></div>
-                            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i
-                                    class="jfont">&#xe804;</i></a>
-                            <div class="team-description">
-                                <div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-phone"></i>
-                                        </span>
-                                        <span class="pull-right">(0)-123-456-789</span>
-                                    </div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-envelope fa-sm"></i>
-                                        </span>
-                                        <span class="pull-right">apartment@domain.tld</span>
-                                    </div>
-                                    <div class="team-social-cont">
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-skype"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="team-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-name">
-                            <h5>agent</h5>
-                            <h4>Timothe Lee<span class="special-color">.</span></h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member-cont">
-                    <div class="team-member">
-                        <div class="team-photo">
-                            <img src="images/agent6.jpg" alt="" />
-                            <div class="big-triangle"></div>
-                            <div class="big-triangle2"></div>
-                            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i
-                                    class="jfont">&#xe804;</i></a>
-                            <div class="team-description">
-                                <div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-phone"></i>
-                                        </span>
-                                        <span class="pull-right">(0)-123-456-789</span>
-                                    </div>
-                                    <div class="team-desc-line">
-                                        <span class="team-icon-circle pull-right">
-                                            <i class="fa fa-envelope fa-sm"></i>
-                                        </span>
-                                        <span class="pull-right">apartment@domain.tld</span>
-                                    </div>
-                                    <div class="team-social-cont">
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-facebook"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-google-plus"></i>
-                                            </a>
-                                        </div>
-                                        <div class="team-social">
-                                            <a class="team-icon-circle" href="#">
-                                                <i class="fa fa-skype"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p class="team-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-name">
-                            <h5>agent</h5>
-                            <h4>Joanne Doe<span class="special-color">.</span></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="testimonials parallax">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-sm-9 col-sm-push-3">
-                    <h5 class="subtitle-margin second-color">recommendations</h5>
-                    <h1 class="second-color">our clients say<span class="special-color">.</span></h1>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-sm-push-9">
-                    <a href="#" class="navigation-box navigation-box-prev" id="testimonials-owl-prev">
-                        <div class="navigation-triangle"></div>
-                        <div class="navigation-box-icon"><i class="jfont">&#xe800;</i></div>
-                    </a>
-                    <a href="#" class="navigation-box navigation-box-next" id="testimonials-owl-next">
-                        <div class="navigation-triangle"></div>
-                        <div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div>
-                    </a>
+                <div class="col-xs-12 col-sm-12">
+                    <h1 class="second-color">من نحن؟<span class="special-color">.</span></h1>
                 </div>
                 <div class="col-xs-12">
-                    <div class="title-separator-secondary"></div>
+                    <div class="title-separator-secondary" style="background-color: #fff0;"></div>
                 </div>
             </div>
         </div>
 
         <div class="container margin-top-90">
             <div class="row">
-                <div class="col-xs-12 owl-carousel" id="testimonials-owl">
+                <div class="col-xs-12" id="testimonials-owl">
                     <div class="testimonial">
-                        <img src="images/testimonials1.jpg" alt="" class="testimonials-photo" />
-                        <div class="testimonials-content">
-                            <p class="lead">Smith’s Family</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <img src="{{ asset('home/images/who_are_we.jpg') }}" alt="" class="testimonials-photo" />
+                        <div class="testimonials-content margin-top-45" style="  min-height: 200px;">
+                            <p class="lead">{!! $about->who_are_we !!}</p>
 
                         </div>
                         <div class="big-triangle">
                         </div>
                         <div class="big-icon"><i class="fa fa-quote-right fa-lg"></i></div>
                     </div>
-                    <div class="testimonial">
-                        <img src="images/testimonials2.jpg" alt="" class="testimonials-photo" />
-                        <div class="testimonials-content">
-                            <p class="lead">Meggy Johnson</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="big-triangle">
-                            </div>
-                            <div class="big-icon"><i class="fa fa-quote-right fa-lg"></i></div>
-                        </div>
-                    </div>
-                    <div class="testimonial">
-                        <img src="images/testimonials3.jpg" alt="" class="testimonials-photo" />
-                        <div class="testimonials-content">
-                            <p class="lead">Paola Brown &amp; Tommy</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="big-triangle">
-                            </div>
-                            <div class="big-icon"><i class="fa fa-quote-right fa-lg"></i></div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
         </div>
+
+
+    </section>
+
+    <section class=" parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <h1 class="second-color">رسالتنا<span class="special-color">.</span></h1>
+                </div>
+                <div class="col-xs-12">
+                    <div class="title-separator-secondary" style="background-color: #fff0;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container margin-top-90">
+            <div class="row">
+                <div class="col-xs-12" id="testimonials-owl">
+                    <div class="testimonial">
+                        <img src="{{ asset('home/images/massage.jpg') }}" alt="" class="testimonials-photo" style="float: right"/>
+                        <div class="testimonials-content margin-top-45" style="  min-height: 200px;">
+                            <p class="lead">{!! $about->massage !!}</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section class="testimonials parallax">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <h1 class="second-color">رؤيتنا<span class="special-color">.</span></h1>
+                </div>
+                <div class="col-xs-12">
+                    <div class="title-separator-secondary" style="background-color: #fff0;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container margin-top-90">
+            <div class="row">
+                <div class="col-xs-12" id="testimonials-owl">
+                    <div class="testimonial">
+                        <img src="{{ asset('home/images/vision.jpg') }}" alt="" class="testimonials-photo" />
+                        <div class="testimonials-content margin-top-45" style="  min-height: 200px;">
+                            <p class="lead">{!! $about->vision !!}</p>
+
+                        </div>
+                        <div class="big-triangle" style="right: 15px;">
+                        </div>
+                        <div class="big-icon" style="right: 25px;"><i class="fa fa-quote-right fa-lg"></i></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
     </section>
 
     <section class="section-light no-bottom-padding section-top-shadow">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-9 col-sm-push-3">
-                    <h5 class="subtitle-margin">hot</h5>
-                    <h1>new listings<span class="special-color">.</span></h1>
+                    <h1>آخر المشاريع<span class="special-color">.</span></h1>
                 </div>
                 <div class="col-xs-12 col-sm-3 col-sm-push-9">
                     <a href="#" class="navigation-box navigation-box-prev" id="grid-offers-owl-prev">
@@ -971,11 +316,13 @@
         </div>
         <div class="grid-offers-container">
             <div class="owl-carousel" id="grid-offers-owl">
-                <div class="grid-offer-col">
+                @if ($projects->count() > 0)
+                @foreach ($projects as $project)
+                <div class="grid-offer-col" style="">
                     <div class="grid-offer wow fadeInLeft">
                         <div class="grid-offer-front">
                             <div class="grid-offer-photo">
-                                <img src="images/grid-offer1.jpg" alt="" />
+                                <img src="{{ $project->poster_path }}" alt="" />
                                 <div class="type-container">
                                     <div class="estate-type">apartment</div>
                                     <div class="transaction-type">sale</div>
@@ -984,38 +331,24 @@
                             <div class="grid-offer-text">
                                 <i class="fa fa-map-marker grid-offer-localization"></i>
                                 <div class="grid-offer-h4">
-                                    <h4 class="grid-offer-title">34 Fort Collins, Colorado 80523, USA</h4>
-                                </div>
-                                <div class="clearfix"></div>
-                                <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et [...]</p>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="price-grid-cont">
-                                <div class="grid-price-label pull-right">Price:</div>
-                                <div class="grid-price pull-left">
-                                    $320000
+                                    <h4 class="grid-offer-title">{!! $project->address !!}</h4>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="grid-offer-params">
-                                <div class="grid-area">
-                                    <img src="images/area-icon.png" alt="" />54m<sup>2</sup>
-                                </div>
-                                <div class="grid-rooms">
-                                    <img src="images/rooms-icon.png" alt="" />3
-                                </div>
-                                <div class="grid-baths">
-                                    <img src="images/bathrooms-icon.png" alt="" />1
+                                <div class="grid-rooms" style="float: right; padding-right: 15px; text-align: right">
+                                    {{ $project->name }}
                                 </div>
                             </div>
 
                         </div>
                         <div class="grid-offer-back">
-                            <div id="grid-map1" class="grid-offer-map"></div>
+                            <div id="grid-map1" class="grid-offer-map">
+                                {!! $project->address_location !!}
+                            </div>
                             <div class="button">
                                 <a href="estate-details-right-sidebar.html" class="button-primary">
-                                    <span>read more</span>
+                                    <span>تفاصيل المشروع</span>
                                     <div class="button-triangle"></div>
                                     <div class="button-triangle2"></div>
                                     <div class="button-icon"><i class="fa fa-search"></i></div>
@@ -1024,422 +357,100 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid-offer-col">
-                    <div class="grid-offer wow fadeInUp">
-                        <div class="grid-offer-front">
-                            <div class="grid-offer-photo">
-                                <img src="images/grid-offer2.jpg" alt="" />
-                                <div class="type-container">
-                                    <div class="estate-type">apartment</div>
-                                    <div class="transaction-type">sale</div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-text">
-                                <i class="fa fa-map-marker grid-offer-localization"></i>
-                                <div class="grid-offer-h4">
-                                    <h4 class="grid-offer-title">West Fourth Street, New York 10003, USA</h4>
-                                </div>
-                                <div class="clearfix"></div>
-                                <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et [...]</p>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="price-grid-cont">
-                                <div class="grid-price-label pull-right">Price:</div>
-                                <div class="grid-price pull-left">
-                                    $299000
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="grid-offer-params">
-                                <div class="grid-area">
-                                    <img src="images/area-icon.png" alt="" />48m<sup>2</sup>
-                                </div>
-                                <div class="grid-rooms">
-                                    <img src="images/rooms-icon.png" alt="" />2
-                                </div>
-                                <div class="grid-baths">
-                                    <img src="images/bathrooms-icon.png" alt="" />1
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-offer-back">
-                            <div id="grid-map2" class="grid-offer-map"></div>
-                            <div class="button">
-                                <a href="estate-details-right-sidebar.html" class="button-primary">
-                                    <span>read more</span>
-                                    <div class="button-triangle"></div>
-                                    <div class="button-triangle2"></div>
-                                    <div class="button-icon"><i class="fa fa-search"></i></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-offer-col">
-                    <div class="grid-offer wow fadeInUp">
-                        <div class="grid-offer-front">
-                            <div class="grid-offer-photo">
-                                <img src="images/grid-offer3.jpg" alt="" />
-                                <div class="type-container">
-                                    <div class="estate-type">apartment</div>
-                                    <div class="transaction-type">sale</div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-text">
-                                <i class="fa fa-map-marker grid-offer-localization"></i>
-                                <div class="grid-offer-h4">
-                                    <h4 class="grid-offer-title">E. Elwood St. Phoenix, AZ 85034, USA</h4>
-                                </div>
-                                <div class="clearfix"></div>
-                                <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et [...]</p>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="price-grid-cont">
-                                <div class="grid-price-label pull-right">Price:</div>
-                                <div class="grid-price pull-left">
-                                    $400000
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="grid-offer-params">
-                                <div class="grid-area">
-                                    <img src="images/area-icon.png" alt="" />93m<sup>2</sup>
-                                </div>
-                                <div class="grid-rooms">
-                                    <img src="images/rooms-icon.png" alt="" />4
-                                </div>
-                                <div class="grid-baths">
-                                    <img src="images/bathrooms-icon.png" alt="" />2
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-offer-back">
-                            <div id="grid-map3" class="grid-offer-map"></div>
-                            <div class="button">
-                                <a href="estate-details-right-sidebar.html" class="button-primary">
-                                    <span>read more</span>
-                                    <div class="button-triangle"></div>
-                                    <div class="button-triangle2"></div>
-                                    <div class="button-icon"><i class="fa fa-search"></i></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-offer-col">
-                    <div class="grid-offer wow fadeInRight">
-                        <div class="grid-offer-front">
-                            <div class="grid-offer-photo">
-                                <img src="images/grid-offer4.jpg" alt="" />
-                                <div class="type-container">
-                                    <div class="estate-type">house</div>
-                                    <div class="transaction-type">sale</div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-text">
-                                <i class="fa fa-map-marker grid-offer-localization"></i>
-                                <div class="grid-offer-h4">
-                                    <h4 class="grid-offer-title">N. Willamette Blvd., Portland, OR 97203, USA</h4>
-                                </div>
-                                <div class="clearfix"></div>
-                                <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et [...]</p>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="price-grid-cont">
-                                <div class="grid-price-label pull-right">Price:</div>
-                                <div class="grid-price pull-left">
-                                    $800000
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="grid-offer-params">
-                                <div class="grid-area">
-                                    <img src="images/area-icon.png" alt="" />300m<sup>2</sup>
-                                </div>
-                                <div class="grid-rooms">
-                                    <img src="images/rooms-icon.png" alt="" />8
-                                </div>
-                                <div class="grid-baths">
-                                    <img src="images/bathrooms-icon.png" alt="" />3
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-offer-back">
-                            <div id="grid-map4" class="grid-offer-map"></div>
-                            <div class="button">
-                                <a href="estate-details-right-sidebar.html" class="button-primary">
-                                    <span>read more</span>
-                                    <div class="button-triangle"></div>
-                                    <div class="button-triangle2"></div>
-                                    <div class="button-icon"><i class="fa fa-search"></i></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-offer-col">
-                    <div class="grid-offer">
-                        <div class="grid-offer-front">
-                            <div class="grid-offer-photo">
-                                <img src="images/grid-offer5.jpg" alt="" />
-                                <div class="type-container">
-                                    <div class="estate-type">apartment</div>
-                                    <div class="transaction-type">sale</div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-text">
-                                <i class="fa fa-map-marker grid-offer-localization"></i>
-                                <div class="grid-offer-h4">
-                                    <h4 class="grid-offer-title">One Brookings Drive St. Louis, Missouri 63130, USA</h4>
-                                </div>
-                                <div class="clearfix"></div>
-                                <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et [...]</p>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="price-grid-cont">
-                                <div class="grid-price-label pull-right">Price:</div>
-                                <div class="grid-price pull-left">
-                                    $320000
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="grid-offer-params">
-                                <div class="grid-area">
-                                    <img src="images/area-icon.png" alt="" />50m<sup>2</sup>
-                                </div>
-                                <div class="grid-rooms">
-                                    <img src="images/rooms-icon.png" alt="" />2
-                                </div>
-                                <div class="grid-baths">
-                                    <img src="images/bathrooms-icon.png" alt="" />1
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-offer-back">
-                            <div id="grid-map5" class="grid-offer-map"></div>
-                            <div class="button">
-                                <a href="estate-details-right-sidebar.html" class="button-primary">
-                                    <span>read more</span>
-                                    <div class="button-triangle"></div>
-                                    <div class="button-triangle2"></div>
-                                    <div class="button-icon"><i class="fa fa-search"></i></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid-offer-col">
-                    <div class="grid-offer">
-                        <div class="grid-offer-front">
-                            <div class="grid-offer-photo">
-                                <img src="images/grid-offer7.jpg" alt="" />
-                                <div class="type-container">
-                                    <div class="estate-type">house</div>
-                                    <div class="transaction-type">sale</div>
-                                </div>
-                            </div>
-                            <div class="grid-offer-text">
-                                <i class="fa fa-map-marker grid-offer-localization"></i>
-                                <div class="grid-offer-h4">
-                                    <h4 class="grid-offer-title">One Neumann Drive Aston, Philadelphia 19014, USA</h4>
-                                </div>
-                                <div class="clearfix"></div>
-                                <p>Lorem ipsum dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et [...]</p>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="price-grid-cont">
-                                <div class="grid-price-label pull-right">Price:</div>
-                                <div class="grid-price pull-left">
-                                    $500000
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="grid-offer-params">
-                                <div class="grid-area">
-                                    <img src="images/area-icon.png" alt="" />210m<sup>2</sup>
-                                </div>
-                                <div class="grid-rooms">
-                                    <img src="images/rooms-icon.png" alt="" />6
-                                </div>
-                                <div class="grid-baths">
-                                    <img src="images/bathrooms-icon.png" alt="" />2
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-offer-back">
-                            <div id="grid-map6" class="grid-offer-map"></div>
-                            <div class="button">
-                                <a href="estate-details-right-sidebar.html" class="button-primary">
-                                    <span>read more</span>
-                                    <div class="button-triangle"></div>
-                                    <div class="button-triangle2"></div>
-                                    <div class="button-icon"><i class="fa fa-search"></i></div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+                @endif
             </div>
         </div>
 
     </section>
 
-    <section class="section-dark">
+    <section class="testimonials parallax">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12 col-lg-12">
-                    <h5 class="subtitle-margin">latest from</h5>
-                    <h1 class="">our blog<span class="special-color">.</span></h1>
+                <div class="col-xs-12 col-sm-12">
+                    <h1 class="second-color">سياسة الجودة والأمان<span class="special-color">.</span></h1>
                 </div>
                 <div class="col-xs-12">
-                    <div class="title-separator-primary"></div>
+                    <div class="title-separator-secondary" style="background-color: #fff0;"></div>
                 </div>
             </div>
         </div>
-        <div class="container blog-grid1-container">
+
+        <div class="container margin-top-90">
             <div class="row">
-                <div class="col-md-12 col-lg-6 blog-grid1-left-col wow fadeInLeft">
-                    <article class="blog-grid1-item zoom-cont">
-                        <div class="blog-grid1-post-content">
-                            <div class="blog-grid1-topline">
-                                <div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
-                                <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <a href="#" class="blog-grid1-title">
-                                <h4>It’s much cheaper to buy than to rent</h4>
-                            </a>
-                            <div class="blog-grid1-separator"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et. Lorem ipsum dolor sit amet...</p>
-                            <a href="#" class="blog-grid1-button">
-                                <span>read more</span>
-                                <div class="blog-grid1-triangle"></div>
-                            </a>
+                <div class="col-xs-12" id="testimonials-owl">
+                    <div class="testimonial">
+                        <img src="{{ asset('home/images/quality_safty.jpg') }}" alt="" class="testimonials-photo" style="width: 350px;"/>
+                        <div class="testimonials-content margin-top-45" style="  min-height: 200px; max-width:780px;">
+                            <p class="lead">{!! $about->quality_safty !!}</p>
+
                         </div>
-                        <figure class=""><a href="#"><img src="images/blog-grid1a.jpg" alt=""
-                                    class="zoom" /></a></figure>
-                    </article>
-                </div>
-                <div class="col-md-12 col-lg-6 blog-grid1-right-col wow fadeInRight">
-                    <article class="blog-grid1-item zoom-cont">
-                        <div class="blog-grid1-post-content">
-                            <div class="blog-grid1-topline">
-                                <div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
-                                <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <a href="#" class="blog-grid1-title">
-                                <h4>It’s much cheaper to buy than to rent</h4>
-                            </a>
-                            <div class="blog-grid1-separator"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et. Lorem ipsum dolor sit amet...</p>
-                            <a href="#" class="blog-grid1-button">
-                                <span>read more</span>
-                                <div class="blog-grid1-triangle"></div>
-                            </a>
-                        </div>
-                        <figure class=""><a href="#"><img src="images/blog-grid1b.jpg" alt=""
-                                    class="zoom" /></a></figure>
-                    </article>
-                </div>
-                <div class="col-md-12 col-lg-6 blog-grid1-left-col wow fadeInLeft">
-                    <article class="blog-grid1-item zoom-cont">
-                        <figure class=""><a href="#"><img src="images/blog-grid1e.jpg" alt=""
-                                    class="zoom" /></a></figure>
-                        <div class="blog-grid1-post-content">
-                            <div class="blog-grid1-topline">
-                                <div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
-                                <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <a href="#" class="blog-grid1-title">
-                                <h4>It’s much cheaper to buy than to rent</h4>
-                            </a>
-                            <div class="blog-grid1-separator"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et. Lorem ipsum dolor sit amet...</p>
-                            <a href="#" class="blog-grid1-button-right">
-                                <span>read more</span>
-                                <div class="blog-grid1-triangle"></div>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-md-12 col-lg-6 blog-grid1-right-col wow fadeInRight">
-                    <article class="blog-grid1-item zoom-cont">
-                        <figure class=""><a href="#"><img src="images/blog-grid1d.jpg" alt=""
-                                    class="zoom" /></a></figure>
-                        <div class="blog-grid1-post-content">
-                            <div class="blog-grid1-topline">
-                                <div class="blog-grid1-author pull-left"><i class="fa fa-user"></i>Admin</div>
-                                <div class="blog-grid1-date pull-right"><i class="fa fa-calendar-o"></i>28/09/15</div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <a href="#" class="blog-grid1-title">
-                                <h4>It’s much cheaper to buy than to rent</h4>
-                            </a>
-                            <div class="blog-grid1-separator"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et. Lorem ipsum dolor sit amet...</p>
-                            <a href="#" class="blog-grid1-button-right">
-                                <span>read more</span>
-                                <div class="blog-grid1-triangle"></div>
-                            </a>
-                        </div>
-                    </article>
+                    </div>
+
                 </div>
             </div>
         </div>
+
+
     </section>
 
     <section class="section-light top-padding-45 bottom-padding-45">
         <div class="container">
             <div class="row count-container">
-                <div class="col-xs-6 col-lg-3">
+                <div class="col-xs-6 col-lg-3" style="  height: 200px;">
                     <div class="number" id="number1">
                         <div class="number-img">
-                            <i class="fa fa-building"></i>
+                            <i class="fa fa-line-chart "></i>
                         </div>
-                        <span class="number-label text-color2">APARTMENTS</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="130"
+                        <span class="number-label text-color2">الحد الأعلى للأرباح التي سلمت</span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{setting('chart_0')}}"
                             data-speed="2000"></span>
+                            <span style="position: relative;
+                            top: -22px;
+                            left: 60px;
+                            font-size: 26px;">%</span>
                     </div>
                 </div>
-                <div class="col-xs-6 col-lg-3 number_border">
+                <div class="col-xs-6 col-lg-3 number_border" style="  height: 200px;">
                     <div class="number" id="number2">
                         <div class="number-img">
-                            <i class="fa fa-home"></i>
+                            <i class="fa fa-line-chart "></i>
                         </div>
-                        <span class="number-label text-color2">HOUSES</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="107"
+                        <span class="number-label text-color2">الحد الأدنى للأرباح في الشقق</span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{setting('chart_1')}}"
                             data-speed="2000"></span>
+                            <span style="position: relative;
+                            top: -22px;
+                            left: 60px;
+                            font-size: 26px;">%</span>
                     </div>
                 </div>
-                <div class="col-xs-6 col-lg-3 number_border3">
+                <div class="col-xs-6 col-lg-3 number_border3" style="  height: 200px;">
                     <div class="number" id="number3">
                         <div class="number-img">
-                            <i class="fa fa-industry"></i>
+                            <i class="fa fa-line-chart "></i>
                         </div>
-                        <span class="number-label text-color2">COMMERCIAL</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="149"
+                        <span class="number-label text-color2">أعلى نسبة ارباح للأسهم</span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{setting('chart_2')}}"
                             data-speed="2000"></span>
+                            <span style="position: relative;
+                            top: -22px;
+                            left: 60px;
+                            font-size: 26px;">%</span>
                     </div>
                 </div>
-                <div class="col-xs-6 col-lg-3 number_border">
+                <div class="col-xs-6 col-lg-3 number_border" style="  height: 200px;">
                     <div class="number" id="number4">
                         <div class="number-img">
-                            <i class="fa fa-tree"></i>
+                            <i class="fa fa-line-chart "></i>
                         </div>
-                        <span class="number-label text-color2">LAND</span>
-                        <span class="number-big text-color3 count" data-from="0" data-to="25"
+                        <span class="number-label text-color2">الحد الأدنى للأسهم</span>
+                        <span class="number-big text-color3 count" data-from="0" data-to="{{setting('chart_3')}}"
                             data-speed="2000"></span>
+                            <span style="position: relative;
+                            top: -22px;
+                            left: 60px;
+                            font-size: 26px;">%</span>
                     </div>
                 </div>
             </div>

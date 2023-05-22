@@ -41,6 +41,7 @@ Route::prefix('admin')
             Route::get('/settings/settings', 'SettingController@settingsText')->name('setting.settingsText');
             Route::post('/settings/setting', 'SettingController@settings')->name('setting.settings');
             Route::get('/settings/social', 'SettingController@social')->name('setting.social');
+            Route::get('/settings/chart', 'SettingController@chart')->name('setting.chart');
 
             Route::get('/settings/contact', 'SettingController@contact')->name('setting.contact');
             Route::get('/settings/export-csv', 'SettingController@exportCSV')->name('setting.export-csv');

@@ -44,6 +44,10 @@
                 <a class="nav-link" href="{{ route('admin.about.create') }}"><i class="icon-info "></i>
                  اعدادات المحتوى</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.setting.chart') }}"><i class="icon-info "></i>
+                 الاسهم</a>
+            </li>
                 <li class="nav-title">
                     الأدوات
                 </li>

@@ -75,6 +75,11 @@ class SettingController extends Controller
         return view('admin.settings.social');
     }
 
+    public function chart()
+    {
+        return view('admin.settings.chart');
+    }
+
     public function changePassword()
     {
         $user = Auth::user();
