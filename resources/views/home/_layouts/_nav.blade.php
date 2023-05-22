@@ -7,19 +7,19 @@
                         <span class="top-icon-circle">
                             <i class="fa fa-envelope fa-sm"></i>
                         </span>
-                        <span class="top-bar-text">apartment@domain.tld</span>
+                        <span class="top-bar-text">{{ setting('site_email') }}</span>
                     </div>
                     <div class="top-phone pull-left hidden-xxs">
                         <span class="top-icon-circle">
                             <i class="fa fa-phone"></i>
                         </span>
-                        <span class="top-bar-text">(0)-123-456-789</span>
+                        <span class="top-bar-text">{{ setting('site_phone') }}</span>
                     </div>
                     <div class="top-localization pull-left hidden-sm hidden-md hidden-xs">
-                        <span class="top-icon-circle pull-left">
+                        <span class="top-icon-circle ">
                             <i class="fa fa-map-marker"></i>
                         </span>
-                        <span class="top-bar-text">One Brookings Drive St. Louis, Missouri 63130-4899, USA</span>
+                        <span class="top-bar-text">{{ setting('site_location') }}</span>
                     </div>
                 </div>
                 <div class="col-xs-7 col-sm-4">
@@ -31,18 +31,13 @@
                     </div>
 
                     <div class="top-social pull-right">
-                        <a class="top-icon-circle" href="#">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </div>
-                    <div class="top-social pull-right">
-                        <a class="top-icon-circle" href="#">
+                        <a class="top-icon-circle" href="{{ setting('twitter_link') }}">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </div>
                     <div class="top-social pull-right">
-                        <a class="top-icon-circle" href="#">
-                            <i class="fa fa-google-plus"></i>
+                        <a class="top-icon-circle" href="{{ setting('instagram_link') }}">
+                            <i class="fa fa-instagram"></i>
                         </a>
                     </div>
                     <div class="top-social pull-right">
@@ -64,7 +59,7 @@
                     <span class="icon-bar icon-bar2"></span>
                     <span class="icon-bar icon-bar3"></span>
                 </button>
-                <a href="index.html" title="" class="navbar-brand">
+                <a href="{{ route('home') }}" title="" class="navbar-brand">
                     <img src="{{ asset('images/logo-light.png') }}" alt="Apartment - Premium Real Estate Template" />
                 </a>
             </div>
