@@ -1,4 +1,7 @@
 @extends('admin._layouts._app')
+@section('scripts')
+<script src="{{asset('dashboard/js/image_preview.js')}}"></script>
+@endsection
 
 @section('content')
     <form action="{{ route('admin.projects.store') }}" method="post" enctype="multipart/form-data">
@@ -77,8 +80,11 @@
                                     <h5 class="mt-2">@lang('site.description')</h5>
                                     <textarea id="summernote2" name="details" class="form-control" id="basicTextarea" rows="3" required>{{ old('details') }}</textarea>
                                     <h5 class="mt-2">@lang('site.image') رئيسية</h5>
-                                    <input value="{{ old('poster') }}" name="poster" type="file" class="form-control"
+                                    <input value="{{ old('poster') }}" name="poster" type="file" class="form-control image"
                                         id="basicInput" required>
+                                        <div class="row mt-1">
+                                            <img class="col-lg-3 img-thumbnail image-preview" style="width: 300px; display: none;"  src="" alt="" >
+                                        </div>
 
                                     <h5 class="mt-2">صور المشروع</h5>
                                     <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
@@ -285,7 +291,7 @@
                                     <h5 class="mt-2">اتحاد الملاك مجاناَ</h5>
                                     <input value="{{ old('f4') }}" name="f4" type="text"
                                         class="form-control" id="basicInput" required>
-                                   
+
                                 </div>
                             </fieldset>
                         </div>

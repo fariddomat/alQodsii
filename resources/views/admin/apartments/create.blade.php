@@ -1,5 +1,7 @@
 @extends('admin._layouts._app')
-
+@section('scripts')
+<script src="{{asset('dashboard/js/image_preview.js')}}"></script>
+@endsection
 @section('content')
     <section class="basic-inputs">
         <div class="row match-height">
@@ -54,8 +56,14 @@
                                                 {{ old('details') }}
                                             </textarea>
                                         <h5 class="mt-2">@lang('site.image')</h5>
-                                        <input name="img" type="file" class="form-control" id="basicInput" required>
+                                        <input name="img" type="file" class="form-control image" id="basicInput" required>
 
+                                    </div>
+                                    <div class="col-lg-6">
+
+                                        <div class="form-group">
+                                            <img src="" style="width: 300px; display: none;" class="img-thumbnail image-preview" alt="">
+                                        </div>
                                     </div>
 
                                     <div class="col-lg-12">

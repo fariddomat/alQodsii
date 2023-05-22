@@ -1,5 +1,7 @@
 @extends('admin._layouts._app')
-
+@section('scripts')
+<script src="{{asset('dashboard/js/image_preview.js')}}"></script>
+@endsection
 @section('content')
     <section class="basic-inputs">
         <div class="row match-height">
@@ -8,7 +10,7 @@
                     <div class="card-header">
                         <h4 class="card-title">@lang('site.edit') شقة</h4>
                     </div>
-                    <div class="card-body" dir="rtl" style="text-align: right">
+                    <div class="card-block" dir="rtl" style="text-align: right">
                         <div class="card-body col-lg-12">
                             <fieldset class="form-group">
                                 <form action="{{ route('admin.apartments.update', $apartment->id) }}" method="post"
@@ -57,13 +59,13 @@
                                                 {{ old('details', $apartment->details) }}
                                             </textarea>
                                         <h5 class="mt-2">@lang('site.image')</h5>
-                                        <input name="img" type="file" class="form-control" id="basicInput">
+                                        <input name="img" type="file" class="form-control image" id="basicInput">
 
                                     </div>
                                     <div class="col-lg-6">
 
                                         <div class="mt-2">
-                                            <img src="{{ $apartment->image_path }}" alt="">
+                                            <img src="{{ $apartment->image_path }}" alt="" class="img-thumbnail image-preview">
                                         </div>
                                     </div>
 

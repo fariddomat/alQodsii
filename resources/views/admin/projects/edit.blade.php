@@ -1,5 +1,7 @@
 @extends('admin._layouts._app')
-
+@section('scripts')
+<script src="{{asset('dashboard/js/image_preview.js')}}"></script>
+@endsection
 @section('content')
     <form action="{{ route('admin.projects.update', $project->id) }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -86,10 +88,10 @@
                                     <h5 class="mt-2">@lang('site.description')</h5>
                                     <textarea id="summernote2" name="details" class="form-control" id="basicTextarea" rows="3" required>{{ old('details', $project->details) }}</textarea>
                                     <h5 class="mt-2">@lang('site.image') رئيسية</h5>
-                                    <input value="{{ old('poster') }}" name="poster" type="file" class="form-control"
+                                    <input value="{{ old('poster') }}" name="poster" type="file" class="form-control image"
                                         id="basicInput">
                                     <div class="row mt-1">
-                                        <img class="col-lg-3" src="{{ $project->poster_path }}" alt="Images">
+                                        <img class="col-lg-3 img-thumbnail image-preview" src="{{ $project->poster_path }}" alt="Images" >
                                     </div>
                                     <h5 class="mt-2">صور المشروع</h5>
                                     <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
