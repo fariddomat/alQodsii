@@ -44,7 +44,7 @@
                             <div class="">
                                 <!-- Slides -->
                                 <div class="">
-                                    <img class="" src="{{ $project->poster_path }}" style="width: 100%" />
+                                    <img class="" src="{{ $project->poster_path }}" style="width: 100%;  max-height: 470px" />
                                 </div>
                             </div>
 
@@ -75,11 +75,8 @@
                                 <div class="details-parameters-cont">
                                     <div class="details-parameters-val">الملاحق</div>
                                     <div class="details-parameters-name">
-                                        @if ($project->appendix_count > 0)
-                                            {{ $project->appendix_count }}
-                                        @else
-                                            0
-                                        @endif
+                                            {{ $project->appendixx_count }}
+                                       
 
                                     </div>
                                     <div class="clearfix"></div>
@@ -90,8 +87,8 @@
                             <div class="clearfix"></div>
                             <div class="title-separator-primary"></div>
                             <p class="details-desc">
-                            <h3>العنوان: {!! $project->address !!}</h3>
-                            <h3>الوصف: {!! $project->details !!}</h3>
+                            <h3 style="  line-height: 30px;">العنوان: {!! $project->address !!}</h3>
+                            <h3 style="  line-height: 30px;">الوصف: {!! $project->details !!}</h3>
                             </p>
                         </div>
                     </div>
@@ -476,8 +473,7 @@
 
                     <div class="row margin-top-90">
                         <div class="col-xs-12 col-sm-9">
-                            <h5 class="subtitle-margin">hot</h5>
-                            <h1>new listings<span class="special-color">.</span></h1>
+                            <h1>مشاريع مشابهة<span class="special-color">.</span></h1>
                         </div>
                         <div class="col-xs-12 col-sm-3">
                             <a href="#" class="navigation-box navigation-box-prev" id="short-offers-owl-prev">
@@ -504,9 +500,20 @@
 
                                         <div class="grid-offer-photo">
                                             <img src="{{ $project->poster_path }}" alt="" />
-                                            <div class="type-container">
-                                                <div class="estate-type">apartment</div>
-                                                <div class="transaction-type">sale</div>
+                                            <div class="type-container"> <span
+                                                class="badge @if ($project->status == 'مكتمل') btn-success
+                                                @elseif($project->status == 'على وشك الانتهاء')
+                                                btn-secondary
+                                                @elseif($project->status == 'غير متاح للعرض')
+                                                btn-danger
+                                                @else
+                                                btn-warning text-white @endif"
+                                                                    style="padding: 5px 15px; font-size: 14px;  top: 5px;
+                                                position: relative;">{{ $project->status }}
+                                                @if ($project->status == 'على وشك الانتهاء' || $project->status == 'غير متاح للعرض')
+                                                    <i class="bx bx-lock"></i>
+                                                @endif
+                                            </span>
                                             </div>
                                         </div>
                                         <div class="grid-offer-text">

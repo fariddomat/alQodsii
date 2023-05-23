@@ -22,7 +22,7 @@
             </div>
 
             <div class="col-xs-12 col-md-6 footer-copyrights">
-                &copy; Copyright 2023 <a href="https://joudtech.sa/" target="blank">Joudtech</a>. All rights reserved. By on <a href="http://themeforest.net/user/johnnychaos/portfolio?ref=johnnychaos" target="blank">Themeforest</a>.
+                &copy; Copyright 2023 <a href="https://joudtech.sa/" target="blank">Joudtech</a>. All rights reserved.
             </div>
         </div>
     </div>

@@ -78,8 +78,8 @@ class ProjectController extends Controller
         }
 
 
-        $sourcePath = storage_path('app/public/images/' . $project->id); // Path to the source folder
-        $destinationPath = storage_path('app/public/images/' . $clone->id); // Path to the destination folder
+        $sourcePath = public_path('uploads/images/' . $project->id); // Path to the source folder
+        $destinationPath = public_path('uploads/images/' . $clone->id); // Path to the destination folder
 
         // Copy the directory to the destination folder
         File::copyDirectory($sourcePath, $destinationPath);
@@ -109,7 +109,6 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        try {
             $request->validate([
                 'category' => 'required',
                 'name' => 'required|unique:projects,name',
@@ -134,6 +133,7 @@ class ProjectController extends Controller
                 'f4' => 'required',
 
             ]);
+        try {
 
             $percent = 100;
             if ($request->status != 'complete') {
@@ -157,7 +157,7 @@ class ProjectController extends Controller
                 'img' => $request->poster->hashName()
             ]);
             $poster = Image::make($request->poster)
-                ->resize(720, 538)
+                ->resize(538, 720)
                 ->encode('jpg');
 
             Storage::disk('public')->put('images/' . $project->id . '/'  . $request->poster->hashName(), (string)$poster, 'public');
@@ -241,9 +241,7 @@ class ProjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        try {
-            $request->validate([
+    {$request->validate([
 
                 'category' => 'required',
                 'name' => 'required|unique:projects,name,' . $id,
@@ -270,6 +268,8 @@ class ProjectController extends Controller
                 'f4' => 'required',
             ]);
 
+        try {
+
 
 
 
@@ -278,7 +278,7 @@ class ProjectController extends Controller
             if ($request->poster) {
                 Storage::disk('public')->delete('images/' . $project->id . '/' . $project->img);
                 $poster = Image::make($request->poster)
-                    ->resize(720, 538)
+                    ->resize( 538, 720)
                     ->encode('jpg');
 
                 Storage::disk('public')->put('images/' . $project->id . '/' . $request->poster->hashName(), (string)$poster, 'public');

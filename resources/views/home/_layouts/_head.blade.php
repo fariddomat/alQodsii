@@ -3418,6 +3418,10 @@ header.header2 .navbar-collapse, header.header3 .navbar-collapse {
 {header.header2.sticky {
   height: 160px !important;
 }}
+
+.badge{
+    background-color: none !important;
+}
     </style>
     @yield('style')
 

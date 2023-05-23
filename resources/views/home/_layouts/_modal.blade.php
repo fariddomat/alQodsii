@@ -45,8 +45,8 @@
 
 
 <!-- jQuery  -->
-<script type="text/javascript" src="{{ asset('js/jQuery/jquery.min.js') }}" defer></script>
-<script type="text/javascript" src="{{ asset('js/jQuery/jquery-ui.min.js') }}" defer></script>
+<script type="text/javascript" src="{{ asset('js/jQuery/jquery.min.js') }}" ></script>
+<script type="text/javascript" src="{{ asset('js/jQuery/jquery-ui.min.js') }}" ></script>
 
 <!-- Bootstrap-->
 <script type="text/javascript" src="{{ asset('bootstrap/bootstrap.min.js') }}" defer></script>

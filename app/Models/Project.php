@@ -196,4 +196,13 @@ class Project extends Model
         // dd($this->FloorRow($id)->whereIn("apartment_id",$back->pluck('id'))->count());
         return $this->FloorRow($id)->whereIn("apartment_id", $back->pluck('id'))->count();
     }
+
+    public function getAppendixxCountAttribute()
+    {
+        $id=$this->floors_count;
+        $a = $this->apartments->where('type', 'ملحق');
+        // dd($a);
+        return $this->FloorRow($id)->whereIn("apartment_id", $a->pluck('id'))->count();
+
+    }
 }

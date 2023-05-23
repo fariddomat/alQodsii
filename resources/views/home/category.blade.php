@@ -4,7 +4,7 @@
 @endsection
 
 @section('scripts')
-    <script>
+    <script defer>
         $(window).on('load', function() {
             var maxHeight = 0;
             $('.grid-offer-text').each(function() {
@@ -17,17 +17,17 @@
     </script>
 @endsection
 @section('content')
-<section class="short-image no-padding agency margin-top-135">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-lg-12 short-image-title">
-                <h5 class="subtitle-margin second-color">AlQodsi</h5>
-                <h1 class="second-color">المشاريع</h1>
-                <div class="short-title-separator"></div>
+    <section class="short-image no-padding agency margin-top-135">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12 short-image-title">
+                    <h5 class="subtitle-margin second-color">AlQodsi</h5>
+                    <h1 class="second-color">المشاريع</h1>
+                    <div class="short-title-separator"></div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <section class="section-light section-top-shadow">
         <div class="container">
@@ -65,8 +65,20 @@
                                             <div class="grid-offer-photo">
                                                 <img src="{{ $project->poster_path }}" alt="" />
                                                 <div class="type-container">
-                                                    <div class="estate-type">apartment</div>
-                                                    <div class="transaction-type">sale</div>
+                                                    <span
+                                                        class="badge @if ($project->status == 'مكتمل') btn-success
+                                                        @elseif($project->status == 'على وشك الانتهاء')
+                                                        btn-secondary
+                                                        @elseif($project->status == 'غير متاح للعرض')
+                                                        btn-danger
+                                                        @else
+                                                        btn-warning text-white @endif"
+                                                                            style="padding: 5px 15px; font-size: 14px;  top: 5px;
+                                                        position: relative;">{{ $project->status }}
+                                                        @if ($project->status == 'على وشك الانتهاء' || $project->status == 'غير متاح للعرض')
+                                                            <i class="bx bx-lock"></i>
+                                                        @endif
+                                                    </span>
                                                 </div>
                                             </div>
                                             <div class="grid-offer-text">
@@ -113,49 +125,54 @@
                 <div class="col-xs-12 col-md-3">
                     <form action="" method="get">
 
-                    <div class="sidebar">
-                        <h3 class="sidebar-title">البحث<span class="special-color">.</span></h3>
-                        <div class="title-separator-primary"></div>
+                        <div class="sidebar">
+                            <h3 class="sidebar-title">البحث<span class="special-color">.</span></h3>
+                            <div class="title-separator-primary"></div>
 
-                        <div class="sidebar-select-cont">
-                            <select name="category_id" class="bootstrap-select" title="التصنيف" multiple>
-                                @foreach ($category_list as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="adv-search-range-cont">
-                            <label for="slider-range-price-sidebar-value" class="adv-search-label">السعر:</label>
-                            <span></span>
-                            <input type="text" name="price" id="slider-range-price-sidebar-value" readonly class="adv-search-amount">
-                            <div class="clearfix"></div>
-                            <div id="slider-range-price-sidebar" data-min="0" data-max="{{ $max_price }}" class="slider-range">
+                            <div class="sidebar-select-cont">
+                                <select name="category_id" class="bootstrap-select" title="التصنيف" multiple>
+                                    @foreach ($category_list as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="adv-search-range-cont">
+                                <label for="slider-range-price-sidebar-value" class="adv-search-label">السعر:</label>
+                                <span></span>
+                                <input type="text" name="price" id="slider-range-price-sidebar-value" readonly
+                                    class="adv-search-amount">
+                                <div class="clearfix"></div>
+                                <div id="slider-range-price-sidebar" data-min="0" data-max="{{ $max_price }}"
+                                    class="slider-range">
+                                </div>
+                            </div>
+                            <div class="adv-search-range-cont">
+                                <label for="slider-range-area-sidebar-value" class="adv-search-label">المساحة:</label>
+                                <span>m<sup>2</sup></span>
+                                <input type="text" name="area" id="slider-range-area-sidebar-value" readonly
+                                    class="adv-search-amount">
+                                <div class="clearfix"></div>
+                                <div id="slider-range-area-sidebar" data-min="0" data-max="{{ $max_area }}"
+                                    class="slider-range"></div>
+                            </div>
+                            <div class="adv-search-range-cont">
+                                <label for="slider-range-bedrooms-sidebar-value" class="adv-search-label">الغرف:</label>
+                                <input type="text" name="room_count" id="slider-range-bedrooms-sidebar-value" readonly
+                                    class="adv-search-amount">
+                                <div class="clearfix"></div>
+                                <div id="slider-range-bedrooms-sidebar" data-min="1" data-max="{{ $max_room_count }}"
+                                    class="slider-range">
+                                </div>
+                            </div>
+                            <div class="sidebar-search-button-cont">
+                                <button type="submit" class="button-primary">
+                                    <span>ابحث</span>
+                                    <div class="button-triangle"></div>
+                                    <div class="button-triangle2"></div>
+                                    <div class="button-icon"><i class="fa fa-search"></i></div>
+                                </button>
                             </div>
                         </div>
-                        <div class="adv-search-range-cont">
-                            <label for="slider-range-area-sidebar-value" class="adv-search-label">المساحة:</label>
-                            <span>m<sup>2</sup></span>
-                            <input type="text" name="area" id="slider-range-area-sidebar-value" readonly class="adv-search-amount">
-                            <div class="clearfix"></div>
-                            <div id="slider-range-area-sidebar" data-min="0" data-max="{{ $max_area }}" class="slider-range"></div>
-                        </div>
-                        <div class="adv-search-range-cont">
-                            <label for="slider-range-bedrooms-sidebar-value" class="adv-search-label">الغرف:</label>
-                            <input type="text" name="room_count" id="slider-range-bedrooms-sidebar-value" readonly
-                                class="adv-search-amount">
-                            <div class="clearfix"></div>
-                            <div id="slider-range-bedrooms-sidebar" data-min="1" data-max="{{ $max_room_count }}" class="slider-range">
-                            </div>
-                        </div>
-                        <div class="sidebar-search-button-cont">
-                            <button type="submit" class="button-primary">
-                                <span>ابحث</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </button>
-                        </div>
-                    </div>
                     </form>
                 </div>
             </div>

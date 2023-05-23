@@ -351,13 +351,25 @@
                 @if ($projects->count() > 0)
                     @foreach ($projects as $project)
                         <div class="grid-offer-col" style="">
-                            <div class="grid-offer wow fadeInLeft">
+                            <div class="grid-offer wow fadeInLeft" style="min-height: 50vh">
                                 <div class="grid-offer-front">
                                     <div class="grid-offer-photo">
                                         <img src="{{ $project->poster_path }}" alt="" />
                                         <div class="type-container">
-                                            <div class="estate-type">apartment</div>
-                                            <div class="transaction-type">sale</div>
+                                            <span
+                                                        class="badge @if ($project->status == 'مكتمل') btn-success
+                                                        @elseif($project->status == 'على وشك الانتهاء')
+                                                        btn-secondary
+                                                        @elseif($project->status == 'غير متاح للعرض')
+                                                        btn-danger
+                                                        @else
+                                                        btn-warning text-white @endif"
+                                                                            style="padding: 5px 15px; font-size: 14px;  top: 5px;
+                                                        position: relative;">{{ $project->status }}
+                                                        @if ($project->status == 'على وشك الانتهاء' || $project->status == 'غير متاح للعرض')
+                                                            <i class="bx bx-lock"></i>
+                                                        @endif
+                                                    </span>
                                         </div>
                                     </div>
                                     <div class="grid-offer-text">
@@ -380,7 +392,7 @@
                                         {!! $project->address_location !!}
                                     </div>
                                     <div class="button">
-                                        <a href="estate-details-right-sidebar.html" class="button-primary">
+                                        <a href="{{ route('project', $project->id) }}" class="button-primary">
                                             <span>تفاصيل المشروع</span>
                                             <div class="button-triangle"></div>
                                             <div class="button-triangle2"></div>
