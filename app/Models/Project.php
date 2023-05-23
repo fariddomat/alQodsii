@@ -126,16 +126,16 @@ class Project extends Model
 
     public function getPosterPathAttribute()
     {
-        // return asset('uploads/images/' . $this->id . '/' . $this->img);
-        return Storage::url('images/' . $this->id . '/' . $this->img);
+        return asset('uploads/images/' . $this->id . '/' . $this->img);
+        // return Storage::url('images/' . $this->id . '/' . $this->img);
     }
     public function getImagePathAttribute()
     {
         if ($this->projectImages()->exists()) {
             foreach ($this->projectImages as $key => $value) {
-                // return asset('uploads/images/' . $this->id . '/' . $value->img);
+                return asset('uploads/images/' . $this->id . '/' . $value->img);
 
-                return Storage::url('images/' . $this->id . '/' . $value->img);
+                // return Storage::url('images/' . $this->id . '/' . $value->img);
             }
         }
     }
@@ -146,7 +146,7 @@ class Project extends Model
             foreach ($this->projectImages as $key => $value) {
                 array_push(
                     $array,
-                    Storage::url('images/' . $this->id . '/' . $value->img)
+                    asset('uploads/images/' . $this->id . '/' . $value->img)
                 );
             }
         }
