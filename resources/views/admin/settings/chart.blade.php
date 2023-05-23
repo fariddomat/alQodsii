@@ -33,7 +33,7 @@
                                {{-- client id --}}
                                <div class="form-group col-md-6">
                                  <label for="chart_{{$index}}" class="text-capitalize"> {{$chart}} </label>
-                                 <input type="number" class="form-control" name="chart_{{$index}}" id=""
+                                 <input type="text" class="form-control" name="chart_{{$index}}" id=""
                                    value="{{setting('chart_'.$index)}}" aria-describedby="helpId" placeholder="">
                                </div>
                            @endforeach

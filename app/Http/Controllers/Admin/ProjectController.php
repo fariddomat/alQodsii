@@ -83,6 +83,7 @@ class ProjectController extends Controller
 
         // Copy the directory to the destination folder
         File::copyDirectory($sourcePath, $destinationPath);
+        LogSystem::success('تم نسخ مشروع  بنجاح - اسم المشروع: ' . $project->name);
 
         session()->flash('success', 'Successfully Cloned !');
 

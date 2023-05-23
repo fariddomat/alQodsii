@@ -133,7 +133,7 @@ class PromoterController extends Controller
             Mail::send('mail', $info, function ($message) use ($promoter) {
                 $message->to($promoter->email, $promoter->name)
                     ->subject('إشعار مشروع جديد من القدسي');
-                $message->from('tahdeeth@alqodsii.com', 'alqodsii');
+                $message->from('info@alqodsii.com', 'alqodsii');
             });
 
             // echo "Successfully sent the email";

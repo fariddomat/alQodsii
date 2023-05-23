@@ -25,6 +25,7 @@ class SettingController extends Controller
     public function change_cover(Request $request)
     {
 
+        setting($request->all())->save();
         if ($request->cover3) {
             $image_path = public_path("home/images/3.jpg");
             if (File::exists($image_path)) {

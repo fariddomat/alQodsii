@@ -3407,6 +3407,18 @@ header.header2 .navbar-collapse, header.header3 .navbar-collapse {
   direction: rtl;
 }
     </style>
+
+    <style>
+         @media only screen and (max-width: 720px) {
+            .navbar-header{
+                width: 100%
+            }
+         }
+         @media only screen and (min-width: 768px)
+{header.header2.sticky {
+  height: 160px !important;
+}}
+    </style>
     @yield('style')
 
 </head>

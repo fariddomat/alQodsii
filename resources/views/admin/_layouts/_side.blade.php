@@ -34,7 +34,7 @@
 
                <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.setting.cover') }}"><i class="icon-camera "></i>
-                 الصور</a>
+                 السلايدر</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.setting.settingsText') }}"><i class="icon-info "></i>

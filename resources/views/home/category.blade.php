@@ -17,23 +17,23 @@
     </script>
 @endsection
 @section('content')
-    <section class="short-image no-padding agency margin-top-135"">
-        <div class="container">
-            <div class="row >
-                <div class="col-xs-12 col-lg-12 short-image-title">
+<section class="short-image no-padding agency margin-top-135">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-12 short-image-title">
                 <h5 class="subtitle-margin second-color">AlQodsi</h5>
-                <h1 class="second-color"> المشاريع</h1>
+                <h1 class="second-color">المشاريع</h1>
                 <div class="short-title-separator"></div>
             </div>
         </div>
-        </div>
-    </section>
+    </div>
+</section>
 
     <section class="section-light section-top-shadow">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-md-9">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-xs-12 col-lg-6">
                             <h5 class="subtitle-margin">apartments for sale, colorodo, usa</h5>
                             <h1>42 estates found<span class="special-color">.</span></h1>
@@ -52,8 +52,8 @@
                         <div class="col-xs-12">
                             <div class="title-separator-primary"></div>
                         </div>
-                    </div>
-                    <div class="row grid-offer-row" style="display: flex; flex-wrap: wrap;">
+                    </div> --}}
+                    <div class="row grid-offer-row" style="display: flex; flex-wrap: wrap; margin-top: -15px;">
 
 
                         @if ($projects->count() > 0)
