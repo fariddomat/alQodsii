@@ -7,12 +7,12 @@
     <title>{{ setting('site_title') }} </title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{{ asset('alqodsii.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('alqodsi.png') }}">
     <meta name="keywords"
-        content="Download, Apartment, Premium, Real Estate, HMTL, Site Template, property, mortgage, CSS" />
-    <meta name="description" content="Download Apartment - Premium Real Estate HMTL Site Template" />
+        content="{{ setting('site_title') }}" />
+    {{-- <meta name="description" content="Download Apartment - Premium Real Estate HMTL Site Template" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> --}}
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
@@ -3422,7 +3422,20 @@ header.header2 .navbar-collapse, header.header3 .navbar-collapse {
 .badge{
     background-color: none !important;
 }
+
+#swiper2 .container {
+  top: 30%;
+}
+.grid-rooms, .grid-baths {
+  font-family: arial;
+}
+header.header2 .navbar-collapse, header.header3 .navbar-collapse {
+
+  z-index: 1000;
+  position: sticky;
     </style>
     @yield('style')
-
+<script>
+    document.body.style.zoom="80%"
+</script>
 </head>

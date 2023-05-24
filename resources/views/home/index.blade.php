@@ -92,7 +92,7 @@
                             </ul>
                         </div>
                         <div class="col-lg-1 visible-lg">
-                            <a id="adv-search-hide" href="#"><i class="jfont">&#xe801;</i></a>
+                            <a id="adv-search-hide"  href="#"><i class="jfont">&#xe801;</i></a>
                         </div>
                     </div>
                 </div>
@@ -351,7 +351,7 @@
                 @if ($projects->count() > 0)
                     @foreach ($projects as $project)
                         <div class="grid-offer-col" style="">
-                            <div class="grid-offer wow fadeInLeft" style="min-height: 50vh">
+                            <div class="grid-offer wow fadeInLeft" style="min-height: 65vh">
                                 <div class="grid-offer-front">
                                     <div class="grid-offer-photo">
                                         <img src="{{ $project->poster_path }}" alt="" />
