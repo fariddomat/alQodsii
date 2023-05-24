@@ -139,6 +139,7 @@ class PromoterController extends Controller
             // echo "Successfully sent the email";
         }
 
+        session()->flash('success', 'Email Sent Successfully');
         return redirect()->route('admin.projects.index');
     }
 
