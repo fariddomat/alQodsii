@@ -1,16 +1,6 @@
 @extends('home._layouts._app')
+
 @section('scripts')
-    <script>
-        $(window).on('load', function() {
-            var maxHeight = 0;
-            $('.grid-offer-text').each(function() {
-                if ($(this).height() > maxHeight) {
-                    maxHeight = $(this).height();
-                }
-            });
-            $('.grid-offer-text').height(maxHeight);
-        });
-    </script>
 @endsection
 @section('content')
 
@@ -92,7 +82,7 @@
                             </ul>
                         </div>
                         <div class="col-lg-1 visible-lg">
-                            <a id="adv-search-hide"  href="#"><i class="jfont">&#xe801;</i></a>
+                            <a id="adv-search-hide" href="#"><i class="jfont">&#xe801;</i></a>
                         </div>
                     </div>
                 </div>
@@ -129,11 +119,11 @@
                                         <label for="slider-range-area-sidebar-value"
                                             class="adv-search-label">المساحة:</label>
                                         <span>m<sup>2</sup></span>
-                                        <input type="text" name="area" id="slider-range-area-sidebar-value" readonly
-                                            class="adv-search-amount">
+                                        <input type="text" name="area" id="slider-range-area-sidebar-value"
+                                            readonly class="adv-search-amount">
                                         <div class="clearfix"></div>
-                                        <div id="slider-range-area-sidebar" data-min="0" data-max="{{ $max_area }}"
-                                            class="slider-range"></div>
+                                        <div id="slider-range-area-sidebar" data-min="0"
+                                            data-max="{{ $max_area }}" class="slider-range"></div>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-6 col-lg-4">
@@ -244,14 +234,12 @@
             <div class="row">
                 <div class="col-xs-12" id="testimonials-owl">
                     <div class="testimonial">
-                        <img src="{{ asset('home/images/who_are_we.jpg') }}" alt="" class="testimonials-photo" />
-                        <div class="testimonials-content margin-top-45" style="  min-height: 200px;">
+                        <img src="{{ asset('home/images/who_are_we.jpg') }}" alt="" class="testimonials-photo"
+                            style="margin-top: 0" />
+                        <div class="testimonials-content margin-top-30" style="  min-height: 200px;">
                             <p class="lead">{!! $about->who_are_we !!}</p>
 
                         </div>
-                        <div class="big-triangle">
-                        </div>
-                        <div class="big-icon"><i class="fa fa-quote-right fa-lg"></i></div>
                     </div>
 
                 </div>
@@ -279,7 +267,7 @@
                     <div class="testimonial">
                         <img src="{{ asset('home/images/massage.jpg') }}" alt="" class="testimonials-photo"
                             style="float: right" />
-                        <div class="testimonials-content margin-top-45" style="  min-height: 200px;">
+                        <div class="testimonials-content" style="  min-height: 200px;">
                             <p class="lead">{!! $about->massage !!}</p>
 
                         </div>
@@ -309,13 +297,10 @@
                 <div class="col-xs-12" id="testimonials-owl">
                     <div class="testimonial">
                         <img src="{{ asset('home/images/vision.jpg') }}" alt="" class="testimonials-photo" />
-                        <div class="testimonials-content margin-top-45" style="  min-height: 200px;">
+                        <div class="testimonials-content" style="  min-height: 200px;">
                             <p class="lead">{!! $about->vision !!}</p>
 
                         </div>
-                        <div class="big-triangle" style="right: 15px;">
-                        </div>
-                        <div class="big-icon" style="right: 25px;"><i class="fa fa-quote-right fa-lg"></i></div>
                     </div>
 
                 </div>
@@ -351,25 +336,25 @@
                 @if ($projects->count() > 0)
                     @foreach ($projects as $project)
                         <div class="grid-offer-col" style="">
-                            <div class="grid-offer wow fadeInLeft" style="min-height: 65vh">
+                            <div class="grid-offer wow fadeInLeft" style="">
                                 <div class="grid-offer-front">
                                     <div class="grid-offer-photo">
                                         <img src="{{ $project->poster_path }}" alt="" />
                                         <div class="type-container">
                                             <span
-                                                        class="badge @if ($project->status == 'مكتمل') btn-success
+                                                class="badge @if ($project->status == 'مكتمل') btn-success
                                                         @elseif($project->status == 'على وشك الانتهاء')
                                                         btn-secondary
                                                         @elseif($project->status == 'غير متاح للعرض')
                                                         btn-danger
                                                         @else
                                                         btn-warning text-white @endif"
-                                                                            style="padding: 5px 15px; font-size: 14px;  top: 5px;
+                                                style="padding: 5px 15px; font-size: 14px;  top: 5px;
                                                         position: relative;">{{ $project->status }}
-                                                        @if ($project->status == 'على وشك الانتهاء' || $project->status == 'غير متاح للعرض')
-                                                            <i class="bx bx-lock"></i>
-                                                        @endif
-                                                    </span>
+                                                @if ($project->status == 'على وشك الانتهاء' || $project->status == 'غير متاح للعرض')
+                                                    <i class="bx bx-lock"></i>
+                                                @endif
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="grid-offer-text">
@@ -426,8 +411,8 @@
                 <div class="col-xs-12" id="testimonials-owl">
                     <div class="testimonial">
                         <img src="{{ asset('home/images/quality_safty.jpg') }}" alt=""
-                            class="testimonials-photo" style="width: 350px;" />
-                        <div class="testimonials-content margin-top-45" style="  min-height: 200px; max-width:780px;">
+                            class="testimonials-photo" style="" />
+                        <div class="testimonials-content" style="  min-height: 200px; max-width:780px;">
                             <p class="lead">{!! $about->quality_safty !!}</p>
 
                         </div>

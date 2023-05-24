@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-lg-12">
-                <h4 class="second-color">النشرة البريدية<span class="special-color">.</span></h4>
+                <h1 class="second-color">النشرة البريدية<span class="special-color">.</span></h1>
                 <div class="footer-title-separator"></div>
-                <p class="footer-p" style="color: white">اشترك بالنشرة البريدية للحصول على آخر تحديثات المشاريع.</p>
+                <h3 class="footer-p" style="color: white">اشترك بالنشرة البريدية للحصول على آخر تحديثات المشاريع.</h3>
                 <form action="{{ route('promoters') }}" method="post" class="form-inline footer-newsletter">
                     @csrf
                     <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="أدخل البريد الالكتروني" style="" required>

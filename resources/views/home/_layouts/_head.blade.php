@@ -3432,10 +3432,11 @@ header.header2 .navbar-collapse, header.header3 .navbar-collapse {
 header.header2 .navbar-collapse, header.header3 .navbar-collapse {
 
   z-index: 1000;
-  position: sticky;
+  position: sticky;}
+  .testimonials-photo{
+    margin-top: -50px !important;
+  }
     </style>
     @yield('style')
-<script>
-    document.body.style.zoom="80%"
-</script>
+
 </head>

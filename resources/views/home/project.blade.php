@@ -8,17 +8,7 @@
 @endsection
 
 @section('scripts')
-    <script>
-        $(window).on('load', function() {
-            var maxHeight = 0;
-            $('.grid-offer-text').each(function() {
-                if ($(this).height() > maxHeight) {
-                    maxHeight = $(this).height();
-                }
-            });
-            $('.grid-offer-text').height(maxHeight);
-        });
-    </script>
+
 @endsection
 @section('content')
 
@@ -76,7 +66,7 @@
                                     <div class="details-parameters-val">الملاحق</div>
                                     <div class="details-parameters-name">
                                             {{ $project->appendixx_count }}
-                                       
+
 
                                     </div>
                                     <div class="clearfix"></div>
