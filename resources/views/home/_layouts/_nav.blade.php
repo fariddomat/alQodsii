@@ -3,17 +3,17 @@
         <div class="container top-bar">
             <div class="row">
                 <div class="col-xs-5 col-sm-8">
-                    <div class="top-mail pull-left hidden-xs">
+                    <div class="top-mail pull-left hidden-xs">  
                         <span class="top-icon-circle">
                             <i class="fa fa-envelope fa-sm"></i>
                         </span>
-                        <span class="top-bar-text">{{ setting('site_email') }}</span>
+                        <span class="top-bar-text"><a href="mailto:{{ setting('site_email') }}">{{ setting('site_email') }}</a></span>
                     </div>
                     <div class="top-phone pull-left hidden-xxs">
                         <span class="top-icon-circle">
                             <i class="fa fa-phone"></i>
                         </span>
-                        <span class="top-bar-text">{{ setting('site_phone') }}</span>
+                        <span class="top-bar-text"><a href="tel:+{{ setting('site_phone') }}">{{ setting('site_phone') }}</a></span>
                     </div>
                     <div class="top-localization pull-left hidden-sm hidden-md hidden-xs">
                         <span class="top-icon-circle ">
