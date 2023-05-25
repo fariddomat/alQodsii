@@ -161,7 +161,7 @@ class Project extends Model
     public function FloorRow($id)
     {
         $q = $this->floors->where('floor_id', $id)->where('apartment_id');
-        dd($q);
+       
         $q1 = collect();
         $b = false;
         $item = null;
