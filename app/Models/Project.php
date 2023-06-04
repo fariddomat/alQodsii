@@ -161,27 +161,25 @@ class Project extends Model
     public function FloorRow($id)
     {
         $q = $this->floors->where('floor_id', $id)->where('apartment_id');
-       
+        // dd($q);
         $q1 = collect();
+        $q2 = collect();
+        $q3 = collect();
         $b = false;
-        $item = null;
+
         foreach ($q as $key => $floor) {
             if ($floor->apartment->type == "أمامية") {
-                if ($b) {
-                    $item = $floor;
-                } else {
-                    $b = true;
-                    $q1->push($floor);
-                }
+                $q2->push($floor);
             } else {
                 $q1->push($floor);
             }
         }
-        if ($item) {
 
-            $q1->push($item);
-        }
-        return $q1;
+        $index = $q2->count() / 2; // Get the middle index of the second collection
+
+        $q2->splice($index, 0, $q1); // Insert $q1 in the middle of $q2
+
+        return $q2->flatten();
     }
 
     public function backCount($id, $a_id)
@@ -200,10 +198,9 @@ class Project extends Model
 
     public function getAppendixxCountAttribute()
     {
-        $id=$this->floors_count;
+        $id = $this->floors_count;
         $a = $this->apartments->where('type', 'ملحق');
         // dd($a);
         return $this->FloorRow($id)->whereIn("apartment_id", $a->pluck('id'))->count();
-
     }
 }

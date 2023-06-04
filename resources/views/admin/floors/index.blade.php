@@ -68,7 +68,7 @@
                                                 type="hidden"><input value="{{ old('floor_id[]', $i) }}" name="floor_id[]"
                                                 type="hidden">
                                             <input value="{{ old('counts[]', 2) }}" name="counts[]" type="number"
-                                                min="0" max="2" class="form-control" id="basicInput" required>
+                                                min="0" max="4" class="form-control" id="basicInput" required>
                                         @endforeach
 
                                     </div>
@@ -113,7 +113,7 @@
                                             type="hidden"><input value="{{ old('floor_id[]', $i) }}" name="floor_id[]"
                                             type="hidden">
                                         <input value="{{ old('counts[]', 2) }}" name="counts[]" type="number"
-                                            min="1" max="2" class="form-control" id="basicInput" required>
+                                            min="1" max="4" class="form-control" id="basicInput" required>
                                     @endforeach
 
                                 </div>
