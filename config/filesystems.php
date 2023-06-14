@@ -48,6 +48,13 @@ return [
             'root' => public_path(),
         ],
 
+
+        'public_html' => [
+            'driver' => 'local',
+            'root'   => public_path(),
+            'url' => env('APP_URL').'/public_html',
+            'visibility' => 'public',
+        ],
         'public' => [
             'driver' => 'local',
             'root'   => public_path() . '/uploads',

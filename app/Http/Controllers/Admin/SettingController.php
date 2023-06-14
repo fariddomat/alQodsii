@@ -13,6 +13,9 @@ use App\Rules\MatchOldPassword;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+
 class SettingController extends Controller
 {
 
@@ -24,29 +27,27 @@ class SettingController extends Controller
 
     public function change_cover(Request $request)
     {
-
         setting($request->all())->save();
+        setting([
+            'cover_time' => now()
+        ])->save();
         if ($request->cover3) {
-            $image_path = public_path("home/images/3.jpg");
-            if (File::exists($image_path)) {
-                File::delete($image_path);
-            }
-            $request->cover3->move(public_path('/home/images'), '3.jpg');
+
+            Storage::disk('public_html')->delete('/home/images/3.jpg');
+            $img = Image::make($request->cover3)->encode('webp', 90);
+            Storage::disk('public_html')->put('/home/images/3.jpg', (string)$img, 'public');
         }
         if ($request->cover2) {
-            $image_path = public_path("home/images/2.jpg");
-            if (File::exists($image_path)) {
-                File::delete($image_path);
-            }
-            $request->cover2->move(public_path('/home/images'), '2.jpg');
+
+            // Storage::disk('public_html')->delete('/home/images/2.jpg');
+            $img = Image::make($request->cover2)->encode('webp', 90);
+            Storage::disk('public_html')->put('/home/images/2.jpg', (string)$img, 'public');
         }
         if ($request->cover1) {
-            $image_path = public_path("home/images/1.jpg");
-            // dd($image_path);
-            if (File::exists($image_path)) {
-                File::delete($image_path);
-            }
-            $request->cover1->move(public_path('/home/images'), '1.jpg');
+
+            Storage::disk('public_html')->delete('/home/images/1.jpg');
+            $img = Image::make($request->cover1)->encode('webp', 90);
+            Storage::disk('public_html')->put('/home/images/1.jpg', (string)$img, 'public');
         }
         return redirect()->back();
     }

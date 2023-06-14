@@ -35,19 +35,19 @@
                             <div class="col-md-4">
                                 <label>غلاف 1</label>
                                 <input type="file" name="cover1" class="form-control-file">
-                                <img src="{{ asset('home/images/1.jpg') }}"
+                                <img src="{{ asset('home/images/1.jpg') }}?v={{ setting('cover_time') }}"
                                     style=" margin-top: 10px; max-width: 250px;" alt="">
                             </div>
                             <div class="col-md-4">
                                 <label>غلاف 2</label>
                                 <input type="file" name="cover2" class="form-control-file">
-                                <img src="{{ asset('home/images/2.jpg') }}"
+                                <img src="{{ asset('home/images/2.jpg') }}?v={{ setting('cover_time') }}"
                                     style=" margin-top: 10px; max-width: 250px;" alt="">
                             </div>
                             <div class="col-md-4">
                                 <label>غلاف 3</label>
                                 <input type="file" name="cover3" class="form-control-file">
-                                <img src="{{ asset('home/images/3.jpg') }}"
+                                <img src="{{ asset('home/images/3.jpg') }}?v={{ setting('cover_time') }}"
                                     style=" margin-top: 10px;max-width: 250px;" alt="">
                             </div>
 

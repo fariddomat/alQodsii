@@ -45,7 +45,7 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/1.jpg') }}">
+                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/1.jpg') }}?v={{ setting('cover_time') }}">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 animated fadeInDown slide2-desc slide2-desc-1">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="slider-overlay"></div>
                 </div>
-                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/2.jpg') }}">
+                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/2.jpg') }}?v={{ setting('cover_time') }}">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 animated slide2-desc slide2-desc-2">
@@ -72,7 +72,7 @@
                     <div class="slider-overlay"></div>
 
                 </div>
-                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/3.jpg') }}">
+                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/3.jpg') }}?v={{ setting('cover_time') }}">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 animated slide2-desc slide2-desc-3">
