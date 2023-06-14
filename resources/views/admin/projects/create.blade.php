@@ -53,6 +53,8 @@
                                         <option value="تحت التشطيب">تحت التشطيب</option>
                                         <option value="على وشك الانتهاء">على وشك الانتهاء</option>
                                         <option value="غير متاح للعرض">غير متاح للعرض</option>
+
+                                        <option value="تم البيع">تم البيع</option>
                                     </select>
                                     <h5 class="mt-2">نسبة التنفيذ</h5>
                                     <input value="{{ old('status_percent', 0) }}" name="status_percent" type="number"

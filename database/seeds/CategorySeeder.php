@@ -15,6 +15,7 @@ class CategorySeeder extends Seeder
 
         Category::create([
                     'name'=>'التصنيف',
+                    'slug'=>'التصنيف',
                     'description'=>'مشروع تصنيف مشروع'
                 ]);
     }

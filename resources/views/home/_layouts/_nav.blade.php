@@ -3,7 +3,7 @@
         <div class="container top-bar">
             <div class="row">
                 <div class="col-xs-5 col-sm-8">
-                    <div class="top-mail pull-left hidden-xs">  
+                    <div class="top-mail pull-left hidden-xs">
                         <span class="top-icon-circle">
                             <i class="fa fa-envelope fa-sm"></i>
                         </span>

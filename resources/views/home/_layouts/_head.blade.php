@@ -2,7 +2,8 @@
     <!-- Required Meta Tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> --}}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!-- Title -->
     <title>{{ setting('site_title') }} </title>
 
@@ -10,17 +11,18 @@
     <link rel="icon" type="image/png" href="{{ asset('alqodsi.png') }}">
     <meta name="keywords"
         content="{{ setting('site_title') }}" />
-    {{-- <meta name="description" content="Download Apartment - Premium Real Estate HMTL Site Template" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="description" content="{{ setting('site_about') }}" />
+    {{--
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon"> --}}
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('bootstrap/bootstrap.min.css') }}">
     <!-- Font awesome styles -->
-    <link rel="stylesheet" href="{{ asset('apartment-font/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" as="font" href="{{ asset('apartment-font/css/font-awesome.min.css') }}">
     <!-- Custom styles -->
-    <link rel='stylesheet' type='text/css'
-        href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
+    <link rel='preload' type='text/css'
+        href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins.css') }}">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/apartment-layout.css') }}">
@@ -3423,9 +3425,9 @@ header.header2 .navbar-collapse, header.header3 .navbar-collapse {
     background-color: none !important;
 }
 
-#swiper2 .container {
+/* #swiper2 .container {
   top: 30%;
-}
+} */
 .grid-rooms, .grid-baths {
   font-family: arial;
 }
@@ -3437,6 +3439,85 @@ header.header2 .navbar-collapse, header.header3 .navbar-collapse {
     margin-top: -50px !important;
   }
     </style>
+    <style>
+
+.icon-bar-social {
+  position: fixed;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 2000;
+  left: 0;
+}
+
+.icon-bar-social a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+margin-left: 5px;
+}
+
+.icon-bar-social a:hover {
+  background-color: #000;
+}
+
+.facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.google {
+  background: #dd4b39;
+  color: white;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.youtube {
+  background: #bb0000;
+  color: white;
+}
+.instagram{
+    background: #E1306C;
+    color: white
+}
+.snapchat {
+  background: #ffe606;
+  color: white;
+}.whatsapp {
+  background: #1fbb00;
+  color: white;
+}
+.icon-bar-social.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+.icon-bar.fa {
+  border-radius: 50%;
+}
+
+#grid-map1 iframe{
+    height: 100% !important;
+}
+
+.navigation-box-icon2 {
+    border: none !important;
+}
+</style>
     @yield('style')
 
 </head>

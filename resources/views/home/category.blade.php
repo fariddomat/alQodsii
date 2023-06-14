@@ -64,6 +64,15 @@
 
                                             <div class="grid-offer-photo">
                                                 <img src="{{ $project->poster_path }}" alt="" />
+                                                @if ($project->status == 'تم البيع')
+                                        <img src="{{ asset('done.png') }}" style="top: 0;
+                                        position: absolute;
+                                        z-index: 100000;
+                                        left: 0;
+                                        background: linear-gradient(0deg, rgba(240, 236, 0, 0.57), rgba(240, 236, 0, 0.57));
+                                        padding-top: 45px;
+                                        padding-bottom: 75px;" alt="">
+                                        @endif
                                                 <div class="type-container">
                                                     <span
                                                         class="badge @if ($project->status == 'مكتمل') btn-success
@@ -88,13 +97,15 @@
                                                 </div>
                                                 <div class="clearfix"></div>
                                             </div>
-                                            <div class="grid-offer-params">
-
+                                            <div class="grid-offer-params"><a href="{{ route('project', $project->id) }}"
+                                                class="">
                                                 <div class="grid-rooms"
-                                                    style="float: right; padding-right: 15px; text-align: right">
+                                                    style="float: right; padding-right: 15px; text-align: right;width: 100%;">
                                                     {{ $project->name }}
+                                                    <i class="fa fa-search"></i>
                                                 </div>
-                                            </div>
+                                            </a>
+                                        </div>
                                         </div>
                                         <div class="grid-offer-back">
                                             <div id="grid-map1" class="grid-offer-map">

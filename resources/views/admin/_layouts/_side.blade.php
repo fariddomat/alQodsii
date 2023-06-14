@@ -9,7 +9,7 @@
 
                <li class="nav-item">
                    <a class="nav-link" href="{{ route('admin.categories.index') }}"><i class="icon-layers "></i>
-                    @lang('site.categories')</a>
+                    المخططات</a>
                </li>
                <li class="nav-item">
                    <a class="nav-link" href="{{ route('admin.projects.index') }}"><i class="icon-home "></i>

@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group([], function()
-{
-    Route::get('/clear', function() {
+Route::group([], function () {
+    Route::get('/clear', function () {
 
         Artisan::call('cache:clear');
         Artisan::call('config:clear');
@@ -24,22 +23,21 @@ Route::group([], function()
         Artisan::call('view:clear');
 
         return "Cleared!";
-
-     });
-	Route::get('/', 'Home\HomeController@index')->name('home');
+    });
+    Route::get('/', 'Home\HomeController@index')->name('home');
     Route::get('/profileDownload', 'Home\HomeController@profileDownload')->name('profileDownload');
-	Route::post('/contact', 'Home\HomeController@contact')->name('contact');
-	Route::get('/contactPage', 'Home\HomeController@contactPage')->name('contactPage');
-	Route::post('/promoters', 'Home\HomeController@promoters')->name('promoters');
-    Route::get('/categories','Home\CategoryControlelr@index')->name('categories');
-    Route::get('/category/{id}','Home\CategoryControlelr@show')->name('category');
-    Route::get('/projects','Home\ProjectControlelr@index')->name('projects');
-    Route::get('/project/{id}','Home\ProjectControlelr@show')->name('project');
+    Route::post('/contact', 'Home\HomeController@contact')->name('contact');
+    Route::get('/contactPage', 'Home\HomeController@contactPage')->name('contactPage');
+    Route::post('/promoters', 'Home\HomeController@promoters')->name('promoters');
+    Route::get('/categories', 'Home\CategoryControlelr@index')->name('categories');
+    Route::get('/category/{id}', 'Home\CategoryControlelr@show')->name('category');
+    Route::get('/projects', 'Home\ProjectControlelr@index')->name('projects');
+    Route::get('/project/{id}', 'Home\ProjectControlelr@show')->name('project');
 
 
+    Route::get('/sitemap.xml', 'Home\SitemapXmlController@index')->name('sitemap');
 });
 
 
 
 Auth::routes(['register' => false]);
-

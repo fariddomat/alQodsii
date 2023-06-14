@@ -1,6 +1,25 @@
 @extends('home._layouts._app')
 
 @section('scripts')
+    <script>
+        $(window).on('load', function() {
+            var maxHeight = 0;
+            $('.grid-offer-text').each(function() {
+                if ($(this).height() > maxHeight) {
+                    maxHeight = $(this).height() - 100;
+                }
+            });
+            $('.grid-offer-text').height(maxHeight);
+
+            var maxHeight = 0;
+            $('.grid-offer-col').each(function() {
+                if ($(this).height() > maxHeight) {
+                    maxHeight = $(this).height() + 200;
+                }
+            });
+            $('.grid-offers-owl').height(maxHeight);
+        });
+    </script>
 @endsection
 @section('content')
 
@@ -69,97 +88,7 @@
             </div>
         </div>
 
-        <form action="{{ route('category', ['id' => 1]) }}" method="get">
-            <div class="adv-search-cont">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12 col-lg-11 adv-search-icons">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs adv-search-tabs" role="tablist">
-                                <li role="presentation" class="active" data-toggle="tooltip" data-placement="top"
-                                    title="apartments"><a href="#apartments" aria-controls="apartments" role="tab"
-                                        data-toggle="tab" id="adv-search-tab1"><i class="fa fa-building"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-1 visible-lg">
-                            <a id="adv-search-hide" href="#"><i class="jfont">&#xe801;</i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row tab-content">
-                        <div role="tabpanel" class="col-xs-12 adv-search-outer tab-pane fade in active" id="apartments">
 
-                            <div class="row" dir="rtl">
-                                <div class="col-xs-12 col-sm-6 col-lg-3" style="float: right">
-                                    <select name="category_id" class="bootstrap-select" title="التصنيف" multiple>
-                                        @foreach ($category_list as $category)
-                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-12 col-sm-6 col-lg-4">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-price-sidebar-value"
-                                            class="adv-search-label">السعر:</label>
-                                        <span></span>
-                                        <input type="text" name="price" id="slider-range-price-sidebar-value" readonly
-                                            class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-price-sidebar" data-min="0" data-max="{{ $max_price }}"
-                                            class="slider-range">
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-4">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-area-sidebar-value"
-                                            class="adv-search-label">المساحة:</label>
-                                        <span>m<sup>2</sup></span>
-                                        <input type="text" name="area" id="slider-range-area-sidebar-value"
-                                            readonly class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-area-sidebar" data-min="0"
-                                            data-max="{{ $max_area }}" class="slider-range"></div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-12 col-sm-6 col-lg-4">
-                                    <div class="adv-search-range-cont">
-                                        <label for="slider-range-bedrooms-sidebar-value"
-                                            class="adv-search-label">الغرف:</label>
-                                        <input type="text" name="room_count" id="slider-range-bedrooms-sidebar-value"
-                                            readonly class="adv-search-amount">
-                                        <div class="clearfix"></div>
-                                        <div id="slider-range-bedrooms-sidebar" data-min="1"
-                                            data-max="{{ $max_room_count }}" class="slider-range">
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-6 col-lg-3 col-md-offset-6 col-lg-offset-9 adv-search-button-cont">
-                            <button type="submit" class="button-primary pull-right">
-                                <span>بحث</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
     </section>
 
     {{-- <section class="section-light bottom-padding-45 section-both-shadow">
@@ -249,63 +178,29 @@
 
     </section>
 
-    <section class=" parallax">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                    <h1 class="second-color">رسالتنا<span class="special-color">.</span></h1>
-                </div>
-                <div class="col-xs-12">
-                    <div class="title-separator-secondary" style="background-color: #fff0;"></div>
-                </div>
+    <section class="" style="padding: 0">
+        <div class="row">
+            <div class="col-md-6"
+                style="min-height: 450px ;padding: 100px 75px ;background: linear-gradient(0deg, rgba(240, 236, 0, 0.57), rgba(240, 236, 0, 0.57)),url({{ asset('home/images/massage.jpg') }});background-size: cover;  color:white; ">
+                <h1 class="second-color">رسالتنا<span class="special-color">.</span></h1>
+                <p class="lead">{!! $about->massage !!}</p>
+
+
+
             </div>
-        </div>
-
-        <div class="container margin-top-90">
-            <div class="row">
-                <div class="col-xs-12" id="testimonials-owl">
-                    <div class="testimonial">
-                        <img src="{{ asset('home/images/massage.jpg') }}" alt="" class="testimonials-photo"
-                            style="float: right" />
-                        <div class="testimonials-content" style="  min-height: 200px;">
-                            <p class="lead">{!! $about->massage !!}</p>
-
-                        </div>
-                    </div>
-
-                </div>
+            <div class="col-md-6"
+                style="min-height: 450px ;padding: 100px 75px ;background: linear-gradient(0deg, rgba(89, 92, 106, 0.74), rgba(89, 92, 106, 0.74)),url({{ asset('home/images/vision.jpg') }});background-size: cover; color:white">
+                <h1 class="second-color">رؤيتنا<span class="special-color">.</span></h1>
+                <p class="lead">{!! $about->vision !!}</p>
             </div>
         </div>
 
 
+        {{--
     </section>
 
-    <section class="testimonials parallax">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12">
-                    <h1 class="second-color">رؤيتنا<span class="special-color">.</span></h1>
-                </div>
-                <div class="col-xs-12">
-                    <div class="title-separator-secondary" style="background-color: #fff0;"></div>
-                </div>
-            </div>
-        </div>
+    <section class="testimonials parallax"> --}}
 
-        <div class="container margin-top-90">
-            <div class="row">
-                <div class="col-xs-12" id="testimonials-owl">
-                    <div class="testimonial">
-                        <img src="{{ asset('home/images/vision.jpg') }}" alt="" class="testimonials-photo" />
-                        <div class="testimonials-content" style="  min-height: 200px;">
-                            <p class="lead">{!! $about->vision !!}</p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
 
     </section>
@@ -332,14 +227,23 @@
             </div>
         </div>
         <div class="grid-offers-container">
-            <div class="owl-carousel" id="grid-offers-owl">
+            <div class="owl-carousel " id="grid-offers-owl" style="display: flex; flex-wrap: wrap;">
                 @if ($projects->count() > 0)
                     @foreach ($projects as $project)
-                        <div class="grid-offer-col" style="">
+                        <div class="grid-offer-col" style="margin-bottom: 150px">
                             <div class="grid-offer wow fadeInLeft" style="">
-                                <div class="grid-offer-front">
+                                <div class="grid-offer-front" style="">
                                     <div class="grid-offer-photo">
-                                        <img src="{{ $project->poster_path }}" alt="" />
+                                        <img src="{{ $project->poster_path }}"   alt="" />
+                                        @if ($project->status == 'تم البيع')
+                                        <img src="{{ asset('done.png') }}" loading="lazy" style="top: 0;
+                                        position: absolute;
+                                        z-index: 100000;
+                                        left: 0;
+                                        background: linear-gradient(0deg, rgba(240, 236, 0, 0.57), rgba(240, 236, 0, 0.57));
+                                        padding-top: 45px;
+                                        padding-bottom: 75px;" alt="">
+                                        @endif
                                         <div class="type-container">
                                             <span
                                                 class="badge @if ($project->status == 'مكتمل') btn-success
@@ -364,17 +268,20 @@
                                         </div>
                                         <div class="clearfix"></div>
                                     </div>
-                                    <div class="grid-offer-params">
-                                        <div class="grid-rooms"
-                                            style="float: right; padding-right: 15px; text-align: right">
-                                            {{ $project->name }}
-                                        </div>
+                                    <div class="grid-offer-params"><a href="{{ route('project', $project->id) }}"
+                                            class="">
+                                            <div class="grid-rooms"
+                                                style="float: right; padding-right: 15px; text-align: right;width: 100%;">
+                                                {{ $project->name }}
+                                                <i class="fa fa-search"></i>
+                                            </div>
+                                        </a>
                                     </div>
 
                                 </div>
-                                <div class="grid-offer-back">
+                                <div class="grid-offer-back" style="min-height: 500px">
                                     <div id="grid-map1" class="grid-offer-map">
-                                        {!! $project->address_location !!}
+                                        <img src="{{ $project->poster_path }}" loading="lazy"  alt="" />
                                     </div>
                                     <div class="button">
                                         <a href="{{ route('project', $project->id) }}" class="button-primary">
@@ -410,7 +317,7 @@
             <div class="row">
                 <div class="col-xs-12" id="testimonials-owl">
                     <div class="testimonial">
-                        <img src="{{ asset('home/images/quality_safty.jpg') }}" alt=""
+                        <img src="{{ asset('home/images/quality_safty.jpg') }}" loading="lazy" alt=""
                             class="testimonials-photo" style="" />
                         <div class="testimonials-content" style="  min-height: 200px; max-width:780px;">
                             <p class="lead">{!! $about->quality_safty !!}</p>
@@ -481,11 +388,8 @@
                         <span class="number-label text-color2">الحد الأدنى للأسهم</span>
                         <span class="number-big text-color3 count" data-from="0" data-to="{{ setting('chart_3') }}"
                             data-speed="2000"></span>
-                        <span
-                            style="position: relative;
-                            top: -22px;
-                            left: 60px;
-                            font-size: 26px;">%</span>
+                        <span style="margin-top: 15px
+                            font-size: 20px;">ريال سعودي</span>
                     </div>
                 </div>
             </div>

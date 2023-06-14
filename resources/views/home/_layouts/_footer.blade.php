@@ -4,11 +4,11 @@
             <div class="col-xs-12 col-sm-12 col-lg-12">
                 <h1 class="second-color">النشرة البريدية<span class="special-color">.</span></h1>
                 <div class="footer-title-separator"></div>
-                <h3 class="footer-p" style="color: white">اشترك بالنشرة البريدية للحصول على آخر تحديثات المشاريع.</h3>
+                <h4 class="footer-p" style="color: white">اشترك بالنشرة البريدية للحصول على آخر تحديثات المشاريع.</h4>
                 <form action="{{ route('promoters') }}" method="post" class="form-inline footer-newsletter">
                     @csrf
                     <input type="email" name="email" class="form-control" id="exampleInputEmail2" placeholder="أدخل البريد الالكتروني" style="" required>
-                    <button type="submit" class="btn"><i class="fa fa-lg fa-paper-plane"></i></button>
+                    <button type="submit" name="go" aria-label="go" class="btn"><i class="fa fa-lg fa-paper-plane"></i></button>
                 </form>
             </div>
         </div>

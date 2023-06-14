@@ -19,9 +19,8 @@ class HomeController extends Controller
     public function index()
     {
 
-        $projects = Project::latest()->get();
-
-        $category_list=Category::all();
+        $projects = Project::latest()->limit(4)->get();
+        $category_list=Category::limit(3)->get(['id','name']);
         $max_price=Apartment::max('price');
         $max_room_count=Apartment::max('room_count');
         $max_area=Apartment::max('area');

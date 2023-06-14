@@ -70,6 +70,7 @@
                                             على وشك الانتهاء</option>
                                         <option value="غير متاح للعرض" @if ($project->status == 'غير متاح للعرض') selected @endif>غير
                                             متاح للعرض</option>
+                                            <option value="تم البيع" @if ($project->status == 'تم البيع') selected @endif>تم البيع</option>
 
                                     </select>
                                     <h5 class="mt-2">نسبة التنفيذ</h5>
