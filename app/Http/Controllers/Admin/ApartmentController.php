@@ -65,14 +65,14 @@ class ApartmentController extends Controller
             'price' => 'nullable|numeric|min:0',
             'price_bank' => 'nullable|numeric|min:0',
             'details' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
         ]);
 
         $request_data = $request->except(['img']);
         $img = Image::make($request->img)->resize(500, null, function ($constraint) {
             $constraint->aspectRatio();
         })
-            ->encode('jpg');
+            ->encode('webp', 90);
         Storage::disk('public')->put('images/' . $request->project_id . '/' . $request->img->hashName(), (string)$img, 'public');
         $request_data['img'] = $request->img->hashName();
         $project = Project::find($request->project_id);
@@ -181,7 +181,7 @@ class ApartmentController extends Controller
             'price' => 'nullable|numeric|min:0',
             'price_bank' => 'nullable|numeric|min:0',
             'details' => 'required',
-            'img' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'img' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
 
         ]);
 
@@ -193,7 +193,7 @@ class ApartmentController extends Controller
             $img = Image::make($request->img)->resize(500, null, function ($constraint) {
                 $constraint->aspectRatio();
             })
-                ->encode('jpg');
+                ->encode('webp', 90);
 
             Storage::disk('public')->put('images/' . $request->project_id . '/' . $request->img->hashName(), (string)$img, 'public');
             $request_data['img'] = $request->img->hashName();

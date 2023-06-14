@@ -47,7 +47,7 @@ class CategoryController extends Controller
         $request->validate([
             'name' => 'required|unique:categories,name',
             'description' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
 
         ]);
 
@@ -55,7 +55,7 @@ class CategoryController extends Controller
 
         $img = Image::make($request->img)
             ->resize(524, 646)
-            ->encode('jpg');
+            ->encode('webp', 90);
 
         Storage::disk('public')->put('images/' . $request->img->hashName(), (string)$img, 'public');
         $request_data['img'] = $request->img->hashName();
@@ -105,7 +105,7 @@ class CategoryController extends Controller
         $request->validate([
             'name'=>'required|unique:categories,name,' . $id,
             'description' => 'required',
-            'img' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'img' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
 
         ]);
 
@@ -116,7 +116,7 @@ class CategoryController extends Controller
 
             $img = Image::make($request->img)
                 ->resize(524, 646)
-                ->encode('jpg');
+                ->encode('webp', 90);
 
             Storage::disk('public')->put('images/' . $request->img->hashName(), (string)$img, 'public');
             $request_data['img'] = $request->img->hashName();

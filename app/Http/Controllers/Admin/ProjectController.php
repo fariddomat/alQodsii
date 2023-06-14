@@ -121,9 +121,9 @@ class ProjectController extends Controller
                 // 'floor_apartments_count' => 'required|numeric|min:2|max:4',
 
                 // 'appendix_count' => 'required|numeric|min:0|default',
-                'poster' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+                'poster' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
                 'img' => 'required',
-                'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg',
+                'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
 
                 'pdetails' => 'required',
 
@@ -157,8 +157,7 @@ class ProjectController extends Controller
                 'img' => $request->poster->hashName()
             ]);
             $poster = Image::make($request->poster)
-                ->resize(538, 720)
-                ->encode('jpg');
+                ->resize(538, 720)->encode('webp', 90);
 
             Storage::disk('public')->put('images/' . $project->id . '/'  . $request->poster->hashName(), (string)$poster, 'public');
 
@@ -167,8 +166,7 @@ class ProjectController extends Controller
                 $img = Image::make($file)
                     ->resize(800, null, function ($constraint) {
                         $constraint->aspectRatio();
-                    })
-                    ->encode('jpg');
+                    })->encode('webp', 90);
 
                 Storage::disk('public')->put('images/' . $project->id . '/' . $file->hashName(), (string)$img, 'public');
 
@@ -256,9 +254,9 @@ class ProjectController extends Controller
                 'status_percent' => 'required|numeric|min:0|max:100',
 
 
-                'poster' => 'image|mimes:jpeg,png,jpg,gif,svg',
+                'poster' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
                 // 'img' => 'required',
-                'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg',
+                'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
 
                 'pdetails' => 'required',
 
@@ -278,8 +276,7 @@ class ProjectController extends Controller
             if ($request->poster) {
                 Storage::disk('public')->delete('images/' . $project->id . '/' . $project->img);
                 $poster = Image::make($request->poster)
-                    ->resize( 538, 720)
-                    ->encode('jpg');
+                    ->resize( 538, 720)->encode('webp', 90);
 
                 Storage::disk('public')->put('images/' . $project->id . '/' . $request->poster->hashName(), (string)$poster, 'public');
                 $project->update([
@@ -301,8 +298,7 @@ class ProjectController extends Controller
                     $img = Image::make($file)
                         ->resize(null, 800, function ($constraint) {
                             $constraint->aspectRatio();
-                        })
-                        ->encode('jpg');
+                        })->encode('webp', 90);
 
                     Storage::disk('public')->put('images/' . $project->id . '/' . $file->hashName(), (string)$img, 'public');
 
