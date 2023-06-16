@@ -1,6 +1,6 @@
 @extends('admin._layouts._app')
 @section('scripts')
-<script src="{{asset('dashboard/js/image_preview.js')}}"></script>
+    <script src="{{ asset('dashboard/js/image_preview.js') }}?v=1"></script>
 @endsection
 
 @section('content')
@@ -36,7 +36,8 @@
                                         class="form-control" id="basicInput" required>
                                     {{-- date_of_build --}}
                                     <h5 class="mt-2">تاريخ البناء</h5>
-                                    <input type="date" name="date_of_build" value="{{ old('date_of_build') }}" id="basicInput" class="form-control">
+                                    <input type="date" name="date_of_build" value="{{ old('date_of_build') }}"
+                                        id="basicInput" class="form-control">
 
                                     <h5 class="mt-2">@lang('site.address')</h5>
                                     <textarea id="summernote" name="address" class="form-control" id="basicTextarea" rows="3" required>{{ old('address') }}</textarea>
@@ -44,6 +45,11 @@
                                     {{-- address_location --}}
                                     <h5 class="mt-2">الموقع على الخريطة - iframe (اختياري)</h5>
                                     <textarea name="address_location" class="form-control" id="basicTextarea" rows="3">{{ old('address_location') }}</textarea>
+
+
+                                    {{-- virtual --}}
+                                    {{-- <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
+                                    <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location') }}</textarea> --}}
 
                                     <h5 class="mt-2">حالة المشروع</h5>
                                     <select name="status" id="" class="form-control">
@@ -82,14 +88,27 @@
                                     <h5 class="mt-2">@lang('site.description')</h5>
                                     <textarea id="summernote2" name="details" class="form-control" id="basicTextarea" rows="3" required>{{ old('details') }}</textarea>
                                     <h5 class="mt-2">@lang('site.image') رئيسية</h5>
-                                    <input value="{{ old('poster') }}" name="poster" type="file" class="form-control image"
-                                        id="basicInput" required>
-                                        <div class="row mt-1">
-                                            <img class="col-lg-3 img-thumbnail image-preview" style="width: 300px; display: none;"  src="" alt="" >
-                                        </div>
+                                    <input value="{{ old('poster') }}" name="poster" type="file"
+                                        class="form-control image" id="basicInput" required>
+                                    <div class="row mt-1">
+                                        <img class="col-lg-3 img-thumbnail image-preview"
+                                            style="width: 300px; display: none;" src="" alt="">
+                                    </div>
+                                    <h5 class="mt-2">@lang('site.image') غلاف</h5>
+                                    <input value="{{ old('cover_img') }}" name="cover_img" type="file"
+                                        class="form-control image2" id="basicInput" required>
+                                    <div class="row mt-1">
+                                        <img class="col-lg-3 img-thumbnail image2-preview"
+                                            style="width: 300px; display: none;" src="" alt="">
+                                    </div>
+
 
                                     <h5 class="mt-2">صور المشروع</h5>
                                     <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
+                                        class="form-control" id="basicInput">
+
+                                        <h5 class="mt-2"> pdf ملفات المشروع (اختياري)</h5>
+                                        <input type="file"  value="{{ old('pdfs[]') }}"  name="pdfs[]" multiple
                                         class="form-control" id="basicInput">
                                 </div>
 

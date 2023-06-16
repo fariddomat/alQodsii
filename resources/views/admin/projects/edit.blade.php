@@ -1,6 +1,6 @@
 @extends('admin._layouts._app')
 @section('scripts')
-<script src="{{asset('dashboard/js/image_preview.js')}}"></script>
+<script src="{{asset('dashboard/js/image_preview.js?v=1')}}"></script>
 @endsection
 @section('content')
     <form action="{{ route('admin.projects.update', $project->id) }}" method="post" enctype="multipart/form-data">
@@ -57,6 +57,10 @@
                                     {{-- address_location --}}
                                     <h5 class="mt-2">الموقع على الخريطة - iframe (اختياري)</h5>
                                     <textarea name="address_location" class="form-control" id="basicTextarea" rows="3">{{ old('address_location', $project->address_location) }}</textarea>
+
+                                    {{-- <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
+                                    <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location', $project->virtual_location) }}</textarea> --}}
+
                                     <h5 class="mt-2">حالة المشروع</h5>
                                     <select name="status" id="" class="form-control">
                                         <option value="مكتمل" selected>مكتمل</option>
@@ -94,6 +98,14 @@
                                     <div class="row mt-1">
                                         <img class="col-lg-3 img-thumbnail image-preview" src="{{ $project->poster_path }}" alt="Images" >
                                     </div>
+
+                                    <h5 class="mt-2">@lang('site.image') الغلاف</h5>
+                                    <input value="{{ old('cover_img') }}" name="cover_img" type="file" class="form-control image2"
+                                        id="basicInput">
+                                    <div class="row mt-1">
+                                        <img class="col-lg-3 img-thumbnail image2-preview" src="{{ $project->cover_img_path }}" alt="Images" >
+                                    </div>
+
                                     <h5 class="mt-2">صور المشروع</h5>
                                     <input value="{{ old('img[]') }}" name="img[]" multiple type="file"
                                         class="form-control" id="basicInput">
@@ -104,6 +116,13 @@
                                             @endforeach
                                         </div>
                                     @endif
+
+
+                                    <h5 class="mt-2"> pdf ملفات المشروع (اختياري)</h5>
+                                    <input type="file"  value="{{ old('pdfs[]') }}"  name="pdfs[]" multiple
+                                    class="form-control" id="basicInput">
+                                    <h5 class="mt-2">لديك {{ $project->pdfs->count() }} ملف
+                                    </h5>
                                 </div>
 
 

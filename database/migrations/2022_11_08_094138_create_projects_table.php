@@ -21,6 +21,7 @@ class CreateProjectsTable extends Migration
             $table->date('date_of_build');
             $table->text('address');
             $table->text('address_location')->nullable();
+            $table->longText('virtual')->nullable();
             $table->string('scheme_name');
             $table->integer('floors_count');
             // $table->integer('floor_apartments_count');
@@ -28,6 +29,7 @@ class CreateProjectsTable extends Migration
             // $table->integer('appendix_count')->default(0);
             $table->text('details')->nullable();
             $table->string('img');
+            $table->string('cover_img')->nullable();
             $table->string('status')->default('مكتمل');
             $table->integer('status_percent')->default(0);
             $table->unsignedBigInteger('category_id');

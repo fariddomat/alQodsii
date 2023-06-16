@@ -122,8 +122,11 @@ class ProjectController extends Controller
 
                 // 'appendix_count' => 'required|numeric|min:0|default',
                 'poster' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
+                'cover_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp',
                 'img' => 'required',
                 'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
+
+                'pdfs.*' => 'nullable|mimes:pdf',
 
                 'pdetails' => 'required',
 
@@ -145,6 +148,7 @@ class ProjectController extends Controller
                 'date_of_build' => $request->date_of_build,
                 'address' => $request->address,
                 'address_location' => $request->address_location,
+                'virtual_location' => $request->virtual_location,
                 'scheme_name' => $request->scheme_name,
                 'status' => $request->status,
                 'status_percent' => $percent,
@@ -154,12 +158,21 @@ class ProjectController extends Controller
                 // 'appendix_count' => '2',
                 // 'appendix_count' => $request->appendix_count,
                 'details' => $request->details,
-                'img' => $request->poster->hashName()
+                'img' => $request->poster->hashName(),
+                'cover_img' => $request->cover_img->hashName()
             ]);
             $poster = Image::make($request->poster)
                 ->resize(538, 720)->encode('webp', 90);
 
             Storage::disk('public')->put('images/' . $project->id . '/'  . $request->poster->hashName(), (string)$poster, 'public');
+
+
+            $cover_img = Image::make($request->cover_img)
+                ->resize(1200, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                })->encode('webp', 90);
+
+            Storage::disk('public')->put('images/' . $project->id . '/'  . $request->cover_img->hashName(), (string)$cover_img, 'public');
 
             foreach ($request->file('img') as $file) {
 
@@ -174,6 +187,17 @@ class ProjectController extends Controller
                     'project_id' => $project->id,
                     'img' => $file->hashName()
                 ]);
+            }
+
+            if ($request->hasFile('pdfs')) {
+                foreach ($request->file('pdfs') as $file) {
+                    $path = $file->store('images/' . $project->id . '/pdfs','public');
+
+                    $project->pdfs()->create([
+                        'name' => $file->getClientOriginalName(),
+                        'file_path' => $path,
+                    ]);
+                }
             }
 
 
@@ -255,9 +279,12 @@ class ProjectController extends Controller
 
 
                 'poster' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
+                'cover_img' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
                 // 'img' => 'required',
                 'img.*' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
 
+
+                'pdfs.*' => 'nullable|mimes:pdf',
                 'pdetails' => 'required',
 
                 'f1' => 'required',
@@ -281,6 +308,20 @@ class ProjectController extends Controller
                 Storage::disk('public')->put('images/' . $project->id . '/' . $request->poster->hashName(), (string)$poster, 'public');
                 $project->update([
                     'img' => $request->poster->hashName()
+                ]);
+            }
+
+
+            if ($request->cover_img) {
+                Storage::disk('public')->delete('images/' . $project->id . '/' . $project->cover_img);
+                $cover_img = Image::make($request->cover_img)
+                    ->resize(1200, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                    })->encode('webp', 90);
+
+                Storage::disk('public')->put('images/' . $project->id . '/' . $request->cover_img->hashName(), (string)$cover_img, 'public');
+                $project->update([
+                    'cover_img' => $request->cover_img->hashName()
                 ]);
             }
 
@@ -309,6 +350,20 @@ class ProjectController extends Controller
                 }
             }
 
+
+    if ($request->hasFile('pdfs')) {
+            // Delete old PDFs
+    $project->pdfs()->delete();
+        foreach ($request->file('pdfs') as $file) {
+            $path = $file->store('images/' . $project->id . '/pdfs', 'public');
+
+            $project->pdfs()->create([
+                'name' => $file->getClientOriginalName(),
+                'file_path' => $path,
+            ]);
+        }
+    }
+
             $percent = 100;
             if ($request->status != 'complete') {
                 $percent = $request->status_percent;
@@ -319,6 +374,7 @@ class ProjectController extends Controller
                 'date_of_build' => $request->date_of_build,
                 'address' => $request->address,
                 'address_location' => $request->address_location,
+                'virtual_location' => $request->virtual_location,
                 'scheme_name' => $request->scheme_name,
                 'status' => $request->status,
                 'status_percent' => $percent,

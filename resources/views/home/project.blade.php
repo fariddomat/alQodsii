@@ -34,7 +34,7 @@
                             <div class="">
                                 <!-- Slides -->
                                 <div class="">
-                                    <img class="" src="{{ $project->poster_path }}" style="width: 100%;  max-height: 470px" />
+                                    <img class="" src="{{ $project->cover_img_path }}" style="width: 100%;  max-height: 470px" />
                                 </div>
                             </div>
 
@@ -66,11 +66,22 @@
                                     <div class="details-parameters-val">الملاحق</div>
                                     <div class="details-parameters-name">
                                             {{ $project->appendixx_count }}
-
-
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
+                                @if ($project->pdfs)
+                                @if ($project->pdfs->count() > 0)
+                                <div class="details-parameters-cont">
+                                    <div class="details-parameters-val">الملفات</div>
+                                        @foreach ($project->pdfs as $pdf)
+                                        <a class="btn" href="{{ asset('/uploads/'.$pdf->file_path) }}" download="" style="white-space: unset;
+                                            text-align: right;"> <i class="fa fa-download"></i> {{ $pdf->name }}</a>
+                                        @endforeach
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                @endif
+                                @endif
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-7 col-md-8">
@@ -101,10 +112,19 @@
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active">
                                     <a href="#tab-map" aria-controls="tab-map" role="tab" data-toggle="tab">
-                                        <span>Map</span>
+                                        <span>الموقع</span>
                                         <div class="button-triangle2"></div>
                                     </a>
                                 </li>
+                                @if ($project->virtual_location != '')
+
+                                <li role="presentation" class="">
+                                    <a href="#tab-map2" aria-controls="tab-map2" role="tab" data-toggle="tab">
+                                        <span>جولة افتراضية</span>
+                                        <div class="button-triangle2"></div>
+                                    </a>
+                                </li>
+                                @endif
                                 {{-- <li role="presentation">
                                     <a href="#tab-street-view" aria-controls="tab-street-view" role="tab"
                                         data-toggle="tab">
@@ -120,12 +140,18 @@
                                         {!! $project->address_location !!}
                                     </div>
                                 </div>
+                                <div role="tabpanel" class="tab-pane " id="tab-map2" style="margin-bottom: 200px">
+                                    <div id="estate-map" class="details-map" loading="lazy">
+                                        {!! $project->virtual_location !!}
+                                    </div>
+                                </div>
                                 {{-- <div role="tabpanel" class="tab-pane" id="tab-street-view">
                                     <div id="estate-street-view" class="details-map"></div>
                                 </div> --}}
                             </div>
                         </div>
                     </div>
+
                     <div class="row margin-top-60">
                         <div class="col-xs-12 col-lg-12 text-center">
                             <h1 class="">معرض الصور<span class="special-color">.</span></h1>

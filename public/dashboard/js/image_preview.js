@@ -15,6 +15,23 @@ $(".image").change(function () {
   }
 });
 
+// image preview
+$(".image2").change(function () {
+    if (this.files && this.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+        $(".image2-preview").attr("src", e.target.result);
+        $(".image2-preview").show();
+      };
+
+      reader.readAsDataURL(this.files[0]);
+    } else {
+      $(".image2-preview").attr("src", "");
+      $(".image2-preview").hide();
+    }
+  });
+
 $(".logo").change(function () {
   if (this.files && this.files[0]) {
     var reader = new FileReader();

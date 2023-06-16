@@ -129,6 +129,10 @@ class Project extends Model
         return asset('uploads/images/' . $this->id . '/' . $this->img);
         // return Storage::url('images/' . $this->id . '/' . $this->img);
     }
+    public function getCoverImgPathAttribute()
+    {
+        return asset('uploads/images/' . $this->id . '/' . $this->cover_img);
+    }
     public function getImagePathAttribute()
     {
         if ($this->projectImages()->exists()) {
@@ -202,5 +206,10 @@ class Project extends Model
         $a = $this->apartments->where('type', 'ملحق');
         // dd($a);
         return $this->FloorRow($id)->whereIn("apartment_id", $a->pluck('id'))->count();
+    }
+
+    public function pdfs()
+    {
+        return $this->hasMany(Pdfm::class);
     }
 }
