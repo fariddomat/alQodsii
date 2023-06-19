@@ -58,6 +58,10 @@
                                         <h5 class="mt-2">@lang('site.image')</h5>
                                         <input name="img" type="file" class="form-control image" id="basicInput" required>
 
+
+ <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
+                                    <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location') }}</textarea>
+
                                     </div>
                                     <div class="col-lg-6">
 
@@ -65,7 +69,6 @@
                                             <img src="" style="width: 300px; display: none;" class="img-thumbnail image-preview" alt="">
                                         </div>
                                     </div>
-
                                     <div class="col-lg-12">
 
                                         <button class="btn btn-icon btn-info mr-1 mt-2">@lang('site.create') <i

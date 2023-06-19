@@ -60,6 +60,8 @@
                                             </textarea>
                                         <h5 class="mt-2">@lang('site.image')</h5>
                                         <input name="img" type="file" class="form-control image" id="basicInput">
+                                        <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
+                                        <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location', $apartment->virtual_location) }}</textarea>
 
                                     </div>
                                     <div class="col-lg-6">
@@ -68,6 +70,7 @@
                                             <img src="{{ $apartment->image_path }}" alt="" class="img-thumbnail image-preview">
                                         </div>
                                     </div>
+
 
                                     <div class="col-lg-12">
 

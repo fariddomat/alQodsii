@@ -1,6 +1,13 @@
 @extends('admin._layouts._app')
 @section('scripts')
     <script src="{{ asset('dashboard/js/image_preview.js') }}?v=1"></script>
+
+    <script type="text/javascript">
+        var imageGalleryBrowseUrl = "{{ route('admin.imageGallery.browser') }}";
+        var imageGalleryUploadUrl = "{{ route('admin.imageGallery.uploader') }}";
+    </script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('dashboard/js/about.js') }}"></script>
 @endsection
 
 @section('content')
@@ -40,7 +47,7 @@
                                         id="basicInput" class="form-control">
 
                                     <h5 class="mt-2">@lang('site.address')</h5>
-                                    <textarea id="summernote" name="address" class="form-control" id="basicTextarea" rows="3" required>{{ old('address') }}</textarea>
+                                    <textarea id="quality_safty" name="address" class="form-control" id="basicTextarea" rows="3" required>{{ old('address') }}</textarea>
 
                                     {{-- address_location --}}
                                     <h5 class="mt-2">الموقع على الخريطة - iframe (اختياري)</h5>
@@ -86,7 +93,7 @@
 
 
                                     <h5 class="mt-2">@lang('site.description')</h5>
-                                    <textarea id="summernote2" name="details" class="form-control" id="basicTextarea" rows="3" required>{{ old('details') }}</textarea>
+                                    <textarea id="about_me" name="details" class="form-control" id="basicTextarea" rows="3" required>{{ old('details') }}</textarea>
                                     <h5 class="mt-2">@lang('site.image') رئيسية</h5>
                                     <input value="{{ old('poster') }}" name="poster" type="file"
                                         class="form-control image" id="basicInput" required>
@@ -272,7 +279,7 @@
                         <div class="" style="text-align: right">
                             <fieldset class="form-group">
                                 <div class="col-lg-6 mt-3">
-                                    <textarea id="summernote6" name="pdetails" class="form-control" id="" required>
+                                    <textarea id="who" name="pdetails" class="form-control" id="" required>
                                     {{ old('pdetails') }}
                                 </textarea>
                                 </div>

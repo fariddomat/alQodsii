@@ -97,12 +97,15 @@
                     @if ($project->propertie->details)
                         <div class="row margin-top-45">
                             @foreach (preg_split("/((\r?\n)|(\r\n?))/", $project->propertie->details) as $line)
+                                @if ($line!= '')
                                 <div class="col-xs-6 col-sm-6" style="float: right">
                                     <ul class="details-ticks">
-                                        <li style="font-size: 22px"><i class="jfont">&#xe815;</i></i>{{ $line }}
+                                        <li style="font-size: 22px;display: flex;
+                                        align-items: center;"><i class="jfont">&#xe815;</i></i>{!! $line !!}
                                         </li>
                                     </ul>
                                 </div>
+                                @endif
                             @endforeach
                         </div>
                     @endif
@@ -311,29 +314,28 @@
                                     width: fit-content;
                                     margin-bottom: 35px;">
                                                 @if ($project->FloorRow($project->floors_count)->count() > 0)
-                                                    <tr>
-                                                        <td style="color: #2f2e33; border-top: none">
-                                                            الملاحق
+                                                    <tr style="justify-content: center">
+                                                        <td style="color: #2f2e33; border-top: none; ">
+
                                                         </td>
                                                         @foreach ($project->FloorRow($project->floors_count) as $key => $floor)
                                                             <td
                                                                 class=" @if ($floor->status == 'متاح') td1
-                                                @elseif ($floor->status == 'محجوز')
-                                                td2
-                                                @else
-                                                td3 @endif" style=" @if ($key==0) margin-right: 139px;
-                                                @endif">
+                                                            @elseif ($floor->status == 'محجوز')
+                                                            td2
+                                                            @else
+                                                            td3 @endif" >
                                                                 {{-- {{ $floor->apartment->count() }} --}}
                                                                 {{ $floor->apartment->type }}
                                                                 {{-- -
-                                                        {{ $floor->apartment->code }} --}}
+                                                            {{ $floor->apartment->code }} --}}
                                                             </td>
 
                                                             {{-- @if ($key == 0)
-                                                        <td
+                                                              <td
                                                             style="width: 33% !important; color:transparent!important;box-shadow: none !important; translate: 0px 24px;">
                                                             .</td>
-                                                    @endif --}}
+                                                             @endif --}}
                                                         @endforeach
                                                     </tr>
                                                 @endif
@@ -474,6 +476,14 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            @if ($item->virtual_location)
+
+                                                            <div class="row" style="margin-bottom: 150px;">
+                                                                <div id="estate-map" class="details-map" loading="lazy">
+                                                                    {!! $item->virtual_location !!}
+                                                                </div>
+                                                            </div>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>

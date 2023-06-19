@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
             $table->date('date_of_build');
             $table->text('address');
             $table->text('address_location')->nullable();
-            $table->longText('virtual')->nullable();
+            $table->longText('virtual_location')->nullable();
             $table->string('scheme_name');
             $table->integer('floors_count');
             // $table->integer('floor_apartments_count');

@@ -28,6 +28,7 @@ class CreateApartmentsTable extends Migration
             $table->integer('price_bank')->nullable();
             $table->text('details');
             $table->string('img');
+            $table->longText('virtual_location')->nullable();
             // $table->text('reservation');
             $table->timestamps();
         });
