@@ -281,7 +281,7 @@
                                 </div>
                                 <div class="grid-offer-back" style="min-height: 500px">
                                     <div id="grid-map1" class="grid-offer-map">
-                                        <img src="{{ $project->poster_path }}" loading="lazy"  alt="" />
+                                        {!! $project->address_location !!}
                                     </div>
                                     <div class="button">
                                         <a href="{{ route('project', $project->id) }}" class="button-primary">

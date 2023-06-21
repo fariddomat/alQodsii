@@ -115,15 +115,28 @@ class PromoterController extends Controller
     public function notify()
     {
         $projects=Project::all();
-        return view('admin.promoters.notify', compact('projects'));
+        $promoters=Promoter::all();
+        return view('admin.promoters.notify', compact('projects', 'promoters'));
     }
 
     public function send_mail(Request $request )
     {
         $request->validate([
-            'details'=> 'required'
+            'details'=> 'required',
+            'promoters' => 'required'
         ]);
+
+        $promoters=null;
+        if($request->promoters[0]==null){
+
         $promoters = Promoter::all();
+
+        }else{
+
+        $promoters = Promoter::whereIn('id',$request->promoters)->get();
+
+        }
+        // dd($promoters);
         foreach ($promoters as $key => $promoter) {
             $info = array(
                 'name' => $promoter->name,

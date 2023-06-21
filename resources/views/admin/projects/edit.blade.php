@@ -119,7 +119,7 @@
                                     @if ($project->projectImages->count() > 0)
                                         <div class="row mt-1">
                                             @foreach ($project->images_path as $item)
-                                                <img class="col-lg-3" src="{{ $item }}" alt="Images">
+                                                <img class="col-lg-3"  src="{{ $item }}" alt="Images" style="max-width: 300px; margin:15px 0">
                                             @endforeach
                                         </div>
                                     @endif

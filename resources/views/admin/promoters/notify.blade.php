@@ -1,5 +1,11 @@
 @extends('admin._layouts._app')
-
+@section('scripts')
+<script>
+    $(document).ready(function() {
+    $('.select2').select2();
+});
+</script>
+@endsection
 @section('content')
     <section class="basic-inputs">
         <div class="row match-height">
@@ -17,6 +23,14 @@
                                     @method('POST')
 
                                     @include('admin._layouts._error')
+                                    <h5 class="mt-2">الوسطاء</h5>
+                                    <select name="promoters[]" id="" class="form-control select2" multiple>
+                                        <option value="">الجميع</option>
+
+                                        @foreach ($promoters as $promoter)
+                                        <option value="{{ $promoter->id }}">{{ $promoter->name }}</option>
+                                        @endforeach
+                                    </select>
                                     <h5 class="mt-2">@lang('site.project')</h5>
                                     <select name="project" id="" class="form-control">
                                         @foreach ($projects as $project)
