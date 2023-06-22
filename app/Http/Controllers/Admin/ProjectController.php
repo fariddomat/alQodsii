@@ -39,7 +39,7 @@ class ProjectController extends Controller
     public function clone($id)
     {
         $project = Project::findOrFail($id);
-        $project->load('apartments', 'floors', 'propertie', 'facility');
+        $project->load('apartments', 'floors', 'propertie', 'facility', 'projectImages');
 
         // replicate() will take care of those
         $clone = $project->replicate();
@@ -53,12 +53,12 @@ class ProjectController extends Controller
         }
 
         // Copy the floors
-        foreach ($project->floors as $floor) {
-            $cloneFloor = $floor->replicate();
-            $clone->floors()->save($cloneFloor);
-        }
+        // foreach ($project->floors as $floor) {
+        //     $cloneFloor = $floor->replicate();
+        //     $clone->floors()->save($cloneFloor);
+        // }
 
-        // Copy the floors
+        // Copy the images
         foreach ($project->projectImages as $projectImage) {
             $cloneProjectImage = $projectImage->replicate();
             $clone->projectImages()->save($cloneProjectImage);
@@ -78,8 +78,8 @@ class ProjectController extends Controller
         }
 
 
-        $sourcePath = public_path('uploads/images/' . $project->id); // Path to the source folder
-        $destinationPath = public_path('uploads/images/' . $clone->id); // Path to the destination folder
+        $sourcePath = '/home/alqolzct/public_html/uploads/images/' . $project->id; // Path to the source folder
+        $destinationPath = '/home/alqolzct/public_html/uploads/images/' . $clone->id; // Path to the destination folder
 
         // Copy the directory to the destination folder
         File::copyDirectory($sourcePath, $destinationPath);
@@ -353,7 +353,11 @@ class ProjectController extends Controller
 
     if ($request->hasFile('pdfs')) {
             // Delete old PDFs
-    $project->pdfs()->delete();
+            foreach ($project->pdfs as $key => $pdf) {
+                Storage::disk('public')->delete($pdf->file_path);
+
+            }
+        $project->pdfs()->delete();
         foreach ($request->file('pdfs') as $file) {
             $path = $file->store('images/' . $project->id . '/pdfs', 'public');
 
@@ -457,5 +461,19 @@ class ProjectController extends Controller
             }
         }
         return response('Update Successfully.', 200);
+    }
+
+    public function deletePdf($id)
+    {
+        $project=Project::findOrFail($id);
+        foreach ($project->pdfs as $key => $pdf) {
+            Storage::disk('public')->delete($pdf->file_path);
+
+        }
+        $project->pdfs()->delete();
+
+        session()->flash('success', 'Successfully PDF deleted !');
+        return redirect()->back();
+
     }
 }

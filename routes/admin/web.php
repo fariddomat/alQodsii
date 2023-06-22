@@ -18,6 +18,8 @@ Route::prefix('admin')
             Route::resource('projects', 'ProjectController');
             Route::get('/projects/{id}/clone', 'ProjectController@clone')->name('projects.clone');
             Route::post('projects/sortable', 'ProjectController@sort');
+            Route::get('/projects/{id}/deletePdf', 'ProjectController@deletePdf')->name('projects.deletePdf');
+
 
             Route::resource('properties', 'PropertieController');
             Route::resource('promoters', 'PromoterController');

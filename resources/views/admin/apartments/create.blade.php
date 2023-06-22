@@ -25,6 +25,7 @@
                                         <select name="type" id="" class="form-control">
                                             <option value="أمامية">أمامية</option>
                                             <option value="خلفية">خلفية</option>
+                                            <option value="داخلية">داخلية</option>
                                             <option value="ملحق">ملحق</option>
                                         </select>
                                         <h5 class="mt-2">رمز الشقة</h5>

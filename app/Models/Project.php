@@ -174,16 +174,24 @@ class Project extends Model
         foreach ($q as $key => $floor) {
             if ($floor->apartment->type == "أمامية") {
                 $q2->push($floor);
-            } else {
+            } elseif ($floor->apartment->type == "خلفية") {
                 $q1->push($floor);
+            }else{
+                $q3->push($floor);
             }
         }
 
         $index = $q2->count() / 2; // Get the middle index of the second collection
 
-        $q2->splice($index, 0, $q1); // Insert $q1 in the middle of $q2
+        $q2->splice($index, 0, $q3); // Insert $q3 in the middle of $q2
 
-        return $q2->flatten();
+        $q4=$q2->flatten();
+
+        $index = $q4->count() / 2; // Get the middle index of the second collection
+
+        $q4->splice($index, 0, $q1); // Insert $q1 in the middle of $q2
+
+        return $q4->flatten();
     }
 
     public function backCount($id, $a_id)

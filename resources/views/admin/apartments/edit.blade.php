@@ -27,6 +27,8 @@
                                                 @if ($apartment->type == 'أمامية') selectedselected @endif>أمامية</option>
                                             <option value="خلفية" @if ($apartment->type == 'خلفية') selected @endif>خلفية
                                             </option>
+                                            <option value="داخلية" @if ($apartment->type == 'داخلية') selected @endif>داخلية
+                                            </option>
 
                                             <option value="ملحق" @if ($apartment->type == 'ملحق') selected @endif>ملحق
                                             </option>

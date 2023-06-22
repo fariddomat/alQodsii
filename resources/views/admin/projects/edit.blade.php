@@ -130,6 +130,9 @@
                                     class="form-control" id="basicInput">
                                     <h5 class="mt-2">لديك {{ $project->pdfs->count() }} ملف
                                     </h5>
+                                    @if($project->pdfs->count() > 0)
+                                    <a href="{{ route('admin.projects.deletePdf', $project->id) }}" class="btn btn-danger">حذف ال pdf</a>
+                                    @endif
                                 </div>
 
 
