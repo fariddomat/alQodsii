@@ -18,7 +18,9 @@
                     </div>
                 </div>
                 <div class="card-block">
-                    <div class="card-body " style="float: right">
+                    <div class="card-body " style="float: right;
+                    position: relative;
+                    z-index: 5000;">
 
                         <a href="{{ route('admin.apartments.create', ['projectId' => $project->id]) }}"
                             class="btn btn-icon btn-info mr-1">@lang('site.create') <i class="fa fa-plus"

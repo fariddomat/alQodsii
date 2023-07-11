@@ -86,7 +86,7 @@
                                                 </tr>
 
                                             </table>
-                                            <table class="table table-striped table-scrollable mt-2">
+                                            <table class="table table-striped table-responsive table-scrollable mt-2">
                                                 <tr>
                                                     <td>
                                                         الملاحق
