@@ -51,7 +51,10 @@
                 <li class="nav-title">
                     الأدوات
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="icon-user "></i>
+                     المستخدمين</a>
+                </li>
                <li class="nav-item">
                    <a class="nav-link" href="{{ route('admin.setting.changePassword') }}"><i class="icon-lock "></i>
                     تغيير كلمة السر</a>

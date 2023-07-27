@@ -13,6 +13,8 @@ Route::prefix('admin')
 
             Route::get('/dashboard', 'DashboardController@index')->name('home');
 
+            Route::resource('users', 'UserController');
+
             Route::resource('categories', 'CategoryController');
 
             Route::resource('projects', 'ProjectController');
@@ -54,10 +56,12 @@ Route::prefix('admin')
             Route::post('/settings/changePass', 'SettingController@changePass')->name('setting.changePass');
 
 
-    Route::get('/imageGallery/browser', 'ImageGalleryController@browser')->name('imageGallery.browser');
-    Route::post('/imageGallery/uploader', 'ImageGalleryController@uploader')->name('imageGallery.uploader');
+            Route::get('/imageGallery/browser', 'ImageGalleryController@browser')->name('imageGallery.browser');
+            Route::post('/imageGallery/uploader', 'ImageGalleryController@uploader')->name('imageGallery.uploader');
 
             Route::get('/about', 'AboutController@create')->name('about.create');
             Route::post('/about', 'AboutController@store')->name('about.store');
         }
     );
+
+
