@@ -1,6 +1,6 @@
 @extends('admin._layouts._app')
 @section('scripts')
-<script src="{{asset('dashboard/js/image_preview.js')}}"></script>
+    <script src="{{ asset('dashboard/js/image_preview.js') }}"></script>
 @endsection
 @section('content')
     <section class="basic-inputs">
@@ -33,8 +33,8 @@
                                             class="form-control" id="basicInput" required>
 
                                         <h5 class="mt-2">عدد الغرف</h5>
-                                        <input value="{{ old('room_count') }}" min="0" name="room_count" type="number"
-                                            class="form-control" id="basicInput" required>
+                                        <input value="{{ old('room_count') }}" min="0" name="room_count"
+                                            type="number" class="form-control" id="basicInput" required>
                                         {{-- <h5 class="mt-2">عدد هذا النوع في الطابق الواحد</h5>
                                         <input value="{{ old('count') }}" name="count" type="number" min="1" max="{{ $project->floor_apartments_count }}"
                                             class="form-control" id="basicInput" required> --}}
@@ -42,14 +42,14 @@
                                         <input value="{{ old('area') }}" name="area" type="number" min="0"
                                             class="form-control" id="basicInput" required>
                                         <h5 class="mt-2">معلومات عن الشقة</h5>
-                                                <textarea name="about" id="" class="form-control">{{ old('about') }}</textarea>
+                                        <textarea name="about" id="" class="form-control">{{ old('about') }}</textarea>
 
                                         <h5 class="mt-2">السعر (اختياري)</h5>
                                         <input value="{{ old('price') }}" name="price" type="number" min="0"
-                                            class="form-control" id="basicInput" >
-                                            <h5 class="mt-2">سعر البنك (اختياري)</h5>
-                                            <input value="{{ old('price_bank') }}" name="price_bank" type="number" min="0"
-                                                class="form-control" id="basicInput" >
+                                            class="form-control" id="basicInput">
+                                        <h5 class="mt-2">سعر البنك (اختياري)</h5>
+                                        <input value="{{ old('price_bank') }}" name="price_bank" type="number"
+                                            min="0" class="form-control" id="basicInput">
 
 
                                         <h5 class="mt-2"> التفاصيل</h5>
@@ -57,17 +57,24 @@
                                                 {{ old('details') }}
                                             </textarea>
                                         <h5 class="mt-2">@lang('site.image')</h5>
-                                        <input name="img" type="file" class="form-control image" id="basicInput" required>
+                                        <input name="img" type="file" class="form-control image" id="basicInput"
+                                            required>
 
 
- <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
-                                    <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location') }}</textarea>
+                                        <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
+                                        <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location') }}</textarea>
+
+
+
+                                        <h5 class="mt-2">يتوتيوب - Youtube (اختياري)</h5>
+                                        <textarea name="youtube" class="form-control" id="basicTextarea" rows="3">{{ old('youtube') }}</textarea>
 
                                     </div>
                                     <div class="col-lg-6">
 
                                         <div class="form-group">
-                                            <img src="" style="width: 300px; display: none;" class="img-thumbnail image-preview" alt="">
+                                            <img src="" style="width: 300px; display: none;"
+                                                class="img-thumbnail image-preview" alt="">
                                         </div>
                                     </div>
                                     <div class="col-lg-12">

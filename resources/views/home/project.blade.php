@@ -4,11 +4,25 @@
         .details-map iframe {
             width: 100% !important;
         }
+        #aa > a:active{
+            color: gold !important
+        }
+        .aa > a:active{
+            color: gold !important
+        }
+        .youtube>iframe{
+            width: 100% !important;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+  color: #555;
+  cursor: default;
+  background-color: #f1813f;
+        }
     </style>
 @endsection
 
 @section('scripts')
-
 @endsection
 @section('content')
 
@@ -34,7 +48,8 @@
                             <div class="">
                                 <!-- Slides -->
                                 <div class="">
-                                    <img class="" src="{{ $project->cover_img_path }}" style="width: 100%;  max-height: 470px" />
+                                    <img class="" src="{{ $project->cover_img_path }}"
+                                        style="width: 100%;  max-height: 470px" />
                                 </div>
                             </div>
 
@@ -65,22 +80,24 @@
                                 <div class="details-parameters-cont">
                                     <div class="details-parameters-val">الملاحق</div>
                                     <div class="details-parameters-name">
-                                            {{ $project->appendixx_count }}
+                                        {{ $project->appendixx_count }}
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
                                 @if ($project->pdfs)
-                                @if ($project->pdfs->count() > 0)
-                                <div class="details-parameters-cont">
-                                    <div class="details-parameters-val">الملفات</div>
-                                        @foreach ($project->pdfs as $pdf)
-                                        <a class="btn" href="{{ asset('/uploads/'.$pdf->file_path) }}" download="" style="white-space: unset;
-                                            text-align: right;"> <i class="fa fa-download"></i> {{ $pdf->name }}</a>
-                                        @endforeach
-                                    <div class="clearfix"></div>
-                                </div>
-
-                                @endif
+                                    @if ($project->pdfs->count() > 0)
+                                        <div class="details-parameters-cont">
+                                            <div class="details-parameters-val">الملفات</div>
+                                            @foreach ($project->pdfs as $pdf)
+                                                <a class="btn" href="{{ asset('/uploads/' . $pdf->file_path) }}"
+                                                    download=""
+                                                    style="white-space: unset;
+                                            text-align: right;">
+                                                    <i class="fa fa-download"></i> {{ $pdf->name }}</a>
+                                            @endforeach
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    @endif
                                 @endif
                             </div>
                         </div>
@@ -97,14 +114,16 @@
                     @if ($project->propertie->details)
                         <div class="row margin-top-45">
                             @foreach (preg_split("/((\r?\n)|(\r\n?))/", $project->propertie->details) as $line)
-                                @if ($line!= '')
-                                <div class="col-xs-6 col-sm-6" style="float: right">
-                                    <ul class="details-ticks">
-                                        <li style="font-size: 22px;display: flex;
-                                        align-items: center;"><i class="jfont">&#xe815;</i></i>{!! $line !!}
-                                        </li>
-                                    </ul>
-                                </div>
+                                @if ($line != '')
+                                    <div class="col-xs-6 col-sm-6" style="float: right">
+                                        <ul class="details-ticks">
+                                            <li
+                                                style="font-size: 22px;display: flex;
+                                        align-items: center;">
+                                                <i class="jfont">&#xe815;</i></i>{!! $line !!}
+                                            </li>
+                                        </ul>
+                                    </div>
                                 @endif
                             @endforeach
                         </div>
@@ -120,13 +139,12 @@
                                     </a>
                                 </li>
                                 @if ($project->virtual_location != '')
-
-                                <li role="presentation" class="">
-                                    <a href="#tab-map2" aria-controls="tab-map2" role="tab" data-toggle="tab">
-                                        <span>جولة افتراضية</span>
-                                        <div class="button-triangle2"></div>
-                                    </a>
-                                </li>
+                                    <li role="presentation" class="">
+                                        <a href="#tab-map2" aria-controls="tab-map2" role="tab" data-toggle="tab">
+                                            <span>جولة افتراضية</span>
+                                            <div class="button-triangle2"></div>
+                                        </a>
+                                    </li>
                                 @endif
                                 {{-- <li role="presentation">
                                     <a href="#tab-street-view" aria-controls="tab-street-view" role="tab"
@@ -324,7 +342,7 @@
                                                             @elseif ($floor->status == 'محجوز')
                                                             td2
                                                             @else
-                                                            td3 @endif" >
+                                                            td3 @endif">
                                                                 {{-- {{ $floor->apartment->count() }} --}}
                                                                 {{ $floor->apartment->type }}
                                                                 {{-- -
@@ -359,9 +377,7 @@
                                                             <td style="   border-radius: @if ($key == 0) 0 15px 15px 0px
                                                     @elseif ($key == $project->FloorRow($i)->count() - 1)
                                                     15px 0 0 15px @endif;
-                                                    @if ($project->backCount2($i) == 1 && $check == false && $floor->apartment->type == 'خلفية')
-                                                        width:260px !important;
-                                                    @endif
+                                                    @if ($project->backCount2($i) == 1 && $check == false && $floor->apartment->type == 'خلفية') width:260px !important; @endif
                                                     "
                                                                 class=" @if ($floor->status == 'متاح') td1
                                                     @elseif ($floor->status == 'محجوز')
@@ -429,7 +445,8 @@
                                                             href="#collaps{{ $index }}" aria-expanded="true"
                                                             aria-controls="collaps{{ $index }}">
                                                             <span style="padding-right: 50px">تفاصيل {{ $item->type }}
-                                                                ({{ $item->code }})</span>
+                                                                ({{ $item->code }})
+                                                            </span>
                                                             <div class="button-triangle"></div>
                                                             <div class="button-triangle2"></div>
                                                             <div class="button-icon" style="right: unset; left: 10px;"><i
@@ -446,7 +463,7 @@
                                                                 </div>
                                                                 <div class="col-xs-12 col-sm-6">
                                                                     <p class="negative-margin">
-                                                                        <p>{!! $item->about !!}</p>
+                                                                    <p>{!! $item->about !!}</p>
                                                                     <ul class="house-list">
                                                                         <li>عدد الغرف: <b>
                                                                                 {{ $item->room_count }}</b>
@@ -456,7 +473,8 @@
                                                                             </li>
                                                                         @endif
                                                                         @if ($item->price_bank)
-                                                                            <li>سعر البنك : <b>{{ $item->price_bank }} ريال</b>
+                                                                            <li>سعر البنك : <b>{{ $item->price_bank }}
+                                                                                    ريال</b>
                                                                             </li>
                                                                         @endif
                                                                         <li> المساحة : <b>{{ $item->area }} متر</b></li>
@@ -466,8 +484,8 @@
                                                                         @foreach (preg_split("/((\r?\n)|(\r\n?))/", $item->details) as $line)
                                                                             <div class="col-xs-12" style="float: right">
                                                                                 <ul class="ticks-ul">
-                                                                                    <li><i
-                                                                                            class="jfont">&#xe815; </i>{{ $line }}
+                                                                                    <li><i class="jfont">&#xe815;
+                                                                                        </i>{{ $line }}
                                                                                     </li>
 
                                                                                 </ul>
@@ -476,14 +494,27 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            @if ($item->virtual_location)
+                                                            <ul class="nav nav-tabs aa">
+                                                                @if ($item->virtual_location)
+                                                                    <li id="aa" class="active"><a data-toggle="tab" href="#tab-virtual{{ $index }}">الموقع الافتراضي</a></li>
+                                                                @endif
+                                                                @if ($item->youtube)
+                                                                    <li><a id="aa" data-toggle="tab" href="#tab-youtube{{ $index }}" >يوتيوب</a></li>
+                                                                @endif
+                                                            </ul>
 
-                                                            <div class="row" style="margin-bottom: 150px;">
-                                                                <div id="estate-map" class="details-map" loading="lazy">
-                                                                    {!! $item->virtual_location !!}
-                                                                </div>
+                                                            <div class="tab-content">
+                                                                @if ($item->virtual_location)
+                                                                    <div id="tab-virtual{{ $index }}" class="tab-pane fade in active">
+                                                                        {!! $item->virtual_location !!}
+                                                                    </div>
+                                                                @endif
+                                                                @if ($item->youtube)
+                                                                    <div id="tab-youtube{{ $index }}" class="tab-pane fade youtube">
+                                                                        {!! $item->youtube !!}
+                                                                    </div>
+                                                                @endif
                                                             </div>
-                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
@@ -519,59 +550,58 @@
                     <div class="short-offers-container">
                         <div class="owl-carousel" id="short-offers-owl">
                             @foreach ($projects as $project)
+                                <div class="grid-offer-col">
+                                    <div class="grid-offer">
+                                        <div class="grid-offer-front">
 
-                            <div class="grid-offer-col">
-                                <div class="grid-offer">
-                                    <div class="grid-offer-front">
-
-                                        <div class="grid-offer-photo">
-                                            <img src="{{ $project->poster_path }}" alt="" />
-                                            <div class="type-container"> <span
-                                                class="badge @if ($project->status == 'مكتمل') btn-success
+                                            <div class="grid-offer-photo">
+                                                <img src="{{ $project->poster_path }}" alt="" />
+                                                <div class="type-container"> <span
+                                                        class="badge @if ($project->status == 'مكتمل') btn-success
                                                 @elseif($project->status == 'على وشك الانتهاء')
                                                 btn-secondary
                                                 @elseif($project->status == 'غير متاح للعرض')
                                                 btn-danger
                                                 @else
                                                 btn-warning text-white @endif"
-                                                                    style="padding: 5px 15px; font-size: 14px;  top: 5px;
+                                                        style="padding: 5px 15px; font-size: 14px;  top: 5px;
                                                 position: relative;">{{ $project->status }}
-                                                @if ($project->status == 'على وشك الانتهاء' || $project->status == 'غير متاح للعرض')
-                                                    <i class="bx bx-lock"></i>
-                                                @endif
-                                            </span>
+                                                        @if ($project->status == 'على وشك الانتهاء' || $project->status == 'غير متاح للعرض')
+                                                            <i class="bx bx-lock"></i>
+                                                        @endif
+                                                    </span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="grid-offer-text">
-                                            <i class="fa fa-map-marker grid-offer-localization"></i>
-                                            <div class="grid-offer-h4">
-                                                <h4 class="grid-offer-title">{!! $project->address !!}</h4>
+                                            <div class="grid-offer-text">
+                                                <i class="fa fa-map-marker grid-offer-localization"></i>
+                                                <div class="grid-offer-h4">
+                                                    <h4 class="grid-offer-title">{!! $project->address !!}</h4>
+                                                </div>
+                                                <div class="clearfix"></div>
                                             </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="grid-offer-params">
+                                            <div class="grid-offer-params">
 
-                                            <div class="grid-rooms"
-                                                style="float: right; padding-right: 15px; text-align: right">
-                                                {{ $project->name }}
+                                                <div class="grid-rooms"
+                                                    style="float: right; padding-right: 15px; text-align: right">
+                                                    {{ $project->name }}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="grid-offer-back">
-                                        <div id="grid-map1" class="grid-offer-map">
-                                            {!! $project->address_location !!}
-                                        </div>
-                                        <div class="button">
-                                            <a href="{{ route('project', $project->id) }}" class="button-primary">
-                                                <span>تفاصيل المشروع</span>
-                                                <div class="button-triangle"></div>
-                                                <div class="button-triangle2"></div>
-                                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                                            </a>
+                                        <div class="grid-offer-back">
+                                            <div id="grid-map1" class="grid-offer-map">
+                                                {!! $project->address_location !!}
+                                            </div>
+                                            <div class="button">
+                                                <a href="{{ route('project', $project->id) }}" class="button-primary">
+                                                    <span>تفاصيل المشروع</span>
+                                                    <div class="button-triangle"></div>
+                                                    <div class="button-triangle2"></div>
+                                                    <div class="button-icon"><i class="fa fa-search"></i></div>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -580,49 +610,54 @@
                 <div class="col-xs-12 col-md-3">
                     <form action="" method="get">
 
-                    <div class="sidebar">
-                        <h3 class="sidebar-title">البحث<span class="special-color">.</span></h3>
-                        <div class="title-separator-primary"></div>
+                        <div class="sidebar">
+                            <h3 class="sidebar-title">البحث<span class="special-color">.</span></h3>
+                            <div class="title-separator-primary"></div>
 
-                        <div class="sidebar-select-cont">
-                            <select name="category_id" class="bootstrap-select" title="التصنيف" multiple>
-                                @foreach ($category_list as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="adv-search-range-cont">
-                            <label for="slider-range-price-sidebar-value" class="adv-search-label">السعر:</label>
-                            <span></span>
-                            <input type="text" name="price" id="slider-range-price-sidebar-value" readonly class="adv-search-amount">
-                            <div class="clearfix"></div>
-                            <div id="slider-range-price-sidebar" data-min="0" data-max="{{ $max_price }}" class="slider-range">
+                            <div class="sidebar-select-cont">
+                                <select name="category_id" class="bootstrap-select" title="التصنيف" multiple>
+                                    @foreach ($category_list as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="adv-search-range-cont">
+                                <label for="slider-range-price-sidebar-value" class="adv-search-label">السعر:</label>
+                                <span></span>
+                                <input type="text" name="price" id="slider-range-price-sidebar-value" readonly
+                                    class="adv-search-amount">
+                                <div class="clearfix"></div>
+                                <div id="slider-range-price-sidebar" data-min="0" data-max="{{ $max_price }}"
+                                    class="slider-range">
+                                </div>
+                            </div>
+                            <div class="adv-search-range-cont">
+                                <label for="slider-range-area-sidebar-value" class="adv-search-label">المساحة:</label>
+                                <span>m<sup>2</sup></span>
+                                <input type="text" name="area" id="slider-range-area-sidebar-value" readonly
+                                    class="adv-search-amount">
+                                <div class="clearfix"></div>
+                                <div id="slider-range-area-sidebar" data-min="0" data-max="{{ $max_area }}"
+                                    class="slider-range"></div>
+                            </div>
+                            <div class="adv-search-range-cont">
+                                <label for="slider-range-bedrooms-sidebar-value" class="adv-search-label">الغرف:</label>
+                                <input type="text" name="room_count" id="slider-range-bedrooms-sidebar-value" readonly
+                                    class="adv-search-amount">
+                                <div class="clearfix"></div>
+                                <div id="slider-range-bedrooms-sidebar" data-min="1" data-max="{{ $max_room_count }}"
+                                    class="slider-range">
+                                </div>
+                            </div>
+                            <div class="sidebar-search-button-cont">
+                                <button type="submit" class="button-primary">
+                                    <span>ابحث</span>
+                                    <div class="button-triangle"></div>
+                                    <div class="button-triangle2"></div>
+                                    <div class="button-icon"><i class="fa fa-search"></i></div>
+                                </button>
                             </div>
                         </div>
-                        <div class="adv-search-range-cont">
-                            <label for="slider-range-area-sidebar-value" class="adv-search-label">المساحة:</label>
-                            <span>m<sup>2</sup></span>
-                            <input type="text" name="area" id="slider-range-area-sidebar-value" readonly class="adv-search-amount">
-                            <div class="clearfix"></div>
-                            <div id="slider-range-area-sidebar" data-min="0" data-max="{{ $max_area }}" class="slider-range"></div>
-                        </div>
-                        <div class="adv-search-range-cont">
-                            <label for="slider-range-bedrooms-sidebar-value" class="adv-search-label">الغرف:</label>
-                            <input type="text" name="room_count" id="slider-range-bedrooms-sidebar-value" readonly
-                                class="adv-search-amount">
-                            <div class="clearfix"></div>
-                            <div id="slider-range-bedrooms-sidebar" data-min="1" data-max="{{ $max_room_count }}" class="slider-range">
-                            </div>
-                        </div>
-                        <div class="sidebar-search-button-cont">
-                            <button type="submit" class="button-primary">
-                                <span>ابحث</span>
-                                <div class="button-triangle"></div>
-                                <div class="button-triangle2"></div>
-                                <div class="button-icon"><i class="fa fa-search"></i></div>
-                            </button>
-                        </div>
-                    </div>
                     </form>
                 </div>
             </div>

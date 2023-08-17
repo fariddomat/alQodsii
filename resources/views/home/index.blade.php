@@ -45,7 +45,8 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/1.jpg') }}?v={{ setting('cover_time') }}">
+                <div class="swiper-slide swiper-lazy"
+                    data-background="{{ asset('home/images/1.jpg') }}?v={{ setting('cover_time') }}">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 animated fadeInDown slide2-desc slide2-desc-1">
@@ -58,7 +59,8 @@
                     </div>
                     <div class="slider-overlay"></div>
                 </div>
-                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/2.jpg') }}?v={{ setting('cover_time') }}">
+                <div class="swiper-slide swiper-lazy"
+                    data-background="{{ asset('home/images/2.jpg') }}?v={{ setting('cover_time') }}">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 animated slide2-desc slide2-desc-2">
@@ -72,7 +74,8 @@
                     <div class="slider-overlay"></div>
 
                 </div>
-                <div class="swiper-slide swiper-lazy" data-background="{{ asset('home/images/3.jpg') }}?v={{ setting('cover_time') }}">
+                <div class="swiper-slide swiper-lazy"
+                    data-background="{{ asset('home/images/3.jpg') }}?v={{ setting('cover_time') }}">
                     <div class="container">
                         <div class="row">
                             <div class="col-xs-8 col-xs-offset-2 animated slide2-desc slide2-desc-3">
@@ -161,13 +164,25 @@
 
         <div class="container margin-top-90">
             <div class="row">
-                <div class="col-xs-12" id="testimonials-owl">
+                <div class="col-xs-12" >
                     <div class="testimonial">
-                        <img src="{{ asset('home/images/who_are_we.jpg') }}" alt="" class="testimonials-photo"
-                            style="margin-top: 0" />
-                        <div class="testimonials-content margin-top-30" style="  min-height: 200px;">
-                            <p class="lead">{!! $about->who_are_we !!}</p>
+                        <div class="row">
 
+                            <div class="col-md-2 video"
+                                style=" ;
+                                        padding: 0;
+                                        box-shadow: 5px 10px 10px 7px rgba(0, 0, 0, 0.35);
+                                        -webkit-box-shadow: 5px 10px 10px 7px rgba(0, 0, 0, 0.35);
+                                        -moz-box-shadow: 5px 10px 10px 7px rgba(0, 0, 0, 0.35); width: auto; text-align:center;">
+                                {!! setting('site_youtube') !!}
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="testimonials-content margin-top-30" style="  min-height: 200px; width: auto; margin-top: 0px !important;padding-top: 9px;">
+                                    <p class="lead">{!! $about->who_are_we !!}</p>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -234,15 +249,17 @@
                             <div class="grid-offer wow fadeInLeft" style="">
                                 <div class="grid-offer-front" style="">
                                     <div class="grid-offer-photo">
-                                        <img src="{{ $project->poster_path }}"   alt="" />
+                                        <img src="{{ $project->poster_path }}" alt="" />
                                         @if ($project->status == 'تم البيع')
-                                        <img src="{{ asset('done.png') }}" loading="lazy" style="top: 0;
+                                            <img src="{{ asset('done.png') }}" loading="lazy"
+                                                style="top: 0;
                                         position: absolute;
                                         z-index: 100000;
                                         left: 0;
                                         background: linear-gradient(0deg, rgba(240, 236, 0, 0.57), rgba(240, 236, 0, 0.57));
                                         padding-top: 45px;
-                                        padding-bottom: 75px;" alt="">
+                                        padding-bottom: 75px;"
+                                                alt="">
                                         @endif
                                         <div class="type-container">
                                             <span
@@ -370,7 +387,7 @@
                         <div class="number-img">
                             <i class="fa fa-line-chart "></i>
                         </div>
-                        <span class="number-label text-color2">أعلى نسبة ارباح للأسهم</span>
+                        <span class="number-label text-color2">أعلى نسبة أرباح للأسهم</span>
                         <span class="number-big text-color3 count" data-from="0" data-to="{{ setting('chart_2') }}"
                             data-speed="2000"></span>
                         <span

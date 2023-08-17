@@ -65,6 +65,9 @@
                                         <h5 class="mt-2">جولة افتراضية - iframe (اختياري)</h5>
                                         <textarea name="virtual_location" class="form-control" id="basicTextarea" rows="3">{{ old('virtual_location', $apartment->virtual_location) }}</textarea>
 
+                                        <h5 class="mt-2">يتوتيوب - Youtube (اختياري)</h5>
+                                        <textarea name="youtube" class="form-control" id="basicTextarea" rows="3">{{ old('youtube', $apartment->youtube) }}</textarea>
+
                                     </div>
                                     <div class="col-lg-6">
 

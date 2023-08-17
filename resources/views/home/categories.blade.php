@@ -142,7 +142,7 @@
                                             </div>
                                         </div>
                                         <div class="team-name">
-                                            <h4>{{ $category->name }}<span class="special-color">.</span></h4>
+                                            <h3>{{ $category->name }}</h3>
                                             <h5 class="margin-top-15">
                                                 عدد المشاريع {{ $category->projects->count() }}
                                             </h5>

@@ -43,6 +43,16 @@
                                     <label for="site_about" class="text-capitalize">حول - about</label>
                                     <textarea name="site_about" class="form-control" id="" cols="30" rows="10">
                                         {{setting('site_about')}}
+
+                                    </textarea>
+                                </div>
+
+
+                                {{-- Site youtube --}}
+                                <div class="form-group">
+                                    <label for="site_youtube" class="text-capitalize">يوتيوب - youtube</label>
+                                    <textarea name="site_youtube" class="form-control" id="" cols="30" rows="10">
+                                        {!! setting('site_youtube') !!}
                                     </textarea>
                                 </div>
 
