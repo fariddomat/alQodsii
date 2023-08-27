@@ -28,19 +28,27 @@ class CategoryControlelr extends Controller
         $id=$request->category_id;
     }
     $category=Category::find($id);
-    if ($category) {
+    if ($category || $id == 1) {
 
         $category_list=Category::all();
         $max_price=Apartment::max('price');
         $max_room_count=Apartment::max('room_count');
         $max_area=Apartment::max('area');
         // dd($request->price);
-    $projects=Project::where('category_id',$id)
-        ->whenPrice(request()->price)
-        ->whenRoom(request()->room_count)
-        ->whenArea(request()->area)
-        ->orderBy('sort_id', 'asc')
-        ->paginate(6);
+        if($id!=1){
+            $projects=Project::where('category_id',$id)
+            ->whenPrice(request()->price)
+            ->whenRoom(request()->room_count)
+            ->whenArea(request()->area)
+            ->orderBy('sort_id', 'asc')
+            ->paginate(6);
+        }else{
+            $projects=Project::whenPrice(request()->price)
+            ->whenRoom(request()->room_count)
+            ->whenArea(request()->area)
+            ->orderBy('sort_id', 'asc')
+            ->paginate(6);
+        }
     return view('home.category',compact('category','projects',  'category_list', 'max_price', 'max_room_count', 'max_area'));
 
     } else {
