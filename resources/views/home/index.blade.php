@@ -1,5 +1,13 @@
 @extends('home._layouts._app')
 
+@section('style')
+    <style>
+        .video iframe{
+        width: 100% !important;
+        min-height: 80vh !important;
+    }
+    </style>
+@endsection
 @section('scripts')
     <script>
         $(window).on('load', function() {
@@ -166,22 +174,24 @@
             <div class="row">
                 <div class="col-xs-12" >
                     <div class="testimonial">
-                        <div class="row">
+                        <div class="row" style="display: grid;
+                        justify-content: center;
+                        direction: rtl;">
 
-                            <div class="col-md-2 video"
+                            <div class="col-md-6" style="margin: 0 auto;">
+                                <div class="testimonials-content margin-top-30" style="  min-height: 200px; width: auto; margin-top: 0px !important;padding-top: 9px; background: #ffffffc4; ">
+                                  <div>  <p class="lead">{!! $about->who_are_we !!}</p></div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-8 video"
                                 style=" ;
                                         padding: 0;
                                         box-shadow: 5px 10px 10px 7px rgba(0, 0, 0, 0.35);
                                         -webkit-box-shadow: 5px 10px 10px 7px rgba(0, 0, 0, 0.35);
-                                        -moz-box-shadow: 5px 10px 10px 7px rgba(0, 0, 0, 0.35); width: auto; text-align:center;">
+                                        -moz-box-shadow: 5px 10px 10px 7px rgba(0, 0, 0, 0.35); width: 90%; text-align:center; margin: 0 auto ;margin-top:50px">
                                 {!! setting('site_youtube') !!}
 
-                            </div>
-                            <div class="col-md-6">
-                                <div class="testimonials-content margin-top-30" style="  min-height: 200px; width: auto; margin-top: 0px !important;padding-top: 9px;">
-                                    <p class="lead">{!! $about->who_are_we !!}</p>
-
-                                </div>
                             </div>
                         </div>
                     </div>
