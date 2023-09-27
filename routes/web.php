@@ -33,6 +33,9 @@ Route::group([], function () {
     Route::get('/category/{id}', 'Home\CategoryControlelr@show')->name('category');
     Route::get('/projects', 'Home\ProjectControlelr@index')->name('projects');
     Route::get('/project/{id}', 'Home\ProjectControlelr@show')->name('project');
+    
+    
+    Route::get('/updates', 'Home\HomeController@updates')->name('updates');
 
 
     Route::get('/sitemap.xml', 'Home\SitemapXmlController@index')->name('sitemap');

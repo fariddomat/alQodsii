@@ -83,4 +83,10 @@ class HomeController extends Controller
             return Response::download($file, 'profile.pdf', $headers);
         }
     }
+
+    public function updates(){
+
+        $categories=Category::with('projects')->get();
+        return view('home.updates', compact('categories'));
+    }
 }

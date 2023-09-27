@@ -73,6 +73,10 @@
                         <a href="{{ route('categories') }}" role="button">المشاريع</a>
 
                     </li>
+                    <li>
+                        <a href="{{ route('updates') }}" role="button">التحديثات</a>
+
+                    </li>
                     {{-- <li>
                         <a href="#" role="button">من نحن</a>
 
