@@ -2,11 +2,25 @@
 
 @section('style')
     <style>
-        .aProject:hover{
+        .aProject:hover {
             text-decoration: none;
             color: #2f2e33;
         }
+
         @media only screen and (max-width: 600px) {
+            .table-responsive {
+                border: none !important;
+                border-bottom: 1px solid #ddd !important;
+            }
+
+            .tab-content {
+                padding: 30px 0 !important;
+            }
+
+            .container-fluid {
+                padding: 0 !important;
+            }
+
             td {
                 width: auto !important;
                 font-size: 7px !important;
