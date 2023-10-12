@@ -3517,6 +3517,13 @@ margin-left: 5px;
 .navigation-box-icon2 {
     border: none !important;
 }
+
+.footer-title-separator{
+    width: 220px;
+}
+.footer-title-separator::after {
+  width: 220px;
+}
 </style>
     @yield('style')
 

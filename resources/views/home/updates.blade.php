@@ -1,5 +1,39 @@
 @extends('home._layouts._app')
 
+@section('style')
+    <style>
+        .aProject:hover{
+            text-decoration: none;
+            color: #2f2e33;
+        }
+        @media only screen and (max-width: 600px) {
+            td {
+                width: auto !important;
+                font-size: 7px !important;
+                margin: 2px;
+
+            }
+
+            td.back {
+                font-size: 7px !important;
+                width: auto !important;
+                max-width: 180px;
+            }
+
+            td:first-child {
+                left: : 0px !important;
+                width: auto !important;
+                box-shadow: none !important;
+            }
+
+            h1,
+            .h1 {
+                font-size: 1.77em;
+            }
+        }
+    </style>
+@endsection
+
 @section('content')
     <section class="short-image no-padding agency margin-top-135">
         <div class="container">
@@ -43,18 +77,19 @@
                                         <h2>لا يوجد تحديثات في هذا التصنيف بعد</h2>
                                     @endif
                                     @foreach ($category->projects as $index2 => $project)
-                                    
                                         {{-- Apartments Reservation --}}
                                         <div class="row">
                                             @if ($project->floors->count() > 0)
                                                 <!-- apartment check Area-->
-                                                <div class="room-details-area pt-100 pb-70  " >
+                                                <div class="room-details-area pt-100 pb-70  ">
                                                     <div class="container-fluid m-0 p-0">
                                                         <div class="section-title-two text-center">
                                                             <div class="row margin-top-60">
                                                                 <div class="col-xs-12 col-lg-12 text-center">
-                                                                    <h1 class="">{{ $project->name }}<span
-                                                                            class="special-color">.</span></h1>
+                                                                    <h1 class=""><a
+                                                                            href="{{ route('project', $project->id) }}"
+                                                                            class="aProject">{{ $project->name }}<span
+                                                                                class="special-color">.</span></a></h1>
                                                                 </div>
                                                                 <div
                                                                     class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-4">
