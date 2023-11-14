@@ -14,6 +14,7 @@ Route::prefix('admin')
             Route::get('/dashboard', 'DashboardController@index')->name('home');
 
             Route::resource('users', 'UserController');
+            Route::resource('privacies', 'PrivacyController');
 
             Route::resource('categories', 'CategoryController');
 

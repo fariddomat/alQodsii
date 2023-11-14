@@ -3524,6 +3524,16 @@ margin-left: 5px;
 .footer-title-separator::after {
   width: 220px;
 }
+
+@media only screen and (max-width:600px) {
+    .icon-bar-social a {
+        padding: 5px;
+    }
+    #swiper2 .swiper-slide h1 {
+        font-size: 14px;
+    }
+
+        }
 </style>
     @yield('style')
 

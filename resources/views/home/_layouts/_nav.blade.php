@@ -86,6 +86,10 @@
 
                     </li>
                     <li>
+                        <a href="{{ route('privacy') }}" role="button">الخصوصية</a>
+
+                    </li>
+                    <li>
                         @auth
                             <a href="{{ route('admin.home') }}" class="special-color">لوحة التحكم</a>
                         @else

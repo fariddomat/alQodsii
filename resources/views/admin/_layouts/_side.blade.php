@@ -45,6 +45,10 @@
                  من نحن؟</a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('admin.privacies.index') }}"><i class="icon-info "></i>
+                 سياسة الخصوصية</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('admin.setting.chart') }}"><i class="icon-info "></i>
                  الاسهم</a>
             </li>

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\About;
 use App\Models\Apartment;
 use App\Models\Category;
+use App\Models\Privacy;
 use App\Models\ProfileDownload;
 use App\Models\Project;
 use App\Models\Promoter;
@@ -88,5 +89,10 @@ class HomeController extends Controller
 
         $categories=Category::with('projects')->get();
         return view('home.updates', compact('categories'));
+    }
+
+    public function privacy(){
+        $privacies=Privacy::orderBy('id')->get();
+        return view('home.privacy', compact('privacies'));
     }
 }

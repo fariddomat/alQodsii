@@ -33,8 +33,9 @@ Route::group([], function () {
     Route::get('/category/{id}', 'Home\CategoryControlelr@show')->name('category');
     Route::get('/projects', 'Home\ProjectControlelr@index')->name('projects');
     Route::get('/project/{id}', 'Home\ProjectControlelr@show')->name('project');
-    
-    
+    Route::get('/privacy', 'Home\HomeController@privacy')->name('privacy');
+
+
     Route::get('/updates', 'Home\HomeController@updates')->name('updates');
 
 
