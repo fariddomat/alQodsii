@@ -1,5 +1,39 @@
 @extends('home._layouts._app')
+@section('style')
+    <style>
+        input,
+        .form-submit-cont {
+            border-radius: 15px;
+        }
 
+        textarea {
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        #form-submit {
+                width: 100%;
+                border-radius: 0px 0px 15px 15px;
+            }
+        @media only screen and (max-width:600px) {
+
+            input,
+            .form-submit-cont {
+                max-width: 90%;
+                border-radius: 15px;
+            }
+
+            textarea {
+                max-width: 90%;
+                border-radius: 15px 15px 0px 0px;
+            }
+
+            #form-submit {
+                width: 100%;
+                border-radius: 0px 0px 15px 15px;
+            }
+        }
+    </style>
+@endsection
 @section('content')
     <section class="section-light section-both-shadow top-padding-45 margin-top-135">
         <div class="container">
@@ -17,7 +51,7 @@
                         <input name="name" id="name" type="text" class="input-short main-input required,all"
                             placeholder="الاسم بالكامل *"
                             style="  float: right;
-                            margin-left: 15px;" required/>
+                            margin-left: 15px;" required />
                         <input name="phone" id="phone" type="text" class="input-short pull-right main-input ,all"
                             placeholder="رقم الهاتف *" required />
                         <input name="email" id="mail" type="email" class="input-full main-input ,email"
