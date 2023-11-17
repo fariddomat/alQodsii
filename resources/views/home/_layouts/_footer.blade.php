@@ -17,11 +17,13 @@
 <footer class="small-cont">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-6 small-cont">
+            <div class="col-xs-12 col-md-4 small-cont">
                 <img src="{{ asset('alqodsi.png') }}" style="max-height: 75px" alt="" class="img-responsive footer-logo" />
             </div>
-
-            <div class="col-xs-12 col-md-6 footer-copyrights">
+            <div class="col-xs-12 col-md-4 footer-copyrights">
+                <a href="{{ route('privacy') }}">سياسة الخصوصية</a>
+            </div>
+            <div class="col-xs-12 col-md-4 footer-copyrights">
                 &copy; Copyright 2023 <a href="https://joudtech.sa/" target="blank">Joudtech</a>. All rights reserved.
             </div>
         </div>

@@ -23,6 +23,8 @@
     <!-- Custom styles -->
     <link rel='preload' type='text/css'
         href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,500italic,700,700italic&amp;subset=latin,latin-ext'>
+        <link rel='preload' type='text/css'
+            href='{{ asset('Al-Jazeera-Arabic-Regular/Al-Jazeera-Arabic-Regular.ttf') }}'>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins.css') }}">
 
     <link rel="stylesheet" type="text/css" href="{{ asset('css/apartment-layout.css') }}">
@@ -39,8 +41,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
+
+        @font-face {
+            font-family: 'Al-Jazeera-Arabic-Regular';
+            src: url({{ asset('Al-Jazeera-Arabic-Regular/Al-Jazeera-Arabic-Regular.ttf') }});
+        }
         body {
-            font-family: 'Cairo';
+            font-family: 'Al-Jazeera-Arabic-Regular';
         }
         header.header2 .navbar-nav > li > a {
             font-size: 18px;

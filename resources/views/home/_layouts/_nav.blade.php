@@ -85,10 +85,10 @@
                         <a href="{{ route('contactPage') }}" role="button">اتصل بنا</a>
 
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('privacy') }}" role="button">الخصوصية</a>
 
-                    </li>
+                    </li> --}}
                     <li>
                         @auth
                             <a href="{{ route('admin.home') }}" class="special-color">لوحة التحكم</a>
